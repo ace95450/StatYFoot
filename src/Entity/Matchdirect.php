@@ -82,17 +82,17 @@ class Matchdirect
     private $goalsAwayTeam;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $halftime_score;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $final_score;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $penalty;
 
@@ -110,6 +110,52 @@ class Matchdirect
      * @ORM\Column(type="integer")
      */
     private $secondHalfStart;
+
+    /**
+     * Matchdirect constructor.
+     * @param $fixture_id
+     * @param $event_timestamp
+     * @param $event_date
+     * @param $league_id
+     * @param $round
+     * @param $homeTeam_id
+     * @param $awayTeam_id
+     * @param $homeTeam
+     * @param $awayTeam
+     * @param $status
+     * @param $statusShort
+     * @param $goalsHomeTeam
+     * @param $goalsAwayTeam
+     * @param $halftime_score
+     * @param $final_score
+     * @param $penalty
+     * @param $elapsed
+     * @param $firstHalfStart
+     * @param $secondHalfStart
+     */
+    public function __construct($fixture_id, $event_timestamp, $event_date, $league_id, $round, $homeTeam_id, $awayTeam_id, $homeTeam, $awayTeam, $status, $statusShort, $goalsHomeTeam, $goalsAwayTeam, $halftime_score, $final_score, $penalty, $elapsed, $firstHalfStart, $secondHalfStart)
+    {
+        $this->fixture_id = $fixture_id;
+        $this->event_timestamp = $event_timestamp;
+        $this->event_date = $event_date;
+        $this->league_id = $league_id;
+        $this->round = $round;
+        $this->homeTeam_id = $homeTeam_id;
+        $this->awayTeam_id = $awayTeam_id;
+        $this->homeTeam = $homeTeam;
+        $this->awayTeam = $awayTeam;
+        $this->status = $status;
+        $this->statusShort = $statusShort;
+        $this->goalsHomeTeam = $goalsHomeTeam;
+        $this->goalsAwayTeam = $goalsAwayTeam;
+        $this->halftime_score = $halftime_score;
+        $this->final_score = $final_score;
+        $this->penalty = $penalty;
+        $this->elapsed = $elapsed;
+        $this->firstHalfStart = $firstHalfStart;
+        $this->secondHalfStart = $secondHalfStart;
+    }
+
 
     public function getId(): ?int
     {

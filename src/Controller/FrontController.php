@@ -6,14 +6,16 @@ namespace App\Controller;
 use App\Entity\Matchdirect;
 use App\Entity\Membre;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Unirest\Request;
 
 
 class FrontController extends AbstractController
 {
     public function index()
     {
-        // Récupère tout les élément de la BDD dans la table Membre
+        // Récupère tout les éléments de la BDD dans la table Membre
         $repository = $this->getDoctrine()
             ->getRepository(Membre::class);
         $membre = $repository->findAll();
@@ -25,22 +27,57 @@ class FrontController extends AbstractController
         ]);
     }
 
+    /**
+     *  API + Listing
+     * @Route("/api/test")
+     */
     public function showApi()
+
     {
-        require_once 'vendor/autoload.php';
-        // Récupération de l'api
-        $response = Unirest\Request::get("https://api-football-v1.p.rapidapi.com/players/seasons",
-            array("X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725")
-        );
-        $obj = json_decode($response, true);
 
-        // Insertion des données dans la BDD
-         $this->getDoctrine()
-            ->getRepository(Matchdirect::class, [
-             'fixture_id' =>
-            ])
+        $em = $this->getDoctrine()->getManager();
 
-        //var_dump($obj);
+        // TODO : Désactiver en PROD
+        Request::verifyPeer(false);
+        $response = Request::get("https://api-football-v1.p.rapidapi.com/fixtures/live", [
+            "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
+        ]);
+
+        $raw_body = json_decode($response->raw_body, true);
+        dump($raw_body);
+
+        foreach ($raw_body['api']['fixtures'] as $fixture) {
+
+            $matchDirect = new Matchdirect(
+                $fixture['fixture_id'],
+                $fixture['event_timestamp'],
+                new \DateTime($fixture['event_date']),
+                $fixture['league_id'],
+                $fixture['round'],
+                $fixture['homeTeam_id'],
+                $fixture['awayTeam_id'],
+                $fixture['homeTeam'],
+                $fixture['awayTeam'],
+                $fixture['status'],
+                $fixture['statusShort'],
+                $fixture['goalsHomeTeam'],
+                $fixture['goalsAwayTeam'],
+                $fixture['halftime_score'],
+                $fixture['final_score'],
+                $fixture['penalty'],
+                $fixture['elapsed'],
+                $fixture['firstHalfStart'],
+                $fixture['secondHalfStart']
+            );
+
+            dump($matchDirect);
+            $em->persist($matchDirect);
+            $em->flush();
+
+        }
+
+            return new Response("Yes !");
+
 
     }
 }
