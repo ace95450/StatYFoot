@@ -8,11 +8,55 @@
     <!--MAIN CONTENT ------------------------------------------------------------------------------->
     <main>
     <div id="maincontent" class="row">
-        <div id="maintcontentleft" class="col-lg-8">
-            <h2>Bienvenue sur la page membre</h2>
-            <div>
-                <p>On peut afficher plein de trucs ici</p>
-            </div>
+        <div id="maintcontentleft" class="col-lg-8 row">
+                <table class="table">
+                    <thead>
+                    <span>Match Champion's League</span>
+                    </thead>
+
+                    <tbody>
+
+                    {% for match in foot  %}
+
+                    <tr>
+
+
+                        <td class="text-left"><span></span></td>
+                        <!--<td>En cours</td>-->
+
+                        <td  class="text-center" id="centre">
+                            <a class="" href="">
+                                <div class="d-flex justify-content-center row">
+                                    <div class="col-5 text-right">
+                            			<span id="equipe1" class="mx-1">{{ match.homeTeam }}
+                            				<span id="logoequipe1">
+                            					<img alt="" src="../logo.png" height="25px"></span>
+                            				</span>
+                                        </span>
+                                    </div>
+
+                                    <div class="col-1 p-0">
+                                        <span class="score " class="mx-1">{{ match.goalsHomeTeam }} - {{ match.goalsAwayTeam }}</span>
+                                    </div>
+
+                                    <div class="col-5 text-left">
+                            			<span id="equipe2" class="mx-1">
+                            				<span id="logoequipe2">
+                            					<img alt="" src="../logo.png" height="25px">
+                            				</span>
+                            			{{ match.awayTeam }}</span>
+                                    </div>
+
+                                </div>
+                            </a>
+                        </td>
+
+                        <td class="text-right"><span>follow</span></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
         </div><!-- maintcontentleft col-lg-8-->
 
         {% include 'components/_sidebar.html.twig' %}

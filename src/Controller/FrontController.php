@@ -4,7 +4,6 @@ namespace App\Controller;
 
 
 use App\Entity\Matchdirect;
-use App\Entity\Membre;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,15 +14,15 @@ class FrontController extends AbstractController
 {
     public function index()
     {
-        // Récupère tout les éléments de la BDD dans la table Membre
+        // Récupère tout les éléments de la BDD dans la table MatchDirect
         $repository = $this->getDoctrine()
-            ->getRepository(Membre::class);
-        $membre = $repository->findAll();
+            ->getRepository(Matchdirect::class);
+        $matchs = $repository->findAll();
 
 
         //return new Response("<h1>PAGE D'ACCUEIL</h1>");
         return $this->render("front/home.html.twig", [
-            'foot' => $membre
+            'foot' => $matchs
         ]);
     }
 
