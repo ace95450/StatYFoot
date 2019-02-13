@@ -3,10 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Membre;
+use App\Form\MembreFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class MembreController extends AbstractController
 {
@@ -18,10 +20,11 @@ class MembreController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function newMembre(Request $request)
+    public function newMembre(Request $request,UserPasswordEncoderInterface $encoder)
     {
         // Création d'un nouveau membre
         $membre = new Membre();
+        $membre->setRoles(['ROLE_MEMBRE']);
 
         // Création du formulaire d'inscription
         $form = $this->createform(MembreFormType::class, $membre);
@@ -29,11 +32,11 @@ class MembreController extends AbstractController
         // Traitement du formulaire
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form-isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             //dump($membre);
 
             // L'encodgage dut mot depasse
-            $membre->encoreOasswird('$membre', $membre->getPassword());
+            $membre->setPassword($encoder->encodePassword($membre, $membre->getPassword() ) );
 
 
             // Sauvegarder dans la BDD
@@ -46,7 +49,7 @@ class MembreController extends AbstractController
                 'Bravo ! Vous avez ajoutez un utilisateur.'
             );
 
-            return $this->redirectToRoute('index');
+            return $this->redirectToRoute('security_connexion');
         }
 
         // Passage à la vue

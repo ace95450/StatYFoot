@@ -24,6 +24,12 @@ class MembreFormType extends AbstractType
     {
         // Création du formulaire via Symfony
         $builder
+            ->add('pseudo', TextType::class, [
+                'required' => true,
+                'label' => 'Pseudo',
+                'attr' => ['placeholder' => "Votre pseudo",
+                    'class'=>'form-control']
+            ])
             ->add('nom', TextType::class, [
                 'required' => true,
                 'label' => 'Nom',
