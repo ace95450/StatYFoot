@@ -1,0 +1,23 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+    Accueil
+{% endblock %}
+
+{% block content %}
+    <!--MAIN CONTENT ------------------------------------------------------------------------------->
+    <main>
+    <div id="maincontent" class="row">
+        <div id="maintcontentleft" class="col-lg-8">
+            <h2>Bienvenue sur la page membre</h2>
+            <div>
+                <p>On peut afficher plein de trucs ici</p>
+            </div>
+        </div><!-- maintcontentleft col-lg-8-->
+
+        {% include 'components/_sidebar.html.twig' %}
+
+    </div><!-- /MAINCONTENT row-->
+    </div><!-- /CONTAINER-->
+    </main>
+{% endblock %}
