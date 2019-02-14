@@ -20,7 +20,7 @@ class FrontController extends AbstractController
         $matchs = $repository->findAll();
 
 
-        //return new Response("<h1>PAGE D'ACCUEIL</h1>");
+        // Retourne à la vue;
         return $this->render("front/home.html.twig", [
             'foot' => $matchs
         ]);
@@ -74,9 +74,6 @@ class FrontController extends AbstractController
             $em->flush();
 
         }
-
             return new Response("Yes !");
-
-
     }
 }

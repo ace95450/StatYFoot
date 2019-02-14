@@ -1,0 +1,54 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+    Détails
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="jumbotron">
+                    {% for fixture in fixtures  %}
+                    <h7 style="text-align: center">{{ fixture.round }}</h7>
+                    <h2 style="text-align: center">{{ fixture.homeTeam }} - {{ fixture.awayTeam }}</h2>
+                    <div class="row">
+                        <div class="col-md-4" style="border: 1px solid #e1e1e1; text-align: center; width: 70px;">
+                            <img src="https://www.api-football.com/public/teams/85.png" height="45" width="45">
+                            <p>{{ fixture.homeTeam }}</p>
+                        </div>
+                        <h3 class="col-md-4" style="text-align: center;">1 - 6</h3>
+                        <div class="col-md-4" style="border: 1px solid #e1e1e1; text-align: center; width: 70px;">
+                            <img src="https://www.api-football.com/public/teams/529.svg" height="45" width="45">
+                            <p>{{ fixture.awayTeam }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- FIN JUMBOTRON -->
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="jumbotron">
+                    <h7 style="text-align: center">Match du jour</h7>
+                    <h2 style="text-align: center">PSG - Barcelone</h2>
+                    <div class="row">
+                        <div class="col-md-4" style="border: 1px solid #e1e1e1; text-align: center; width: 70px;">
+                            <img src="https://www.api-football.com/public/teams/85.png" height="45" width="45">
+                            <p>Paris</p>
+                        </div>
+                        <h3 class="col-md-4" style="text-align: center;">1 - 6</h3>
+                        <div class="col-md-4" style="border: 1px solid #e1e1e1; text-align: center; width: 70px;">
+                            <img src="https://www.api-football.com/public/teams/529.svg" height="45" width="45">
+                            <p>Barcelone</p>
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
