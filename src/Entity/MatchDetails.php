@@ -155,7 +155,7 @@ class MatchDetails
         return $this->id;
     }
 
-    public function getFixtureId(): ?int
+    public function getFixture_id(): ?int
     {
         return $this->fixture_id;
     }
@@ -203,7 +203,7 @@ class MatchDetails
         return $this;
     }
 
-    public function getHomeTeamId(): ?int
+    public function getHomeTeam_id(): ?int
     {
         return $this->homeTeam_id;
     }
@@ -215,7 +215,7 @@ class MatchDetails
         return $this;
     }
 
-    public function getAwayTeamId(): ?int
+    public function getAwayTeam_id(): ?int
     {
         return $this->awayTeam_id;
     }

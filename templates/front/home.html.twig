@@ -23,13 +23,14 @@
                     <div id="contentmatchdirect" class="col-12">
                         <ul class="list-group">
                             <li id="titlematchdirect" class="list-group-item">{{ leagues.round }}</li>
-                            {% for match in fixtures %}
+                            {{ dump(leagues) }}
+
                             <a class="list-group-item" id="linkrow" href="">
                                 <div id="lignematchdirect" class="row">
                                     <div  class="col-1 text-left d-none d-md-block">16:00
                                     </div>
                                     <div  class="col-md-4 col-5 text-right">
-                                        <span>{{ match.homeTeam }}</span>
+                                        <span>{{ getMatch(leagues.fixture_id)  }}</span>
                                     </div>
                                     <div  class="col-2 text-center justify-content-center">
                                         <img id="logomatchteam" alt="logoequipe" src="logo.png"height="25px">
@@ -37,14 +38,15 @@
                                         <img id="logomatchteam" alt="logoequipe" src="logo.png"height="25px">
                                     </div>
                                     <div  class="col-md-4 col-5 text-left">
-                                        <span>Olympique de Marseille</span>
+                                        <span>{{ match.awayTeam }}</span>
                                     </div>
                                     <div  class="col-1 text-right d-none d-md-block">Follow
                                     </div>
                                 </div><!-- /id ligne -->
                             </a>
-                            {% endfor %}
+
                         </ul>
+                        <br>
                     </div><!-- contentmatchdirect ----->
 
                 </div><!--/ id matchdirect row-->
