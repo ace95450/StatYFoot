@@ -62,7 +62,7 @@ class FrontController extends AbstractController
         ]);
 
         $raw_match = json_decode($responseDirect->raw_body, true);
-//        dump($raw_match);
+//       dump($raw_match);
         $matchdirectArray = [];
         foreach ($raw_match['api']['fixtures'] as $fixture) {
             $matchDirect = new Matchdirect(
@@ -89,10 +89,6 @@ class FrontController extends AbstractController
             $matchdirectArray[] = $matchDirect;
         }
 
-        # Sauvegarde en BDD
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($matchDirect);
-        $em->flush();
 
         // Passage à la vue
         return $this->render('front/home.html.twig', [
