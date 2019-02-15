@@ -19,7 +19,7 @@ class MatchDetails
     /**
      * @ORM\Column(type="integer")
      */
-    private $fixture_id;
+    public $fixture_id;
 
     /**
      * @ORM\Column(type="string", nullable=true)

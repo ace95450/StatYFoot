@@ -19,7 +19,7 @@ class Matchdirect
     /**
      * @ORM\Column(type="integer")
      */
-    private $fixture_id;
+    public $fixture_id;
 
     /**
      * @ORM\Column(type="integer")
@@ -160,11 +160,6 @@ class Matchdirect
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getFixtureId(): ?int
-    {
-        return $this->fixture_id;
     }
 
     public function setFixtureId(int $fixture_id): self

@@ -23,9 +23,10 @@
                     <div id="contentmatchdirect" class="col-12">
                         <ul class="list-group">
                             <li id="titlematchdirect" class="list-group-item">{{ leagues.round }}</li>
-                            {{ dump(leagues) }}
-
-                            <a class="list-group-item" id="linkrow" href="">
+                            {% for match in getMatch(leagues) %}
+                                {{ match.homeTeam }}
+                            {% endfor %}
+                            {#<a class="list-group-item" id="linkrow" href="">
                                 <div id="lignematchdirect" class="row">
                                     <div  class="col-1 text-left d-none d-md-block">16:00
                                     </div>
@@ -43,7 +44,7 @@
                                     <div  class="col-1 text-right d-none d-md-block">Follow
                                     </div>
                                 </div><!-- /id ligne -->
-                            </a>
+                            </a>#}
 
                         </ul>
                         <br>

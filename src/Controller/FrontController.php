@@ -14,7 +14,7 @@ class FrontController extends AbstractController
     public function index()
     {
         $date = date('Y-m-d');
-        dump($date);
+//        dump($date);
 
         // Appelle de l'api ! Request::verifyPeer fait une demande de vérirification du certif SSL
         Request::verifyPeer(false);
@@ -24,7 +24,7 @@ class FrontController extends AbstractController
 
         // json_decode pour récuperer les données json
         $raw_body = json_decode($response->raw_body, true);
-        dump($raw_body);
+//        dump($raw_body);
 
         // foreach pour bouclé les données récupère via le json_decode et pouvoir les utilisé
         $fixturesArray = [];
@@ -58,7 +58,7 @@ class FrontController extends AbstractController
         ]);
 
         $raw_match = json_decode($responseDirect->raw_body, true);
-        dump($raw_match);
+//        dump($raw_match);
         $matchdirectArray = [];
         foreach ($raw_match['api']['fixtures'] as $fixture) {
             $matchDirect = new Matchdirect(
