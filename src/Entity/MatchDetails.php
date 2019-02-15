@@ -22,7 +22,7 @@ class MatchDetails
     private $fixture_id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $event_date;
 

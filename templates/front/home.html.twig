@@ -18,13 +18,12 @@
     <main>
         <div id="maincontent" class="row">
             <div id="maintcontentleft" class="col-md-8">
-
+                {% for leagues in fixtures %}
                 <div id="matchdirect" class="row">
                     <div id="contentmatchdirect" class="col-12">
-                        {% for match in foot %}
                         <ul class="list-group">
-                            <li id="titlematchdirect" class="list-group-item">Match Live</li>
-
+                            <li id="titlematchdirect" class="list-group-item">{{ leagues.round }}</li>
+                            {% for match in fixtures %}
                             <a class="list-group-item" id="linkrow" href="">
                                 <div id="lignematchdirect" class="row">
                                     <div  class="col-1 text-left d-none d-md-block">16:00
@@ -34,22 +33,22 @@
                                     </div>
                                     <div  class="col-2 text-center justify-content-center">
                                         <img id="logomatchteam" alt="logoequipe" src="logo.png"height="25px">
-                                        {{ match.goalsHomeTeam }} - {{ match.goalsAwayTeam }}
+                                        3-0
                                         <img id="logomatchteam" alt="logoequipe" src="logo.png"height="25px">
                                     </div>
                                     <div  class="col-md-4 col-5 text-left">
-                                        <span>{{ match.awayTeam }}</span>
+                                        <span>Olympique de Marseille</span>
                                     </div>
                                     <div  class="col-1 text-right d-none d-md-block">Follow
                                     </div>
                                 </div><!-- /id ligne -->
                             </a>
+                            {% endfor %}
                         </ul>
-                        {% endfor %}
                     </div><!-- contentmatchdirect ----->
 
                 </div><!--/ id matchdirect row-->
-
+                {% endfor %}
         {% include 'components/_sidebar.html.twig' %}
 
     </div><!-- /MAINCONTENT row-->
