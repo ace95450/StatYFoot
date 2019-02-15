@@ -13,6 +13,10 @@ class FrontController extends AbstractController
 {
     public function index()
     {
+        $repository = $this->getDoctrine()->getRepository(MatchDetails::class);
+        $match = $repository->findAll();
+
+
         $date = date('Y-m-d');
 //        dump($date);
 
@@ -84,6 +88,11 @@ class FrontController extends AbstractController
             );
             $matchdirectArray[] = $matchDirect;
         }
+
+        # Sauvegarde en BDD
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($matchDirect);
+        $em->flush();
 
         // Passage à la vue
         return $this->render('front/home.html.twig', [

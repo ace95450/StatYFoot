@@ -10,8 +10,6 @@ use Unirest\Request;
 class AppExtension extends \Twig_Extension
 {
 
-    private $matches;
-
     public function getFixture($id)
     {
         // Appelle de l'api ! Request::verifyPeer fait une demande de vérirification du certif SSL
@@ -38,14 +36,11 @@ class AppExtension extends \Twig_Extension
     public function getMatch($idMatch)
     {
 
-//        dump($idMatch);
-//        die();
         $idMatch = $idMatch->fixture_id;
         // foreach pour bouclé les données récupère via le json_decode et pouvoir les utilisé
         $fixturesArray = [];
         foreach ($this->getFixture($idMatch) as $fixtures) {
             $fixtures = reset($fixtures['fixtures']);
-            dump($fixtures['fixture_id']);
                 $detailsmatch = new MatchDetails(
                     $fixtures['fixture_id'],
                     $fixtures['event_date'],
@@ -72,5 +67,5 @@ class AppExtension extends \Twig_Extension
                 }
             }
         return $fixturesArray;
-        }
+    }
 }

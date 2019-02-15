@@ -60,6 +60,11 @@ class MatchDetailsController extends AbstractController
             $fixturesArray[] = $detailsmatch;
         }
 
+        # Sauvegarde en BDD
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($detailsmatch);
+        $em->flush();
+
         // Passage à la vue
         return $this->render('front/details.html.twig', [
             'fixtures' => $fixturesArray
