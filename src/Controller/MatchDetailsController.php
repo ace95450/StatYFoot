@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Events;
 use App\Entity\MatchDetails;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,22 +18,20 @@ use Unirest\Request;
 class MatchDetailsController extends AbstractController
 {
     /**
-     * @Route("/details-match")
+     * @Route("/details-match/{id<\d+>}")
      */
-    public function detailsMatch()
+    public function detailsMatch($id)
     {
-        $date = date('Y-m-d');
-        dump($date);
-
         // Appelle de l'api ! Request::verifyPeer fait une demande de vérirification du certif SSL
         Request::verifyPeer(false);
-        $response = Request::get("https://api-football-v1.p.rapidapi.com/fixtures/date/".$date."", [
+        $response = Request::get("https://api-football-v1.p.rapidapi.com/fixtures/id/".$id."", [
             "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
         ]);
+        //dump($response);
 
         // json_decode pour récuperer les données json
         $raw_body = json_decode($response->raw_body, true);
-        dump($raw_body);
+       dump($raw_body);
 
         // foreach pour bouclé les données récupère via le json_decode et pouvoir les utilisé
         $fixturesArray = [];
@@ -60,14 +59,30 @@ class MatchDetailsController extends AbstractController
             $fixturesArray[] = $detailsmatch;
         }
 
-        # Sauvegarde en BDD
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($detailsmatch);
-        $em->flush();
+        // Tout ce qui concerne les évenements du match
+        Request::verifyPeer(false);
+        $rEvent = Request::get("https://api-football-v1.p.rapidapi.com/events/".$id."", [
+            "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
+        ]);
+        dump($rEvent);
+
+        $raw_events = json_decode($rEvent->raw_body, true);
+        $eventsArray = [];
+        foreach ($raw_events['api']['events'] as $events) {
+            $eventsMatch = new Events(
+                $events['elapsed'],
+                $events['teamName'],
+                $events['player'],
+                $events['type'],
+                $events['detail']
+            );
+            $eventsArray[] = $eventsMatch;
+        }
 
         // Passage à la vue
         return $this->render('front/details.html.twig', [
-            'fixtures' => $fixturesArray
+            'fixtures' => $fixturesArray,
+            'events' => $eventsArray
         ]);
     }
 

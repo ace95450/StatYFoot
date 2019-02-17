@@ -10,6 +10,17 @@ use Unirest\Request;
 class AppExtension extends \Twig_Extension
 {
 
+    public function getFunctions()
+    {
+        /**
+         * @return array|\Twig_Extension[]
+         */
+        return [
+            new Twig_Function('getMatch', [$this, 'getMatch']),
+            new Twig_Function('render', [$this, 'render'], ['is_safe' => ['html']])
+        ];
+    }
+
     public function getFixture($id)
     {
         // Appelle de l'api ! Request::verifyPeer fait une demande de vérirification du certif SSL
@@ -20,17 +31,6 @@ class AppExtension extends \Twig_Extension
 
         // json_decode pour récuperer les données json
         return json_decode($response->raw_body, true);
-    }
-
-    public function getFunctions()
-    {
-        /**
-         * @return array|\Twig_Extension[]
-         */
-        return [
-            new Twig_Function('getMatch', [$this, 'getMatch']),
-            new Twig_Function('render', [$this, 'render'], ['is_safe' => ['html']])
-        ];
     }
 
     public function getMatch($idMatch)

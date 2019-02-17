@@ -19,32 +19,36 @@ class MatchDetailsRepository extends ServiceEntityRepository
         parent::__construct($registry, MatchDetails::class);
     }
 
-    // /**
-    //  * @return MatchDetails[] Returns an array of MatchDetails objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * Récupérer les derniers matchs
+     */
+    public function findLatest()
     {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('m.id', 'ASC')
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.fixture_id', 'DESC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
-        ;
+            ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?MatchDetails
+
+    /**
+     * @param $idMatch
+     * @param $idLegaue
+     * @return mixed
+     */
+    public function findByFixtures($idMatch, $idLeague)
     {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
+        return $this->createQueryBuilder('a')
+            ->where('a.fixture_id = :fixture_id')
+            ->setParameter('fixture_id', $idMatch)
+
+            ->andWhere('a.league_id = :league_id')
+            ->setParameter('league_id', $idLeague)
+
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getResult();
     }
-    */
+
 }

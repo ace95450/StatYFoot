@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\MatchDetails;
 use App\Entity\Matchdirect;
+use App\Entity\Teams;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Unirest\Request;
 
@@ -14,7 +15,7 @@ class FrontController extends AbstractController
     public function index()
     {
         $repository = $this->getDoctrine()->getRepository(MatchDetails::class);
-        $match = $repository->findAll();
+        $matchDay = $repository->findAll();
 
 
         $date = date('Y-m-d');
@@ -89,11 +90,38 @@ class FrontController extends AbstractController
             $matchdirectArray[] = $matchDirect;
         }
 
+        # Sauvegarde en BDD
+        $em = $this->getDoctrine()->getManager();
+        $em->flush();
 
         // Passage à la vue
         return $this->render('front/home.html.twig', [
             'fixtures' => $fixturesArray,
-            'matchLive' => $matchdirectArray
+            'matchLive' => $matchdirectArray,
+            'matchDay' => $matchDay
+        ]);
+    }
+
+    public function teams($idTeam)
+    {
+        $response = Request::get("https://api-football-v1.p.rapidapi.com/teams/team/".$idTeam."", [
+            "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
+        ]);
+
+        $raw_team = json_decode($response->raw_body, true);
+        dump($raw_team);
+
+        $teamArray = [];
+        foreach ($raw_team['api']['teams'] as $featuresTeam) {
+            $infoTeams = new Teams(
+                $featuresTeam['team_id'],
+                $featuresTeam['name'],
+                $featuresTeam['logo']
+            );
+            $teamArray[] = $infoTeams;
+        }
+        return $this->render('front/home.html.twig', [
+           'teams' => $teamArray
         ]);
     }
 }
