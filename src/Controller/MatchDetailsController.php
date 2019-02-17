@@ -1,16 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Etudiant
- * Date: 14/02/2019
- * Time: 12:47
- */
 
 namespace App\Controller;
 
 
 use App\Entity\Events;
+use App\Entity\LineUps;
 use App\Entity\MatchDetails;
+use App\Entity\Standings;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Unirest\Request;
@@ -79,10 +75,60 @@ class MatchDetailsController extends AbstractController
             $eventsArray[] = $eventsMatch;
         }
 
+        // Le classement de la ligue
+        Request::verifyPeer(false);
+        $response_standings =  Request::get("https://api-football-v1.p.rapidapi.com/leagueTable/4", [
+            "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
+        ]);
+
+        $raw_standings = json_decode($response_standings->raw_body, true);
+        dump($response_standings);
+
+        $standingsArray = [];
+        foreach ($raw_standings['api']['standings']['0'] as $fixtures) {
+            $detailsStandings = new Standings(
+                $fixtures['rank'],
+                $fixtures['team_id'],
+                $fixtures['teamName'],
+                $fixtures['matchsPlayed'],
+                $fixtures['win'],
+                $fixtures['draw'],
+                $fixtures['lose'],
+                $fixtures['goalsFor'],
+                $fixtures['goalsAgainst'],
+                $fixtures['goalsDiff'],
+                $fixtures['points'],
+                $fixtures['lastUpdate']
+            );
+            $standingsArray[] = $detailsStandings;
+        }
+
+        // La compositions des éuqipes du match
+        Request::verifyPeer(false);
+        $rLineups = Request::get("https://api-football-v1.p.rapidapi.com/lineups/".$id."", [
+            "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
+        ]);
+
+        $raw_lineups = json_decode($rLineups->raw_body, true);
+        dump($raw_lineups);
+
+//        foreach ($raw_lineups['api']['lineUps']['bordeaux'] as $fixtures) {
+//            $detailsLineups = new LineUps(
+//                $fixtures['number'],
+//                $fixtures['player']
+//            );
+//            dump($detailsLineups);
+//        }
+
+        // Sauvegarde en BDD
+        $em = $this->getDoctrine()->getManager();
+        $em->flush();
+
         // Passage à la vue
         return $this->render('front/details.html.twig', [
             'fixtures' => $fixturesArray,
-            'events' => $eventsArray
+            'events' => $eventsArray,
+            "standings" => $standingsArray
         ]);
     }
 

@@ -6,7 +6,9 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.sass">
+    <style>
+    </style>
 {% endblock %}
 
 
@@ -18,14 +20,14 @@
                 <div id="matchdirect" class="row">
                     <div id="contentmatchdirect" class="col-12">
                         <ul class="list-group">
-                                <li id="titlematchdirect" class="list-group-item" style="text-align: center;">Match du Jour</li>
+                                <li id="titlematchdirect" class="list-group-item" style="text-align: center;" data-scroll>Match du Jour</li>
                             {% for daymatch in fixtures %}
                                 <a class="list-group-item" id="linkrow" href="/details-match/{{ daymatch.fixture_id }}">
                                     <div id="lignematchdirect" class="row">
                                         <div  class="col-1 text-left d-none d-md-block">{{ daymatch.status }}
                                         </div>
                                         <div  class="col-md-4 col-5 text-right">
-                                            <span>{{ daymatch.homeTeam }}</span>
+                                            <span data-splitting>{{ daymatch.homeTeam }}</span>
                                         </div>
                                         {% for team in teams %}
                                         <div  class="col-2 text-center justify-content-center">
@@ -35,7 +37,7 @@
                                         </div>
                                         {% endfor %}
                                         <div  class="col-md-4 col-5 text-left">
-                                            <span>{{ daymatch.awayTeam }}</span>
+                                            <span data-splitting>{{ daymatch.awayTeam }}</span>
                                         </div>
                                         <div  class="col-1 text-right d-none d-md-block"><i class="fas fa-share-alt"></i>
                                         </div>
@@ -53,4 +55,10 @@
             </div><!--/ maincontent row-->
     </main>
     </div><!-- class container-->
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+    <script>
+    </script>
 {% endblock %}
