@@ -90,21 +90,7 @@ class FrontController extends AbstractController
             $matchdirectArray[] = $matchDirect;
         }
 
-        # Sauvegarde en BDD
-        $em = $this->getDoctrine()->getManager();
-        $em->flush();
-
-        // Passage à la vue
-        return $this->render('front/home.html.twig', [
-            'fixtures' => $fixturesArray,
-            'matchLive' => $matchdirectArray,
-            'matchDay' => $matchDay
-        ]);
-    }
-
-    public function teams($idTeam)
-    {
-        $response = Request::get("https://api-football-v1.p.rapidapi.com/teams/team/".$idTeam."", [
+        $response = Request::get("https://api-football-v1.p.rapidapi.com/teams/team/53", [
             "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
         ]);
 
@@ -120,8 +106,17 @@ class FrontController extends AbstractController
             );
             $teamArray[] = $infoTeams;
         }
+
+        # Sauvegarde en BDD
+        $em = $this->getDoctrine()->getManager();
+        $em->flush();
+
+        // Passage à la vue
         return $this->render('front/home.html.twig', [
-           'teams' => $teamArray
+            'fixtures' => $fixturesArray,
+            'matchLive' => $matchdirectArray,
+            'matchDay' => $matchDay,
+            'teams' => $teamArray
         ]);
     }
 }
