@@ -1648,16 +1648,16 @@
         },
         {
             "name": "scienta/doctrine-json-functions",
-            "version": "4.0.0",
+            "version": "4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ScientaNL/DoctrineJsonFunctions.git",
-                "reference": "763df144cc21eaaefe1ba3dbc771eab8c4e0c8d2"
+                "reference": "94277c78e266f9c410d6193fb61f501247d3b2da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ScientaNL/DoctrineJsonFunctions/zipball/763df144cc21eaaefe1ba3dbc771eab8c4e0c8d2",
-                "reference": "763df144cc21eaaefe1ba3dbc771eab8c4e0c8d2",
+                "url": "https://api.github.com/repos/ScientaNL/DoctrineJsonFunctions/zipball/94277c78e266f9c410d6193fb61f501247d3b2da",
+                "reference": "94277c78e266f9c410d6193fb61f501247d3b2da",
                 "shasum": ""
             },
             "require": {
@@ -1702,7 +1702,7 @@
                 "postgres",
                 "postgresql"
             ],
-            "time": "2019-01-07T09:41:16+00:00"
+            "time": "2019-02-15T15:07:48+00:00"
         },
         {
             "name": "symfony/asset",

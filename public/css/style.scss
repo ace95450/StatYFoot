@@ -143,6 +143,23 @@ a:hover{
   color:black;
   text-decoration:none;
 }
+
+#footermaincontent{
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  text-align:center;
+  font-size:1em;
+}
+
+#footermaincontent{
+  border-bottom: solid 0.125em var(--turle);
+}
+
+#footermaincontent a:hover{
+  color: var(--light-turtle);
+  text-decoration: none;
+}
+
 /*********************** SIDEBAR CONTENT RIGHT ****************************/
 /*
 #maincontentright + .col-4
@@ -224,8 +241,11 @@ h5{
 .fa-twitter-square:hover{
   color:#38A1F3;
   transition:1s;
-
 }
+#footerpart{
+  margin-top:2em;
+}
+
 /************* DÉTAILS *********************/
 /****** Timeline *********/
 

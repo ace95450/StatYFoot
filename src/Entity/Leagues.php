@@ -58,7 +58,6 @@ class Leagues
 
     /**
      * Leagues constructor.
-     * @param $id
      * @param $league_id
      * @param $name
      * @param $country
@@ -68,9 +67,8 @@ class Leagues
      * @param $logo
      * @param $standings
      */
-    public function __construct($id, $league_id, $name, $country, $season, $season_start, $season_end, $logo, $standings)
+    public function __construct($league_id, $name, $country, $season, $season_start, $season_end, $logo, $standings)
     {
-        $this->id = $id;
         $this->league_id = $league_id;
         $this->name = $name;
         $this->country = $country;
