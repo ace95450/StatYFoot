@@ -14,12 +14,8 @@ class FrontController extends AbstractController
 {
     public function index()
     {
-        $repository = $this->getDoctrine()->getRepository(MatchDetails::class);
-        $matchDay = $repository->findAll();
-
 
         $date = date('Y-m-d');
-//        dump($date);
 
         // Appelle de l'api ! Request::verifyPeer fait une demande de vérirification du certif SSL
         Request::verifyPeer(false);
@@ -29,12 +25,12 @@ class FrontController extends AbstractController
 
         // json_decode pour récuperer les données json
         $raw_body = json_decode($response->raw_body, true);
-//        dump($raw_body);
+        dump($raw_body);
 
         // foreach pour bouclé les données récupère via le json_decode et pouvoir les utilisé
         $fixturesArray = [];
         foreach ($raw_body['api']['fixtures'] as $fixtures) {
-            $detailsmatch = new MatchDetails(
+            $matchDay = new MatchDetails(
                 $fixtures['fixture_id'],
                 $fixtures['event_date'],
                 $fixtures['league_id'],
@@ -54,22 +50,58 @@ class FrontController extends AbstractController
                 $fixtures['firstHalfStart'],
                 $fixtures['secondHalfStart']
             );
-            $fixturesArray[] = $detailsmatch;
+            $fixturesArray[] = $matchDay;
         }
 
+//===================================================================
 
+
+        $response = Request::get("https://api-football-v1.p.rapidapi.com/teams/team/85", [
+            "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
+        ]);
+
+        $raw_team = json_decode($response->raw_body, true);
+        dump($raw_team);
+
+        $teamArray = [];
+        foreach ($raw_team['api']['teams'] as $featuresTeam) {
+            $infoTeams = new Teams(
+                $featuresTeam['team_id'],
+                $featuresTeam['name'],
+                $featuresTeam['logo']
+            );
+            $teamArray[] = $infoTeams;
+        }
+//===================================================================
+        # Sauvegarde en BDD
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($matchDay);
+        $em->flush();
+
+        // Passage à la vue
+        return $this->render('front/home.html.twig', [
+            'fixtures' => $fixturesArray,
+//            'matchLive' => $matchDay,
+            'teams' => $teamArray
+        ]);
+    }
+//===================================================================
+
+    public function getLive()
+    {
+
+        Request::verifyPeer(false);
         $responseDirect = Request::get("https://api-football-v1.p.rapidapi.com/fixtures/live", [
             "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
         ]);
 
         $raw_match = json_decode($responseDirect->raw_body, true);
-//       dump($raw_match);
-        $matchdirectArray = [];
+           dump($raw_match);
         foreach ($raw_match['api']['fixtures'] as $fixture) {
             $matchDirect = new Matchdirect(
                 $fixture['fixture_id'],
                 $fixture['event_timestamp'],
-                new \DateTime($fixture['event_date']),
+                $fixture['event_date'],
                 $fixture['league_id'],
                 $fixture['round'],
                 $fixture['homeTeam_id'],
@@ -87,36 +119,6 @@ class FrontController extends AbstractController
                 $fixture['firstHalfStart'],
                 $fixture['secondHalfStart']
             );
-            $matchdirectArray[] = $matchDirect;
         }
-
-        $response = Request::get("https://api-football-v1.p.rapidapi.com/teams/team/53", [
-            "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
-        ]);
-
-        $raw_team = json_decode($response->raw_body, true);
-        dump($raw_team);
-
-        $teamArray = [];
-        foreach ($raw_team['api']['teams'] as $featuresTeam) {
-            $infoTeams = new Teams(
-                $featuresTeam['team_id'],
-                $featuresTeam['name'],
-                $featuresTeam['logo']
-            );
-            $teamArray[] = $infoTeams;
-        }
-
-        # Sauvegarde en BDD
-        $em = $this->getDoctrine()->getManager();
-        $em->flush();
-
-        // Passage à la vue
-        return $this->render('front/home.html.twig', [
-            'fixtures' => $fixturesArray,
-            'matchLive' => $matchdirectArray,
-            'matchDay' => $matchDay,
-            'teams' => $teamArray
-        ]);
     }
 }

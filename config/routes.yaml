@@ -1,5 +1,5 @@
 index:
-  path: /
+  path: /accueil
   controller: App\Controller\FrontController::index
 
 accueil:

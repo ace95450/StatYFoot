@@ -72,12 +72,12 @@ class Matchdirect
     private $statusShort;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $goalsHomeTeam;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $goalsAwayTeam;
 
