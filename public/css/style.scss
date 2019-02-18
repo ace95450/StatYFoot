@@ -1,0 +1,262 @@
+/********************** BODY **************************/
+@import url('https://fonts.googleapis.com/css?family=Bungee|Roboto+Slab');
+
+.color {
+  --dark: #262626;
+  --gold: #c5ab58;
+  --light-gold: #f1c12a;
+  --dark-gold: #9a8645;
+  --turtle: #276060;
+  --light-turtle: #00988e;
+  --light-grey:#cbcbcb;
+}
+
+body{background: repeating-linear-gradient(
+                -78deg,
+                #cbcbcb,
+                #cbcbcb 10px,
+                #c2c2c2 10px,
+                #c2c2c2 20px
+);
+}
+
+p{
+  color: var(--dark);
+  font-family: 'Roboto Slab', serif;
+}
+
+a{
+  color: var(--turtle);
+  text-decoration: none;
+}
+
+a:hover, a:active{
+  color: var(--light-turtle);
+  text-decoration: none;
+}
+
+/******************** NAVBAR ****************************/
+nav{
+  background-color:var(--dark);
+  border-bottom:solid var(--gold) 0.1em;
+}
+nav .navbar-brand, nav .nav-item{
+  font-family: 'Bungee', cursive;
+  color:var(--gold);
+}
+nav button i{
+  color:var(--gold);
+
+}
+@media only screen and (min-width: 768px) {
+  nav .nav-item:hover{
+    transform: skewX(-12deg);
+    color:white;
+    background-color:var(--gold);
+    transition: 0.1s;
+  }
+  nav .nav-item{
+    transform: skewX(-12deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  nav .nav-item:hover{
+    color:white;
+    background-color:var(--gold);
+    transition: 0.15s;
+    padding-left:1em;
+  }
+  nav .nav-item{
+    color:var(--gold);
+    padding-left:1em;
+  }
+  .navbar-collapse{
+    padding-left:1em;
+  }
+  nav .navbar-brand{
+    padding-left:1em;
+  }
+}
+
+nav .navbar-brand:hover{
+  color:white;
+  transition:5s;
+}
+
+
+nav div{
+
+}
+nav div a{
+}
+nav{
+  padding:0!important;
+  margin:0;
+}
+/********************* MAINCONTENT ****************************/
+main{
+
+}
+#maincontent{
+  margin-top:4em;
+}
+/******************** CONTENTLEFT ****************************/
+#maincontentleft{
+  margin-top:2em;
+}
+#matchdirect{
+
+}
+#contentmatchdirect{
+}
+#contentmatchdirect ul{
+
+}
+.list-group-item:hover{
+  background-color:#f5f1f4;
+  color: var(--turtle);
+}
+#contentmatchdirect .list-group-item:nth-child(even) {
+  background-color: #fcf8fb;
+}
+#titlematchdirect{
+  background-color:var(--light-turtle);
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  color:white;
+  text-align:center;
+  font-size:2em;
+  font-family: 'Bungee', cursive;
+}
+@media only screen and (max-width: 1250px) {
+  #logomatchteam {
+    display:none;
+  }
+}
+ul a{
+  color:black;
+  text-decoration:none;
+  font-family: 'Roboto Slab', serif;
+}
+a:hover{
+  color:black;
+  text-decoration:none;
+}
+/*********************** SIDEBAR CONTENT RIGHT ****************************/
+/*
+#maincontentright + .col-4
+#titlesidebar
+#sidebarinfo + .row
+#contentsidebar + .col-12
+
+*/
+#maincontentright{
+  margin-top: 2em;
+}
+
+#maincontentright .list-group-item:nth-child(even) {
+  background-color: #fcf8fb;
+}
+
+#titlesidebar{
+  background-color: var(--gold);
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  color:white;
+  text-align:center;
+  font-size:1em;
+  font-family: 'Bungee', cursive;
+  text-transform: uppercase;
+}
+
+#maincontentright ul{
+  margin-bottom: 1em;
+}
+
+#maincontentright li{
+  border-bottom: solid 0.125em var(--gold);
+}
+
+#footersidebar{
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  text-align:center;
+  font-size:1em;
+  border-bottom: 0;
+}
+
+#footersidebar a{
+  color: var(--turtle);
+  text-decoration: none;
+}
+
+#footersidebar a:hover{
+  color: var(--light-turtle);
+  text-decoration: none;
+}
+
+.ligue_data{
+  display: block;
+  color:#666 !important;
+  font-size: 0.8em;
+}
+
+/********************** FOOTER *************/
+footer{
+  margin-top:3em;
+  padding-top:1em;
+  background-color: var(--light-grey);
+  border-top: solid black 0.1em;
+}
+h5{
+  font-family: 'Roboto Slab', serif;
+  font-weight:bold;
+}
+.social i{
+  color:black;
+}
+.fa-facebook:hover{
+  color:#4267b2;
+  transition:1s;
+
+}
+.fa-twitter-square:hover{
+  color:#38A1F3;
+  transition:1s;
+
+}
+/************* DÉTAILS *********************/
+/****** Timeline *********/
+
+
+ ul.timeline {
+   list-style-type: none;
+   position: relative;
+ }
+ul.timeline:before {
+  content: ' ';
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+ul.timeline > li:before {
+  content: ' ';
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #22c0e8;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}

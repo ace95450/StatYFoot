@@ -1,43 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-    Détails
-{% endblock %}
-
-{% block stylesheets %}
-    {{ parent() }}
-    <style>
-        ul.timeline {
-            list-style-type: none;
-            position: relative;
-        }
-        ul.timeline:before {
-            content: ' ';
-            background: #d4d9df;
-            display: inline-block;
-            position: absolute;
-            left: 29px;
-            width: 2px;
-            height: 100%;
-            z-index: 400;
-        }
-        ul.timeline > li {
-            margin: 20px 0;
-            padding-left: 20px;
-        }
-        ul.timeline > li:before {
-            content: ' ';
-            background: white;
-            display: inline-block;
-            position: absolute;
-            border-radius: 50%;
-            border: 3px solid #22c0e8;
-            left: 20px;
-            width: 20px;
-            height: 20px;
-            z-index: 400;
-        }
-    </style>
+    Détails de match
 {% endblock %}
 
 {% block content %}
@@ -63,29 +27,29 @@
                         <table class="table-custom table">
                             <tbody>
                             <tr>
-                                <td class="table-game-info-number">10(9)</td>
-                                <td class="table-game-info-category">Shots (on target)</td>
-                                <td class="table-game-info-number">10(9)</td>
+                                <td class="text-right table-game-info-number">10(9)</td>
+                                <td class="text-center table-game-info-category">Tirs Cadrés</td>
+                                <td class="text-left table-game-info-number">10(9)</td>
                             </tr>
                             <tr>
-                                <td class="table-game-info-number">4</td>
-                                <td class="table-game-info-category">Corner kicks</td>
-                                <td class="table-game-info-number">4</td>
+                                <td class="text-right table-game-info-number">4</td>
+                                <td class="text-center table-game-info-category">Corners</td>
+                                <td class="text-left table-game-info-number">4</td>
                             </tr>
                             <tr>
-                                <td class="table-game-info-number">1</td>
-                                <td class="table-game-info-category">Saves</td>
-                                <td class="table-game-info-number">1</td>
+                                <td class="text-right table-game-info-number">1</td>
+                                <td class="text-center table-game-info-category">Arrêts</td>
+                                <td class="text-left table-game-info-number">1</td>
                             </tr>
                             <tr>
-                                <td class="table-game-info-number">2</td>
-                                <td class="table-game-info-category">Yellow cards</td>
-                                <td class="table-game-info-number">0</td>
+                                <td class="text-right table-game-info-number">2</td>
+                                <td class="text-center table-game-info-category">Cartons Jaunes</td>
+                                <td class="text-left table-game-info-number">0</td>
                             </tr>
                             <tr>
-                                <td class="table-game-info-number">1</td>
-                                <td class="table-game-info-category">Red cards</td>
-                                <td class="table-game-info-number">0</td>
+                                <td class="text-right table-game-info-number">1</td>
+                                <td class="text-center table-game-info-category">Carton Rouges</td>
+                                <td class="text-left table-game-info-number">0</td>
                             </tr>
                             </tbody>
                         </table>
