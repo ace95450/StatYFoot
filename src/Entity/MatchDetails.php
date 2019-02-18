@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\MatchdirectRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\MatchDetailsRepository")
  */
-class Matchdirect
+class MatchDetails
 {
     /**
      * @ORM\Id()
@@ -22,12 +22,7 @@ class Matchdirect
     public $fixture_id;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $event_timestamp;
-
-    /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=false)
      */
     private $event_date;
 
@@ -37,7 +32,7 @@ class Matchdirect
     private $league_id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=80)
      */
     private $round;
 
@@ -52,22 +47,22 @@ class Matchdirect
     private $awayTeam_id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=80)
      */
     private $homeTeam;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=80)
      */
     private $awayTeam;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=80)
      */
     private $status;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      */
     private $statusShort;
 
@@ -82,22 +77,22 @@ class Matchdirect
     private $goalsAwayTeam;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $halftime_score;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $final_score;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $penalty;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="integer")
      */
     private $elapsed;
 
@@ -112,9 +107,8 @@ class Matchdirect
     private $secondHalfStart;
 
     /**
-     * Matchdirect constructor.
+     * MatchDetails constructor.
      * @param $fixture_id
-     * @param $event_timestamp
      * @param $event_date
      * @param $league_id
      * @param $round
@@ -133,10 +127,9 @@ class Matchdirect
      * @param $firstHalfStart
      * @param $secondHalfStart
      */
-    public function __construct($fixture_id, $event_timestamp, $event_date, $league_id, $round, $homeTeam_id, $awayTeam_id, $homeTeam, $awayTeam, $status, $statusShort, $goalsHomeTeam, $goalsAwayTeam, $halftime_score, $final_score, $penalty, $elapsed, $firstHalfStart, $secondHalfStart)
+    public function __construct($fixture_id, $event_date, $league_id, $round, $homeTeam_id, $awayTeam_id, $homeTeam, $awayTeam, $status, $statusShort, $goalsHomeTeam, $goalsAwayTeam, $halftime_score, $final_score, $penalty, $elapsed, $firstHalfStart, $secondHalfStart)
     {
         $this->fixture_id = $fixture_id;
-        $this->event_timestamp = $event_timestamp;
         $this->event_date = $event_date;
         $this->league_id = $league_id;
         $this->round = $round;
@@ -162,6 +155,11 @@ class Matchdirect
         return $this->id;
     }
 
+    public function getFixture_id(): ?int
+    {
+        return $this->fixture_id;
+    }
+
     public function setFixtureId(int $fixture_id): self
     {
         $this->fixture_id = $fixture_id;
@@ -169,24 +167,15 @@ class Matchdirect
         return $this;
     }
 
-    public function getEventTimestamp(): ?int
-    {
-        return $this->event_timestamp;
-    }
-
-    public function setEventTimestamp(int $event_timestamp): self
-    {
-        $this->event_timestamp = $event_timestamp;
-
-        return $this;
-    }
-
-    public function getEventDate(): ?\DateTimeInterface
+    /**
+     * @return \DateTimeInterface
+     */
+    public function getEventDate()
     {
         return $this->event_date;
     }
 
-    public function setEventDate(\DateTimeInterface $event_date): self
+    public function setEventDate($event_date): self
     {
         $this->event_date = $event_date;
 
@@ -217,7 +206,7 @@ class Matchdirect
         return $this;
     }
 
-    public function getHomeTeamId(): ?int
+    public function getHomeTeam_id(): ?int
     {
         return $this->homeTeam_id;
     }
@@ -229,7 +218,7 @@ class Matchdirect
         return $this;
     }
 
-    public function getAwayTeamId(): ?int
+    public function getAwayTeam_id(): ?int
     {
         return $this->awayTeam_id;
     }
@@ -318,7 +307,7 @@ class Matchdirect
         return $this->halftime_score;
     }
 
-    public function setHalftimeScore(string $halftime_score): self
+    public function setHalftimeScore(?string $halftime_score): self
     {
         $this->halftime_score = $halftime_score;
 
@@ -330,7 +319,7 @@ class Matchdirect
         return $this->final_score;
     }
 
-    public function setFinalScore(string $final_score): self
+    public function setFinalScore(?string $final_score): self
     {
         $this->final_score = $final_score;
 
@@ -342,19 +331,19 @@ class Matchdirect
         return $this->penalty;
     }
 
-    public function setPenalty(string $penalty): self
+    public function setPenalty(?string $penalty): self
     {
         $this->penalty = $penalty;
 
         return $this;
     }
 
-    public function getElapsed(): ?string
+    public function getElapsed(): ?int
     {
         return $this->elapsed;
     }
 
-    public function setElapsed(string $elapsed): self
+    public function setElapsed(int $elapsed): self
     {
         $this->elapsed = $elapsed;
 
