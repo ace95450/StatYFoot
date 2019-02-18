@@ -22,41 +22,42 @@ class MembreFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        // Création du formulaire via Symfony
+        // creation formulaire d'inscription
         $builder
-            ->add('pseudo', TextType::class, [
-                'required' => true,
-                'label' => 'Pseudo',
-                'attr' => ['placeholder' => "Votre pseudo",
-                    'class'=>'form-control']
-            ])
             ->add('nom', TextType::class, [
                 'required' => true,
                 'label' => 'Nom',
-                'attr' => ['placeholder' => "Votre nom",
+                'attr' => ['placeholder' => "Nom",
                     'class'=>'form-control']
             ])
             ->add('prenom', TextType::class, [
                 'required' => true,
-                'label' => 'Prenom',
-                'attr' => ['placeholder' => "Votre prénom",
+                'label' => 'Prénom',
+                'attr' => ['placeholder' => "Prénom",
                     'class'=>'form-control']
             ])
-            ->add('email', EmailType::class, [
+            ->add('pseudo', TextType::class,[
                 'required' => true,
-                'label' => 'Email',
-                'attr' => ['placeholder' => "Votre email",
+                'label' => 'Pseudo',
+                'attr' => ['placeholder' => "Pseudo",
                     'class'=>'form-control']
             ])
-            ->add('password', PasswordType::class, [
+            ->add('email', EmailType::class,[
+                'required' => true,
+                'label' => 'E-Mail',
+                'attr' => ['placeholder' => "E-Mail",
+                    'class'=>'form-control']
+            ])
+            ->add('password', PasswordType::class,[
                 'required' => true,
                 'label' => 'Mot de passe',
-                'attr' => ['placeholder' => "Mot de passe",
+                'attr' => ['placeholder' => "••••••••",
                     'class'=>'form-control']
             ])
-            ->add('submit', SubmitType::class, [
-                'attr' => ['class'=>'form-control', 'btn', 'btn-primary']
+            ->add('inscription', SubmitType::class, [
+                'attr' => ['class'=>'form-control', 'btn', 'btn-custom']
             ]);
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

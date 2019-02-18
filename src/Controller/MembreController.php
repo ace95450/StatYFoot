@@ -3,12 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\Membre;
+use App\Form\LoginFormType;
 use App\Form\MembreFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class MembreController extends AbstractController
 {
@@ -49,12 +51,42 @@ class MembreController extends AbstractController
                 'Bravo ! Vous avez ajoutez un utilisateur.'
             );
 
-            return $this->redirectToRoute('security_connexion');
+            return $this->redirectToRoute('membre_connexion');
         }
 
         // Passage à la vue
         return $this->render('membre/form.html.twig', [
             'form' => $form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/se-connecter", name="membre_connexion")
+     * @param AuthenticationUtils $authenticationUtils
+     * @return Response
+     */
+    public function connexion(AuthenticationUtils $authenticationUtils):Response
+    {
+        $form=$this->createForm(LoginFormType::class,[
+            'email' => $authenticationUtils->getLastUsername()
+        ]);
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        return $this->render('membre/login.html.twig',[
+            'form' => $form->createView(),
+            'error' => $error
+        ]);
+        return $this->addFlash(
+            'notice',
+            'Bravo ! Vous êtes connecté.'
+        );
+
+        return $this->redirectToRoute('front/home.html.twig');
+    }
+    /**
+     * @Route("/deconnexion.html", name="membre_deconnexion")
+     */
+    public function deconnexion()
+    {
     }
 }
