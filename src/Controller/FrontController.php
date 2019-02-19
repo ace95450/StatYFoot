@@ -52,6 +52,12 @@ class FrontController extends AbstractController
             );
             $fixturesArray[] = $matchDay;
         }
+//===================================================================
+        $idteamArray = [];
+
+        $response_teams = Request::get("https://api-football-v1.p.rapidapi.com/teams/team/".$idteam."", [
+            "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
+        ]);
 
 //===================================================================
 
@@ -75,7 +81,7 @@ class FrontController extends AbstractController
 //===================================================================
         # Sauvegarde en BDD
         $em = $this->getDoctrine()->getManager();
-        $em->remove($matchDay);
+        $em->persist($matchDay);
         $em->flush();
 
         // Passage à la vue
