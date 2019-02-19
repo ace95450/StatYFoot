@@ -2,21 +2,21 @@
 
 namespace App\Form;
 
-
+use App\Entity\Leagues;
 use App\Entity\Membre;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class MembreFormType extends AbstractType
+class ProfilFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        // creation formulaire d'inscription
         $builder
             ->add('nom', TextType::class, [
                 'required' => true,
@@ -36,34 +36,41 @@ class MembreFormType extends AbstractType
                 'attr' => ['placeholder' => "Pseudo",
                     'class'=>'form-control']
             ])
-            ->add('email', EmailType::class,[
-                'required' => true,
-                'label' => 'E-Mail',
-                'attr' => ['placeholder' => "E-Mail",
+            ->add('bio', TextareaType::class, [
+                'label' => 'Bio',
+                'attr' => ['placeholder' => "...",
+                    'rows'=>'4',
                     'class'=>'form-control']
             ])
-            ->add('password', PasswordType::class,[
-                'required' => true,
-                'label' => 'Mot de passe',
-                'attr' => ['placeholder' => "••••••••",
-                    'class'=>'form-control']
+            ->add('avatar', FileType::class, [
+                'label' => 'Avatar',
+                'attr' => [
+                    'class' => 'dropify'
+                ]
             ])
-            ->add('inscription', SubmitType::class, [
+            /*->add('Leagues', EntityType::class, [
+                'class' => Leagues::class,
+                'choice_label' => 'name',
+                'expanded' => false,
+                'multiple' => false,
+                'label' => false
+            ])*/
+            ->add('modifier', SubmitType::class, [
                 'attr' => ['class'=>'form-control btn btn-custom']
-            ]);
+            ])
         ;
     }
-
     public function configureOptions(OptionsResolver $resolver)
     {
-        // Les donné qui seront envoyé dans la base ne seront e tne pourrons être que des champs de la base
-        // Et rien d'autre
-        $resolver->setDefault('data_class', Membre::class);
+        # Mon formulaire s'attend à reçevoir une instance de Article.
+        # Tout autres instances ne fonctionnera pas...
+        $resolver->setDefault('data_class', membre::class);
     }
-
+    /**
+     * Permet de préfixer les champs de votre formulaire.
+     */
     public function getBlockPrefix()
     {
         return 'form';
     }
-
 }
