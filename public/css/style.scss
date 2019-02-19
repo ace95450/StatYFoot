@@ -20,7 +20,13 @@ body{background: repeating-linear-gradient(
 );
 }
 
-p{
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Bungee', cursive;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+p, label, input, textarea, select{
   color: var(--dark);
   font-family: 'Roboto Slab', serif;
 }
@@ -33,6 +39,28 @@ a{
 a:hover, a:active{
   color: var(--light-turtle);
   text-decoration: none;
+}
+
+.btn-custom{
+  font-family: 'Roboto Slab', serif;
+  background-color:var(--gold);
+  color:white;
+  outline:none;
+}
+
+.btn-custom:hover{
+  font-family: 'Roboto Slab', serif;
+  background-color:var(--light-gold);
+  color:white;
+  outline:none;
+}
+
+.form-group input, .form-group textarea, .form-group select{
+  border: solid 0.075em var(--gold);
+}
+
+textarea{
+  resize:none;
 }
 
 /******************** NAVBAR ****************************/
@@ -218,7 +246,69 @@ a:hover{
   color:#666 !important;
   font-size: 0.8em;
 }
+/**************** MEMBRE (profil/inscription/cnx) *******************/
+#membre-header{
+  background-color:var(--turtle);
+  color:white;
+  text-align:center;
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  padding-top: 1em;
+}
 
+#membre-content{
+  background-color:white;
+  color:var(--dark);
+  padding-top: 1em;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+}
+
+#membre-footer{
+  background-color:var(--dark);
+  color:white;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  margin-top: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#membre-footer button{
+  margin: 0 auto;
+}
+
+.dropify{
+  background-color:var(--turtle);
+  margin-bottom: 1em;
+  padding:1em;
+}
+
+.dropify p{
+  color:white;
+}
+
+.avatar-100{
+  background-color:var(--light-grey);
+  padding:0.5em;
+  text-align:center;
+}
+
+.avatar-100 img{
+  width: 6.250em;
+  height: 6.250em;
+  background-color: white;
+}
+
+#club-fav img{
+  background-color: #999;
+  width:1.875em;
+  height:1.875em;
+}
+
+#club-fav a, #club-fav a:hover{
+  color:var(--dark);
+}
 /********************** FOOTER *************/
 footer{
   margin-top:3em;
