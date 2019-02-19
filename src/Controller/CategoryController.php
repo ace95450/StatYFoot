@@ -94,6 +94,7 @@ class CategoryController extends AbstractController
     public function categoryLeagues()
     {
         // Appel de toutes les ligues
+       Request::verifyPeer(false);
         $response = Request::get("https://api-football-v1.p.rapidapi.com/leagues/season/2018", [
             "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
         ]);
@@ -115,6 +116,8 @@ class CategoryController extends AbstractController
             );
             $leagueArray[] = $infoLeague;
         }
+
+
         return $this->render("category/league.html.twig", [
             "leaguecategory" => $leagueArray
         ]);

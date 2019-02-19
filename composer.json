@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
+        "curl/curl": "^2.2",
         "mashape/unirest-php": "^3.0",
         "scienta/doctrine-json-functions": "^4.0",
         "snilius/twig-sort-by-field": "^0.1.5",
@@ -24,7 +25,8 @@
         "symfony/var-dumper": "4.2.*",
         "symfony/webpack-encore-bundle": "^1.1",
         "symfony/yaml": "4.2.*",
-        "twig/extensions": "^1.5"
+        "twig/extensions": "^1.5",
+      "ext-curl": "*"
     },
     "config": {
         "preferred-install": {
