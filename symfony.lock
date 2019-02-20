@@ -95,6 +95,9 @@
     "scienta/doctrine-json-functions": {
         "version": "4.0.0"
     },
+    "snilius/twig-sort-by-field": {
+        "version": "v0.1.5"
+    },
     "symfony/asset": {
         "version": "v4.2.3"
     },
