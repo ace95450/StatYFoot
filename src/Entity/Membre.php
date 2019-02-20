@@ -49,6 +49,21 @@ class Membre implements UserInterface
     private $pseudo;
 
     /**
+     * @ORM\Column(type="text", length=400)
+     *
+     */
+    private $bio;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Image(
+     *     mimeTypesMessage="Vérifiez le format de votre image",
+     *     maxSize="1M", maxSizeMessage="Attention, votre image est trop lourde."
+     * )
+     */
+    private $avatar;
+
+    /**
      * @ORM\Column(type="array")
      */
     private $roles = [];
@@ -127,6 +142,30 @@ class Membre implements UserInterface
     {
         $this->roles = $roles;
 
+        return $this;
+    }
+
+    public function getBio(): ?string
+    {
+        return $this->bio;
+    }
+
+    public function setBio(string $bio): self
+    {
+        $this->bio = $bio;
+
+        return $this;
+
+    }
+
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar($avatar): self
+    {
+        $this->avatar = $avatar;
         return $this;
     }
 
