@@ -11,22 +11,24 @@
         <div id="maincontent" class="row">
             <div id="maincontentleft" class="col-lg-12">
 
-                <li id="titlematchdirect" class="list-group-item col-12"  data-scroll>Toutes les ligues</li>
-                <input style="height:50px;width:100%" type="text" id="myInput" class="input-group-text" onkeyup="searchBar()" placeholder="Rechercher une ligue ou un pays">
+                <li id="titlematchdirect" class="col-12"  data-scroll>Toutes les ligues</li>
+                <input type="text" id="myInput" class="input-group-text" onkeyup="searchBar()" placeholder="Rechercher une ligue ou un pays">
 
-                <ul id="myUL">
+                <ul id="myUL" >
 
                     <div id="leaguelist" class="row">
+
                     {% for league_id in leaguecategory | sortbyfield('country') %}
-                    <li class="col-lg-4 col-sm-6 col-12 justify-content-around">
+                    <li class="col-lg-4 col-md-6 col-12">
                         <div id="league">
                         <a href="" id="leaguename">{{ league_id.name }}</a> <br>
                         <a href="" id="leaguecountry">{{ league_id.country }}</a><br>
-                            <a href=""><img height="70px" src="{{ league_id.logo }}" alt="equipelogo"></a>
+                            <a href=""><img height="70px" src="{{ league_id.logo }}" alt="{{ league_id.name }}logo"></a>
                         </div>
                     </li>
                     {% endfor %}
                     </div>
+
                 </ul>
 
 
@@ -35,10 +37,5 @@
         </div><!--/ maincontent row-->
     </main>
     </div><!-- class container-->
-    <style>
-        #leaguelist li{
-            opacity: 0%;
-        }
-    </style>
 {% endblock %}
 

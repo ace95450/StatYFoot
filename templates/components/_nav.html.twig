@@ -1,7 +1,7 @@
 
 <div class="container color">
     <header>
-        <nav class="navbar navbar-expand-md sticky-top">
+        <nav class="navbar navbar-expand-md">
 
             <a class="navbar-brand" href="/index.php">
 
@@ -16,12 +16,12 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link " href="">Teams</a>
-                    <a class="nav-item nav-link " href="/category/todaymatch">Match du jour</a>
+                    <a class="nav-item nav-link " href="/category/todaymatch">Live</a>
                     <a class="nav-item nav-link " href="/category/leagues">Ligues</a>
                     <a class="nav-item nav-link " href="#">Pays</a>
                     <a class="nav-item nav-link " href="#">Articles</a>
                     <div class="dropdown">
-                        <a class="nav-item nav-link dropdown-toggle" data-toggle="dropdown" href="/connexion">Mon Compte</a>
+                        <a class="nav-item nav-link dropdown-toggle" data-toggle="dropdown" href="/connexion">Profil</a>
                         <div class="dropdown-menu">
                             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                                 <a class="dropdown-item" href={{ "/profil/" ~ app.user.id }}>profil</a>

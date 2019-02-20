@@ -41,12 +41,11 @@ a:hover, a:active{
   text-decoration: none;
 }
 
-<<<<<<< HEAD
 li{
   list-style-type:none;
 }
 
-=======
+
 .btn-custom{
   font-family: 'Roboto Slab', serif;
   background-color:var(--gold);
@@ -69,7 +68,6 @@ li{
 textarea{
   resize:none;
 }
->>>>>>> origin/bastien
 
 /******************** NAVBAR ****************************/
 nav{
@@ -121,25 +119,25 @@ nav .navbar-brand:hover{
 }
 
 .dropdown-menu{
-  background-color: var(--dark) !important;
+  background-color: var(--dark);
   border: solid 0 transparent;
   padding: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 .dropdown-item{
-  color:var(--gold) !important;
+  color:var(--gold);
   font-family: 'Bungee', cursive;
 }
 .dropdown-item:hover{
-  background-color: var(--gold) !important;
-  color:white !important;
+  background-color: var(--gold);
+  color:white;
   font-family: 'Bungee', cursive;
 }
 nav div a{
 }
 nav{
-  padding:0!important;
+  padding:0;
   margin:0;
 }
 /********************* MAINCONTENT ****************************/
@@ -266,8 +264,10 @@ a:hover{
   color:#666 !important;
   font-size: 0.8em;
 }
+
+
 /**************** MEMBRE (profil/inscription/cnx) *******************/
-#membre-header{
+  #membre-header{
   background-color:var(--turtle);
   color:white;
   text-align:center;
@@ -276,147 +276,154 @@ a:hover{
   padding-top: 1em;
 }
 
-#membre-content{
-  background-color:white;
-  color:var(--dark);
-  padding-top: 1em;
-  border-bottom-left-radius:10px;
-  border-bottom-right-radius:10px;
-}
+  #membre-content{
+    background-color:white;
+    color:var(--dark);
+    padding-top: 1em;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+  }
 
-#membre-footer{
-  background-color:var(--dark);
-  color:white;
-  border-bottom-left-radius:10px;
-  border-bottom-right-radius:10px;
-  margin-top: 2em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
+  #membre-footer{
+    background-color:var(--dark);
+    color:white;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    margin-top: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
 
-#membre-footer button{
-  margin: 0 auto;
-}
+  #membre-footer button{
+    margin: 0 auto;
+  }
 
-.dropify{
-  background-color:var(--turtle);
-  margin-bottom: 1em;
-  padding:1em;
-  color:white;
-  width:100%;
-}
+  .dropify{
+    background-color:var(--turtle);
+    margin-bottom: 1em;
+    padding:1em;
+    color:white;
+    width:100%;
+  }
 
-.avatar-100{
-  background-color:var(--light-grey);
-  padding:0.5em;
-  text-align:center;
-}
+  .avatar-100{
+    background-color:var(--light-grey);
+    padding:0.5em;
+    text-align:center;
+  }
 
-.avatar-100 img{
-  width: 6.250em;
-  height: 6.250em;
-  background-color: white;
-}
+  .avatar-100 img{
+    width: 6.250em;
+    height: 6.250em;
+    background-color: white;
+  }
 
-#club-fav img{
-  background-color: #999;
-  width:1.875em;
-  height:1.875em;
-}
+  #club-fav img{
+    background-color: #999;
+    width:1.875em;
+    height:1.875em;
+  }
 
-#club-fav a, #club-fav a:hover{
-  color:var(--dark);
-}
-/********************** FOOTER *************/
-footer{
-  margin-top:3em;
-  padding-top:1em;
-  background-color: var(--light-grey);
-  border-top: solid black 0.1em;
-}
-h5{
-  font-family: 'Roboto Slab', serif;
-  font-weight:bold;
-}
-.social i{
-  color:black;
-}
-.fa-facebook:hover{
-  color:#4267b2;
-  transition:1s;
+  #club-fav a, #club-fav a:hover{
+    color:var(--dark);
+  }
+  /********************** FOOTER *************/
+  footer{
+    margin-top:3em;
+    padding-top:1em;
+    background-color: var(--light-grey);
+    border-top: solid black 0.1em;
+  }
+  h5{
+    font-family: 'Roboto Slab', serif;
+    font-weight:bold;
+  }
+  .social i{
+    color:black;
+  }
+  .fa-facebook:hover{
+    color:#4267b2;
+    transition:1s;
 
-}
-.fa-twitter-square:hover{
-  color:#38A1F3;
-  transition:1s;
-}
-#footerpart{
-  margin-top:2em;
-}
+  }
+  .fa-twitter-square:hover{
+    color:#38A1F3;
+    transition:1s;
+  }
+  #footerpart{
+    margin-top:2em;
+  }
 
-/************* DÉTAILS *********************/
-/****** Timeline *********/
+  /************* DÉTAILS *********************/
+  /****** Timeline *********/
 
 
- ul.timeline {
-   list-style-type: none;
-   position: relative;
- }
-ul.timeline:before {
-  content: ' ';
-  background: #d4d9df;
-  display: inline-block;
-  position: absolute;
-  left: 29px;
-  width: 2px;
-  height: 100%;
-  z-index: 400;
+  ul.timeline {
+    list-style-type: none;
+    position: relative;
+  }
+  ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+  }
+  ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+  }
+  ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+  }
+  /******************** CATÉGORIE ********************/
+  /****** Ligue *********/
+#myInput {
+  height: 50px;
+  width: 100%
 }
-ul.timeline > li {
-  margin: 20px 0;
-  padding-left: 20px;
-}
-ul.timeline > li:before {
-  content: ' ';
-  background: white;
-  display: inline-block;
-  position: absolute;
-  border-radius: 50%;
-  border: 3px solid #22c0e8;
-  left: 20px;
-  width: 20px;
-  height: 20px;
-  z-index: 400;
-}
-/******************** CATÉGORIE ********************/
-/****** Ligue *********/
-#league{
-  background-color: #fff;
-  color:black;
-  font-family: 'Roboto Slab', serif;
-  border-radius:5px;
-  margin:0.5em;
-  padding:0.5em;
-  text-align:center;
-  width:250px;
-  border-bottom: solid black 0.1em;
-  border-right: solid black 0.1em;
-}
+  #league{
+    background-color: #fff;
+    color:black;
+    font-family: 'Roboto Slab', serif;
+    border-radius:5px;
+    margin:0.5em;
+    padding:0.5em;
+    text-align:center;
 
-#leaguename{
-  font-size:1.3em;
-}
+    border-bottom: solid black 0.1em;
+    border-right: solid black 0.1em;
+  }
 
-#leaguecountry{
-  font-size:0.8em;
-}
+  #leaguename{
+    font-size:1.3em;
+  }
 
-#league:hover{
-  border-color: var(--light-turtle);
-  background-color: #fcf8fb;
-  color: var(--light-turtle);
-}
+  #leaguecountry{
+    font-size:0.8em;
+  }
 
-#league a:hover{
-  color: var(--light-turtle);
-}
+  #league:hover{
+    border-color: var(--light-turtle);
+    background-color: #fcf8fb;
+    color: var(--light-turtle);
+  }
+
+  #league a:hover{
+    color: var(--light-turtle);
+  }
+  ul {
+    padding-inline-start:0;
+  }

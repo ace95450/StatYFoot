@@ -15,7 +15,7 @@ StatY Foot! Les matchs du jour.
             <div id="matchdirect" class="row">
                 <div id="contentmatchdirect" class="col-12">
                     <li id="titlematchdirect" class="list-group-item"  data-scroll>Match du Jour</li>
-                    <input style="height:50px;width:100%" type="text" id="myInput" class="input-group-text" onkeyup="searchBar()" placeholder="Rechercher un match à venir">
+                    <input type="text" id="myInput" class="input-group-text" onkeyup="searchBar()" placeholder="Rechercher un match à venir">
                     <ul id="myUL" class="list-group">
                         {% for daymatch in viewtodaymatch %}
                         <li><a class="list-group-item" id="linkrow" href="/details-match/{{ daymatch.fixture_id }}">

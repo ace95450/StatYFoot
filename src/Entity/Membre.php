@@ -49,8 +49,9 @@ class Membre implements UserInterface
     private $pseudo;
 
     /**
-     * @ORM\Column(type="text", length=400)
+     * @ORM\Column(type="text", length=400, nullable=yes)
      *
+
      */
     private $bio;
 
