@@ -113,9 +113,21 @@ nav .navbar-brand:hover{
   transition:5s;
 }
 
-
-nav div{
-
+.dropdown-menu{
+  background-color: var(--dark) !important;
+  border: solid 0 transparent;
+  padding: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.dropdown-item{
+  color:var(--gold) !important;
+  font-family: 'Bungee', cursive;
+}
+.dropdown-item:hover{
+  background-color: var(--gold) !important;
+  color:white !important;
+  font-family: 'Bungee', cursive;
 }
 nav div a{
 }

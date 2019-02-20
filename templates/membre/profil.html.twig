@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-    Inscription
+    Profil
 {% endblock %}
 
 {% block stylesheets %}
@@ -35,9 +35,11 @@
             <h2>Profil</h2>
         </div>
         <div id="membre-content" class="col-10 offset-1">
-            {% for membres in membre %}
-            <img src="{{ membres.profileFile }}" alt="">
+            {% for membre in membre  %}
+                <img src="{{ '/images/membre/' ~ membre.avatar }}" alt="#">
             {% endfor %}
+
+
             {{ form(form, {attr:{novalidate: 'novalidate' }}) }}
             {% for message in app.flashes('notice')  %}
                 <div class="flash-notice alert alert-success">

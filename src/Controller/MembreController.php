@@ -76,13 +76,14 @@ class MembreController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
 
         return $this->render('membre/login.html.twig',[
+
             'form' => $form->createView(),
             'error' => $error
         ]);
 
     }
     /**
-     * @Route("/deconnexion.html", name="membre_deconnexion")
+     * @Route("/deconnexion", name="membre_deconnexion")
      */
     public function deconnexion()
     {

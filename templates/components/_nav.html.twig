@@ -15,12 +15,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="">Teams</a>
-                    <a class="nav-item nav-link active" href="/category/todaymatch">todaymatch</a>
-                    <a class="nav-item nav-link active" href="/category/leagues">Ligues</a>
-                    <a class="nav-item nav-link active" href="#">Pays</a>
-                    <a class="nav-item nav-link active" href="#">Articles</a>
-                    <a class="nav-item nav-link active" href="/connexion">Mon Compte</a>
+                    <a class="nav-item nav-link " href="">Teams</a>
+                    <a class="nav-item nav-link " href="/category/todaymatch">Match du jour</a>
+                    <a class="nav-item nav-link " href="/category/leagues">Ligues</a>
+                    <a class="nav-item nav-link " href="#">Pays</a>
+                    <a class="nav-item nav-link " href="#">Articles</a>
+                    <div class="dropdown">
+                        <a class="nav-item nav-link dropdown-toggle" data-toggle="dropdown" href="/connexion">Mon Compte</a>
+                        <div class="dropdown-menu">
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                <a class="dropdown-item" href={{ "/profil/" ~ app.user.id }}>profil</a>
+                                <a class="dropdown-item" href="/deconnexion">déconnexion</a>
+                            {% else %}
+                                <a class="dropdown-item" href="/ajouter-un-membre">inscription</a>
+                                <a class="dropdown-item" href="/connexion">connexion</a>
+                            {% endif %}
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </nav>
