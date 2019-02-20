@@ -18,12 +18,12 @@
 
                     <div id="leaguelist" class="row">
 
-                    {% for league_id in leaguecategory | sortbyfield('country') %}
+                    {% for league in leaguecategory | sortbyfield('country') %}
                     <li class="col-lg-4 col-md-6 col-12">
                         <div id="league">
-                        <a href="" id="leaguename">{{ league_id.name }}</a> <br>
-                        <a href="" id="leaguecountry">{{ league_id.country }}</a><br>
-                            <a href=""><img height="70px" src="{{ league_id.logo }}" alt="{{ league_id.name }}logo"></a>
+                        <a href="/league/5" id="leaguename">{{ league.name }}</a> <br>
+                        <a href="" id="leaguecountry">{{ league.country }}</a><br>
+                            <a href=""><img height="70px" src="{{ league.logo }}" alt="{{ league.name }}logo"></a>
                         </div>
                     </li>
                     {% endfor %}

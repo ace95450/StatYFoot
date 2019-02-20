@@ -1,0 +1,27 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+    La page Ligue.
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron justify-content-center">
+        {% for league in league %}
+                <h4>{{ league.name }}</h4>
+            <br>
+                <img height="200px" src="{{ league.logo }}" alt="{{ league.name }}logo">
+            <br>
+            <br>
+                <span>{{ league.country }}</span><br>
+
+
+        <hr class="my-4">
+        <p>La {{ league.name }} est une ligue de foot de {{ league.country }}. Il s'y passe des matchs vraiment chouette à regarder. Il y a des joueurs très fort dans cette compétition.</p>
+        <p class="lead">
+            Saison {{ league.season }}
+        </p>
+            <hr>
+            {{ league.standings }}
+        {% endfor %}
+    </div>
+{% endblock %}
