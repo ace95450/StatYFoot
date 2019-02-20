@@ -23,6 +23,7 @@
             <h2>connexion</h2>
         </div>
         <div id="membre-content" class="col-10 offset-1">
+            {{ dump(app.user) }}
             {{ form(form, {attr:{novalidate: 'novalidate' }}) }}
             {% for message in app.flashes('notice')  %}
                 <div class="flash-notice alert alert-success">

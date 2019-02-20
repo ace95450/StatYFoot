@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Leagues;
+
 use App\Entity\Membre;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -42,7 +42,7 @@ class ProfilFormType extends AbstractType
                     'rows'=>'4',
                     'class'=>'form-control']
             ])
-            ->add('avatar', FileType::class, [
+            ->add('profileFile', FileType::class, [
                 'label' => 'Avatar',
                 'attr' => [
                     'class' => 'dropify'

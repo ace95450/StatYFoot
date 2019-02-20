@@ -55,7 +55,7 @@ class Membre implements UserInterface
     private $bio;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string")
      * @Assert\Image(
      *     mimeTypesMessage="Vérifiez le format de votre image",
      *     maxSize="1M", maxSizeMessage="Attention, votre image est trop lourde."
@@ -67,6 +67,11 @@ class Membre implements UserInterface
      * @ORM\Column(type="array")
      */
     private $roles = [];
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $profileFile;
 
     public function getId(): ?int
     {
@@ -158,12 +163,12 @@ class Membre implements UserInterface
 
     }
 
-    public function getAvatar(): ?string
+    public function getAvatar()
     {
         return $this->avatar;
     }
 
-    public function setAvatar(string $avatar): self
+    public function setAvatar($avatar): self
     {
         $this->avatar = $avatar;
         return $this;
@@ -181,6 +186,18 @@ class Membre implements UserInterface
 
     public function eraseCredentials()
     {
+    }
+
+    public function getProfileFile(): ?string
+    {
+        return $this->profileFile;
+    }
+
+    public function setProfileFile(?string $profileFile): self
+    {
+        $this->profileFile = $profileFile;
+
+        return $this;
     }
 
 }

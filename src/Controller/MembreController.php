@@ -6,7 +6,6 @@ use App\Entity\Membre;
 use App\Form\LoginFormType;
 use App\Form\MembreFormType;
 use App\Form\ProfilFormType;
-use function Sodium\crypto_box_publickey_from_secretkey;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -145,8 +144,6 @@ class MembreController extends AbstractController
         }
 
         return $this->render('membre/profil.html.twig', [
-            dump($membre),
-            dump($avatar),
             'form' => $form->createView(),
             'membre' => $profil
         ]);

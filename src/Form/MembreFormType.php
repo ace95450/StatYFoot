@@ -42,6 +42,12 @@ class MembreFormType extends AbstractType
                 'attr' => ['placeholder' => "E-Mail",
                     'class'=>'form-control']
             ])
+            ->add('bio', TextType::class,[
+                'required' => true,
+                'label' => 'Bio',
+                'attr' => ['placeholder' => "Une courte bio..",
+                    'class'=>'form-control']
+            ])
             ->add('password', PasswordType::class,[
                 'required' => true,
                 'label' => 'Mot de passe',
