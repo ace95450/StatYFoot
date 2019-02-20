@@ -7,7 +7,6 @@ use App\Form\LoginFormType;
 use App\Form\MembreFormType;
 use App\Form\ProfilFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,10 +29,9 @@ class MembreController extends AbstractController
         // Création d'un nouveau membre
         $membre = new Membre();
         $membre->setRoles(['ROLE_MEMBRE']);
-        $membre->setAvatar(
-            new File($this->getParameter('membre_assets_dir')
-            . '/logo.png')
-        );
+//        $membre->setAvatar(
+//            new File($this->getParameter('membre_assets_dir')
+//            . '/logo.png')
 
         // Création du formulaire d'inscription
         $form = $this->createform(MembreFormType::class, $membre);
