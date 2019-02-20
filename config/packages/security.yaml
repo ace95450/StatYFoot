@@ -21,13 +21,13 @@ security:
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
             form_login:
-                login_path: security_connexion
-                check_path: security_connexion
+                login_path: membre_connexion
+                check_path: membre_connexion
                 username_parameter: app_login[email]
                 password_parameter: app_login[password]
             provider: membre_provider
             logout:
-                path: /deconnexion.html
+                path: /deconnexion
                 target: /
             # https://symfony.com/doc/current/security/form_login_setup.html
 

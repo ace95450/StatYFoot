@@ -6,7 +6,6 @@ use App\Entity\Membre;
 use App\Form\LoginFormType;
 use App\Form\MembreFormType;
 use App\Form\ProfilFormType;
-use function Sodium\crypto_box_publickey_from_secretkey;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -77,13 +76,14 @@ class MembreController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
 
         return $this->render('membre/login.html.twig',[
+
             'form' => $form->createView(),
             'error' => $error
         ]);
 
     }
     /**
-     * @Route("/deconnexion.html", name="membre_deconnexion")
+     * @Route("/deconnexion", name="membre_deconnexion")
      */
     public function deconnexion()
     {
@@ -145,7 +145,6 @@ class MembreController extends AbstractController
         }
 
         return $this->render('membre/profil.html.twig', [
-            dump($membre),
             dump($avatar),
             'form' => $form->createView(),
             'membre' => $profil
