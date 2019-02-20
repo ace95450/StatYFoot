@@ -46,6 +46,7 @@ a:hover, a:active{
   background-color:var(--gold);
   color:white;
   outline:none;
+  text-align: center;
 }
 
 .btn-custom:hover{
@@ -282,10 +283,8 @@ a:hover{
   background-color:var(--turtle);
   margin-bottom: 1em;
   padding:1em;
-}
-
-.dropify p{
   color:white;
+  width:100%;
 }
 
 .avatar-100{
