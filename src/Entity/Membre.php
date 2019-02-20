@@ -158,12 +158,12 @@ class Membre implements UserInterface
 
     }
 
-    public function getAvatar(): ?string
+    public function getAvatar()
     {
         return $this->avatar;
     }
 
-    public function setAvatar(string $avatar): self
+    public function setAvatar($avatar): self
     {
         $this->avatar = $avatar;
         return $this;
