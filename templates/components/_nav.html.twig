@@ -25,6 +25,7 @@
                         <div class="dropdown-menu">
                             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                                 <a class="dropdown-item" href={{ "/profil/" ~ app.user.id }}>profil</a>
+                                <a class="dropdown-item" href="/creer-un-article">ajouter un article</a>
                                 <a class="dropdown-item" href="/deconnexion">déconnexion</a>
                             {% else %}
                                 <a class="dropdown-item" href="/ajouter-un-membre">inscription</a>
