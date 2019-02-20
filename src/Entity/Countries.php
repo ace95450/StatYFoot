@@ -18,17 +18,17 @@ class Countries
 
     /**
      * @ORM\Column(type="string", length=80)
+     * @ORM\OneToMany()(targetEntity="App\Entity\Leagues",
+     * mappedBy="country")
      */
     private $name;
 
     /**
      * Countries constructor.
-     * @param $id
      * @param $name
      */
-    public function __construct($id, $name)
+    public function __construct($name)
     {
-        $this->id = $id;
         $this->name = $name;
     }
 

@@ -27,7 +27,9 @@ class Leagues
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=80)
+     * @ORM\Column(type="string", length=80)   /**
+     * @ORM\ManyToOne()(targetEntity="App\Entity\Countries",
+     *     inversedBy="name")
      */
     private $country;
 

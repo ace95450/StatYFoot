@@ -15,10 +15,11 @@ StatY Foot! Les matchs du jour.
 
             <div id="matchdirect" class="row">
                 <div id="contentmatchdirect" class="col-12">
-                    <ul class="list-group">
-                        <li id="titlematchdirect" class="list-group-item"  data-scroll>Match du Jour</li>
+                    <li id="titlematchdirect" class="list-group-item"  data-scroll>Match du Jour</li>
+                    <input style="height:50px;width:100%" type="text" id="myInput" class="input-group-text" onkeyup="searchBar()" placeholder="Rechercher un match à venir">
+                    <ul id="myUL" class="list-group">
                         {% for daymatch in viewtodaymatch %}
-                        <a class="list-group-item" id="linkrow" href="/details-match/{{ daymatch.fixture_id }}">
+                        <li><a class="list-group-item" id="linkrow" href="/details-match/{{ daymatch.fixture_id }}">
                             <div id="lignematchdirect" class="row">
                                 <div  class="col-1 text-left d-none d-lg-block">{{ daymatch.status }}
                                 </div>
@@ -26,7 +27,7 @@ StatY Foot! Les matchs du jour.
                                     <span>{{ daymatch.homeTeam }}</span>
                                 </div>
                                 {% for team in teamcategory %}
-                                <div  class="col-2 text-center justify-content-center">
+                                <div  id="match" class="col-2 text-center justify-content-center">
                                     <img alt="{{ daymatch.homeTeam }} logo" id="logomatchteam"  src="{{ team.logo }}" height="20px" >
                                     {{ daymatch.goalsHomeTeam }} - {{ daymatch.goalsAwayTeam }}
                                     <img  alt="{{ daymatch.awayTeam }} logo" id="logomatchteam" src="{{ team.logo }}" height="20px" >
@@ -38,7 +39,7 @@ StatY Foot! Les matchs du jour.
                                 <div  class="col-1 text-right d-none d-lg-block"><i class="fas fa-share-alt"></i>
                                 </div>
                             </div><!-- /id ligne -->
-                        </a>
+                        </a></li>
                         {% endfor %}
                     </ul>
                 </div><!--/id contentmatchdirect + class col-12 ----->

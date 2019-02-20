@@ -35,6 +35,11 @@ a:hover, a:active{
   text-decoration: none;
 }
 
+li{
+  list-style-type:none;
+}
+
+
 /******************** NAVBAR ****************************/
 nav{
   background-color:var(--dark);
