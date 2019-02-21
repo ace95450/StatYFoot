@@ -77,6 +77,36 @@
                             </table>
                         </div>
                     </div>
+                    <div id="commentaires" class="col-12">
+                        <h3>Commentaires</h3>
+                        <hr>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            {{ render(controller('App\\Controller\\CommentaireController::NewCommentaire')) }}
+
+
+                        {% else %}
+                            <p>Pensez à vous identifier, afin d'écrire un commentaire, <a href="/connexion">connectez-vous ici</a></p>
+                        {% endif %}
+
+                        {# {% for commentaires in commentaire  %} #}
+                        <hr>
+                        <div id="commentaire" class="commentaire row">
+                            <div class="col-1">
+                                <img src="../images/membre/brikema.jpeg" width="100%" >
+                            </div>
+                            <div class="col-11">
+                                <p>
+                                    Contenu du commentaire
+                                    <br>
+                                    <span class="infos-commentaire">
+                                        <i>par <b>pseudo</b> le 00/00/0000 à 00:00</i>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        {# {% endfor %} #}
+
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
@@ -96,7 +126,6 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div id="ajax-match-classement" class="classement">
-
                             <div class="panel panel-info">
                                 <div class="panel-heading">
                                     {% for name in fixtures %}
@@ -130,11 +159,11 @@
                                     </table>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 {% endblock %}

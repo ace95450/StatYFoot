@@ -45,7 +45,6 @@ li{
   list-style-type:none;
 }
 
-
 .btn-custom{
   font-family: 'Roboto Slab', serif;
   background-color:var(--gold);
@@ -264,6 +263,18 @@ a:hover{
   color:#666 !important;
   font-size: 0.8em;
 }
+
+/**************** COMMENTAIRES *******************/
+
+#commentaire img{
+  width:100%;
+}
+
+.infos-commentaires{
+  font-size: 0.625em;
+  color:var(--light-grey);
+}
+
 
 
 /**************** MEMBRE (profil/inscription/cnx) *******************/

@@ -16,8 +16,8 @@ class AppExtension extends \Twig_Extension
          * @return array|\Twig_Extension[]
          */
         return [
-            new Twig_Function('getMatch', [$this, 'getMatch']),
-            new Twig_Function('render', [$this, 'render'], ['is_safe' => ['html']])
+            new Twig_Function('getMatch', [$this, 'getMatch'])
+//            new Twig_Function('render', [$this, 'render'], ['is_safe' => ['html']])
         ];
     }
 
