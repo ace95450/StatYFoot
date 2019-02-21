@@ -14,6 +14,7 @@ use App\Entity\Leagues;
 use App\Entity\MatchDetails;
 use App\Entity\Teams;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Unirest\Request;
 
@@ -89,7 +90,9 @@ class CategoryController extends AbstractController
 
 
     }
+
     /**
+     * @return Response
      * @Route("/category/leagues")
      */
     public function categoryLeagues()
