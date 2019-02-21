@@ -116,22 +116,22 @@ class MembreController extends AbstractController
         $form = $this->createform(ProfilFormType::class, $membre)->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-                # Traitement de l'upload de l'avatar du membre
-                /** @var UploadedFile $avatar */
-                $avatar = $membre->getAvatar();
+            # Traitement de l'upload de l'avatar du membre
+            /** @var UploadedFile $avatar */
+            $avatar = $membre->getAvatar();
 
-                # Renommer le nom du fichier
-                $fileName = $this->generateUniqueFileName()
-                    . '.' . $avatar->guessExtension();
+            # Renommer le nom du fichier
+            $fileName = $this->generateUniqueFileName()
+                . '.' . $avatar->guessExtension();
 
-                # Deplacer le fichier vers son répertoire final
-                $avatar->move(
-                    $this->getParameter('membre_assets_dir'),
-                    $fileName
-                );
+            # Deplacer le fichier vers son répertoire final
+            $avatar->move(
+                $this->getParameter('membre_assets_dir'),
+                $fileName
+            );
 
-                # Mise à jour de l'avatar
-                $membre->setAvatar($fileName);
+            # Mise à jour de l'avatar
+            $membre->setAvatar($fileName);
 
             # sauvegarde en bdd
             $em = $this->getDoctrine()->getManager();
