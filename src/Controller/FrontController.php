@@ -9,7 +9,6 @@ use App\Entity\Matchdirect;
 use App\Entity\Teams;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Unirest\Request;
-use ZakClayton\Mapbox\MapboxApi;
 
 
 class FrontController extends AbstractController
@@ -27,11 +26,6 @@ class FrontController extends AbstractController
 
         // json_decode pour récuperer les données json
         $raw_body = json_decode($response->raw_body, true);
-<<<<<<< HEAD
-
-=======
-//        dump($raw_body);
->>>>>>> chris
 
         // foreach pour bouclé les données récupère via le json_decode et pouvoir les utilisé
         $fixturesArray = [];
@@ -80,11 +74,6 @@ class FrontController extends AbstractController
         ]);
 
         $raw_team = json_decode($response->raw_body, true);
-<<<<<<< HEAD
-
-=======
-//        dump($raw_team);
->>>>>>> chris
 
         $teamArray = [];
         foreach ($raw_team['api']['teams'] as $featuresTeam) {
@@ -119,11 +108,6 @@ class FrontController extends AbstractController
         ]);
 
         $raw_match = json_decode($responseDirect->raw_body, true);
-<<<<<<< HEAD
-
-=======
-//           dump($raw_match);
->>>>>>> chris
         foreach ($raw_match['api']['fixtures'] as $fixture) {
             $matchDirect = new Matchdirect(
                 $fixture['fixture_id'],
