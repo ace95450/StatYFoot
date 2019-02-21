@@ -11,35 +11,31 @@
         <div id="maincontent" class="row">
             <div id="maincontentleft" class="col-lg-12">
 
-                <div id="matchdirect" class="row">
-                    <div id="contentmatchdirect" class="col-12">
-                        <ul class="list-group">
-                            <li id="titlematchdirect" class="list-group-item col-12"  data-scroll>Toutes les ligues</li>
-                        </ul>
-                        <div class="row">
-                            {% for league_id in leaguecategory | sortbyfield('country') %}
-                                <div class="col-4 d-flex justify-content-around">
-                                    <div id="league">
-                                    <br>
-                                        <a href="" id="leaguename"><img height="75px" src="{{ league_id.logo }}" alt="{{ league_id.name}} logo"></a><br>
-                                        <a href="" id="leaguename">{{ league_id.name }}</a> <br>
-                                        <a href="" id="leaguecountry">{{ league_id.country }}</a>
-                                    </div>
-                                </div>
-                            {% endfor %}
+                <li id="titlematchdirect" class="col-12"  data-scroll>Toutes les ligues</li>
+                <input type="text" id="myInput" class="input-group-text" onkeyup="searchBar()" placeholder="Rechercher une ligue ou un pays">
+
+                <ul id="myUL" >
+
+                    <div id="leaguelist" class="row">
+
+                    {% for league in leaguecategory | sortbyfield('country') %}
+                    <li class="col-lg-4 col-md-6 col-12">
+                        <div id="league">
+                        <a href="/league/5" id="leaguename">{{ league.name }}</a> <br>
+                        <a href="" id="leaguecountry">{{ league.country }}</a><br>
+                            <a href=""><img height="70px" src="{{ league.logo }}" alt="{{ league.name }}logo"></a>
                         </div>
+                    </li>
+                    {% endfor %}
+                    </div>
 
-                    </div><!--/id contentmatchdirect + class col-12 ----->
-                </div><!--/id matchdirect + class row-->
+                </ul>
+
+
+
             </div><!--/id maintcontentleft + class col-lg-12-->
-
         </div><!--/ maincontent row-->
     </main>
     </div><!-- class container-->
 {% endblock %}
-{% block javascripts %}
-    {{ parent() }}
-    <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
-    <script>
-    </script>
-{% endblock %}
+

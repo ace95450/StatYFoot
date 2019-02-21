@@ -17,7 +17,13 @@ class Countries
     private $id;
 
     /**
+<<<<<<< HEAD
+     * @ORM\Column(type="string", length=80)
+     * @ORM\OneToMany()(targetEntity="App\Entity\Leagues",
+     * mappedBy="country")
+=======
      * @ORM\Column(type="string", length=255, nullable=true)
+>>>>>>> chris
      */
     private $name;
 
