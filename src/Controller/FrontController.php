@@ -3,11 +3,13 @@
 namespace App\Controller;
 
 
+use App\Entity\Countries;
 use App\Entity\MatchDetails;
 use App\Entity\Matchdirect;
 use App\Entity\Teams;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Unirest\Request;
+use ZakClayton\Mapbox\MapboxApi;
 
 
 class FrontController extends AbstractController
@@ -25,7 +27,11 @@ class FrontController extends AbstractController
 
         // json_decode pour récuperer les données json
         $raw_body = json_decode($response->raw_body, true);
+<<<<<<< HEAD
 
+=======
+//        dump($raw_body);
+>>>>>>> chris
 
         // foreach pour bouclé les données récupère via le json_decode et pouvoir les utilisé
         $fixturesArray = [];
@@ -52,6 +58,19 @@ class FrontController extends AbstractController
             );
             $fixturesArray[] = $matchDay;
         }
+//===================================================================
+//        $countriesArray = [];
+//
+//        $response_countries = Request::get("https://api-football-v1.p.rapidapi.com/countries", [
+//            "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
+//        ]);
+//
+//        $raw_coutries = json_decode($response_countries->raw_body, true);
+//
+//        foreach($raw_coutries['api']['countries'] as $key => $values){
+//            echo $values.'<br>';
+//        };
+//        $countriesArray[] = $values;
 
 //===================================================================
 
@@ -61,7 +80,11 @@ class FrontController extends AbstractController
         ]);
 
         $raw_team = json_decode($response->raw_body, true);
+<<<<<<< HEAD
 
+=======
+//        dump($raw_team);
+>>>>>>> chris
 
         $teamArray = [];
         foreach ($raw_team['api']['teams'] as $featuresTeam) {
@@ -75,7 +98,7 @@ class FrontController extends AbstractController
 //===================================================================
         # Sauvegarde en BDD
         $em = $this->getDoctrine()->getManager();
-        $em->remove($matchDay);
+        $em->persist($matchDay);
         $em->flush();
 
         // Passage à la vue
@@ -96,7 +119,11 @@ class FrontController extends AbstractController
         ]);
 
         $raw_match = json_decode($responseDirect->raw_body, true);
+<<<<<<< HEAD
 
+=======
+//           dump($raw_match);
+>>>>>>> chris
         foreach ($raw_match['api']['fixtures'] as $fixture) {
             $matchDirect = new Matchdirect(
                 $fixture['fixture_id'],
@@ -120,5 +147,9 @@ class FrontController extends AbstractController
                 $fixture['secondHalfStart']
             );
         }
+        # Sauvegarde en BDD
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($matchDirect);
+        $em->flush();
     }
 }

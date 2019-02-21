@@ -32,11 +32,11 @@
 {% block content %}
     <div id="maincontent" class="row">
         <div id="membre-header" class="col-10 offset-1">
-            <h2>profil</h2>
+            <h2>Profil</h2>
         </div>
         <div id="membre-content" class="col-10 offset-1">
             {% for membre in membre  %}
-                <img src="{{ '/images/membre/' ~ membre.avatar }}" alt="#">
+                <img src="{{ '/images/membre/' ~ membre.avatar }}" height="150">
             {% endfor %}
 
 

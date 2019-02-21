@@ -27,7 +27,7 @@ class MatchDetailsController extends AbstractController
 
         // json_decode pour récuperer les données json
         $raw_body = json_decode($response->raw_body, true);
-       dump($raw_body);
+//       dump($raw_body);
 
         // foreach pour bouclé les données récupère via le json_decode et pouvoir les utilisé
         $fixturesArray = [];
@@ -60,7 +60,7 @@ class MatchDetailsController extends AbstractController
         $rEvent = Request::get("https://api-football-v1.p.rapidapi.com/events/".$id."", [
             "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
         ]);
-        dump($rEvent);
+//        dump($rEvent);
 
         $raw_events = json_decode($rEvent->raw_body, true);
         $eventsArray = [];
@@ -82,7 +82,7 @@ class MatchDetailsController extends AbstractController
         ]);
 
         $raw_standings = json_decode($response_standings->raw_body, true);
-        dump($response_standings);
+//        dump($response_standings);
 
         $standingsArray = [];
         foreach ($raw_standings['api']['standings']['0'] as $fixtures) {
@@ -103,22 +103,18 @@ class MatchDetailsController extends AbstractController
             $standingsArray[] = $detailsStandings;
         }
 
-        // La compositions des éuqipes du match
+        // La compositions des équipes du match
         Request::verifyPeer(false);
         $rLineups = Request::get("https://api-football-v1.p.rapidapi.com/lineups/".$id."", [
             "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
         ]);
 
         $raw_lineups = json_decode($rLineups->raw_body, true);
-        dump($raw_lineups);
+//        dump($raw_lineups);
 
-//        foreach ($raw_lineups['api']['lineUps']['bordeaux'] as $fixtures) {
-//            $detailsLineups = new LineUps(
-//                $fixtures['number'],
-//                $fixtures['player']
-//            );
-//            dump($detailsLineups);
-//        }
+        foreach($raw_lineups['api']['lineUps'] as $fixLine) {
+        }
+
 
         // Sauvegarde en BDD
         $em = $this->getDoctrine()->getManager();
