@@ -22,10 +22,11 @@ class TeamsRepository extends ServiceEntityRepository
     // /**
     //  * @return Teams[] Returns an array of Teams objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('t')
+            ->join('t.standings')
             ->andWhere('t.exampleField = :val')
             ->setParameter('val', $value)
             ->orderBy('t.id', 'ASC')
@@ -34,7 +35,7 @@ class TeamsRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Teams

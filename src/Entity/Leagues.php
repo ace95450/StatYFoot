@@ -87,12 +87,12 @@ class Leagues
         return $this->id;
     }
 
-    public function getLeagueId(): ?int
+    public function getLeague_id(): ?int
     {
         return $this->league_id;
     }
 
-    public function setLeagueId(int $league_id): self
+    public function setLeague_id(int $league_id): self
     {
         $this->league_id = $league_id;
 

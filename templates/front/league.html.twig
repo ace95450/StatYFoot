@@ -13,15 +13,62 @@
             <br>
             <br>
                 <span>{{ league.country }}</span><br>
-
+{% for teams in teams %}{{ dump(teams.logo) }}{% endfor %}
 
         <hr class="my-4">
-        <p>La {{ league.name }} est une ligue de foot de {{ league.country }}. Il s'y passe des matchs vraiment chouette à regarder. Il y a des joueurs très fort dans cette compétition.</p>
+        <p>La {{ league.name }} est une ligue de football de {{ league.country }}. Il s'y passe des matchs vraiment chouette à regarder. Il y a des joueurs très fort dans cette compétition. Les supporters sont hyper sympas.</p>
         <p class="lead">
             Saison {{ league.season }}
         </p>
-            <hr>
-            {{ league.standings }}
         {% endfor %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="ajax-match-classement" class="classement">
+
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-striped tableau_classement" id="tableau_classement_lite">
+                                        <tbody>
+                                        {% for standing in classement %}
+                                            <tr>
+                                                <th scope="row"><span data-toggle="tooltip" data-placement="right" title="Ligue&nbsp;des&nbsp;Champions" style="width:100%; height:100%; display:block;">{{ standing.rank }}</span></th>
+                                                <td class="equipe"><div>{{ standing.teamName }}</div></td>
+
+                                                    <td class="equipe">
+                                                            <img alt="{{ teams.name }}logo" height="30px" src="{{ teams.logo }}">
+                                                    </td>
+
+                                                <td><strong>{{ standing.points }}</strong></td>
+                                                <td>{{ standing.matchsPlayed }}</td>
+                                                <td>{{ standing.goalsFor }}</td>
+                                                <td>{{ standing.goalsDiff }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                        <thead>
+                                        <tr>
+                                            <th>&nbsp;</th>
+                                            <th>Équipe</th>
+                                            <th></th>
+                                            <th>Points</th>
+                                            <th>Journée</th>
+                                            <th>Buts</th>
+                                            <th>Différence de but</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!--/row-->
+
+
+
+
     </div>
 {% endblock %}

@@ -123,6 +123,8 @@ class CategoryController extends AbstractController
             "leaguecategory" => $leagueArray
         ]);
     }
+
+
     /**
      * @Route("/category/country")
      */

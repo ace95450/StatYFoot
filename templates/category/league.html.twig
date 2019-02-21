@@ -14,16 +14,16 @@
                 <li id="titlematchdirect" class="col-12"  data-scroll>Toutes les ligues</li>
                 <input type="text" id="myInput" class="input-group-text" onkeyup="searchBar()" placeholder="Rechercher une ligue ou un pays">
 
-                <ul id="myUL" >
+                <ul class="ulligue" id="myUL" >
 
                     <div id="leaguelist" class="row">
 
                     {% for league in leaguecategory | sortbyfield('country') %}
                     <li class="col-lg-4 col-md-6 col-12">
                         <div id="league">
-                        <a href="/league/5" id="leaguename">{{ league.name }}</a> <br>
+                        <a href="/league/{{ league.league_id }}" id="leaguename">{{ league.name }}</a> <br>
                         <a href="" id="leaguecountry">{{ league.country }}</a><br>
-                            <a href=""><img height="70px" src="{{ league.logo }}" alt="{{ league.name }}logo"></a>
+                            <a href="/league/{{ league.league_id }}"><img height="70px" src="{{ league.logo }}" alt="{{ league.name }}logo"></a>
                         </div>
                     </li>
                     {% endfor %}
