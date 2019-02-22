@@ -1,4 +1,7 @@
 {
+    "behat/transliterator": {
+        "version": "v1.2.0"
+    },
     "curl/curl": {
         "version": "2.2.0"
     },

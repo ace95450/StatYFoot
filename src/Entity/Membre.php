@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -70,110 +71,197 @@ class Membre implements UserInterface
     private $roles = [];
 
     /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Annonce",
+     *     mappedBy="membre")
+     */
+    private $articles;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $profileFile;
 
-    public function getId(): ?int
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNom()
     {
         return $this->nom;
     }
 
-    public function setNom(string $nom): self
+    /**
+     * @param mixed $nom
+     */
+    public function setNom($nom): void
     {
         $this->nom = $nom;
-
-        return $this;
     }
 
-    public function getPrenom(): ?string
+    /**
+     * @return mixed
+     */
+    public function getPrenom()
     {
         return $this->prenom;
     }
 
-    public function setPrenom(string $prenom): self
+    /**
+     * @param mixed $prenom
+     */
+    public function setPrenom($prenom): void
     {
         $this->prenom = $prenom;
-
-        return $this;
     }
 
-    public function getEmail(): ?string
+    /**
+     * @return mixed
+     */
+    public function getEmail()
     {
         return $this->email;
     }
 
-    public function setEmail(string $email): self
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email): void
     {
         $this->email = $email;
-
-        return $this;
     }
 
-    public function getPassword(): ?string
+    /**
+     * @return mixed
+     */
+    public function getPassword()
     {
         return $this->password;
     }
 
-    public function setPassword(string $password): self
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password): void
     {
         $this->password = $password;
-
-        return $this;
     }
 
-    public function getPseudo(): ?string
+    /**
+     * @return mixed
+     */
+    public function getPseudo()
     {
         return $this->pseudo;
     }
 
-    public function setPseudo(string $pseudo): self
+    /**
+     * @param mixed $pseudo
+     */
+    public function setPseudo($pseudo): void
     {
         $this->pseudo = $pseudo;
-
-        return $this;
     }
 
-    public function getRoles(): ?array
-    {
-        return $this->roles;
-    }
-
-    public function setRoles(array $roles): self
-    {
-        $this->roles = $roles;
-
-        return $this;
-    }
-
-    public function getBio(): ?string
+    /**
+     * @return mixed
+     */
+    public function getBio()
     {
         return $this->bio;
     }
 
-    public function setBio(string $bio): self
+    /**
+     * @param mixed $bio
+     */
+    public function setBio($bio): void
     {
         $this->bio = $bio;
-
-        return $this;
-
     }
 
+    /**
+     * @return mixed
+     */
     public function getAvatar()
     {
         return $this->avatar;
     }
 
-    public function setAvatar($avatar): self
+    /**
+     * @param mixed $avatar
+     */
+    public function setAvatar($avatar): void
     {
         $this->avatar = $avatar;
-        return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+    /**
+     * @param mixed $roles
+     */
+    public function setRoles($roles): void
+    {
+        $this->roles = $roles;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArticles()
+    {
+        return $this->articles;
+    }
+
+    /**
+     * @param mixed $articles
+     */
+    public function setArticles($articles): void
+    {
+        $this->articles = $articles;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProfileFile()
+    {
+        return $this->profileFile;
+    }
+
+    /**
+     * @param mixed $profileFile
+     */
+    public function setProfileFile($profileFile): void
+    {
+        $this->profileFile = $profileFile;
+    }
+
 
     public function getSalt()
     {
@@ -187,18 +275,6 @@ class Membre implements UserInterface
 
     public function eraseCredentials()
     {
-    }
-
-    public function getProfileFile(): ?string
-    {
-        return $this->profileFile;
-    }
-
-    public function setProfileFile(?string $profileFile): self
-    {
-        $this->profileFile = $profileFile;
-
-        return $this;
     }
 
 }
