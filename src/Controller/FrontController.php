@@ -2,14 +2,11 @@
 
 namespace App\Controller;
 
-
-use App\Entity\Countries;
 use App\Entity\MatchDetails;
 use App\Entity\Matchdirect;
 use App\Entity\Teams;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Unirest\Request;
-
 
 class FrontController extends AbstractController
 {
@@ -72,8 +69,6 @@ class FrontController extends AbstractController
 //        $countriesArray[] = $values;
 
 //===================================================================
-
-
         $response = Request::get("https://api-football-v1.p.rapidapi.com/teams/team/85", [
             "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
         ]);

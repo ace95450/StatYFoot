@@ -1,10 +1,10 @@
-{{ form(form, {attr:{novalidate: 'novalidate' }}) }}
-
+{{ form_start(form) }}
 <div class="form-group row my-0">
-    <div class="col-sm">
-        <textarea class="form-control mr-auto mb-1" placeholder="Tapez ici votre commentaire"></textarea>
+    <div class="col-9 mb-1">
+        {{ form_row(form.contenu, {'attr': {'class':'form-control mr-auto mb-1', 'placeholder':'Tapez ici votre commentaire'}}) }}
     </div>
-    <div class="col-auto mb-1 close">
-        <button class="btn btn-custom"><i class="far fa-comment"></i></button>
+    <div class="col-auto mb-1">
+        {{ form_row(form.commenter, {'attr': {'class':'form-control btn btn-custom'}}) }}
     </div>
 </div>
+{{ form_end(form) }}

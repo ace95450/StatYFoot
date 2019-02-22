@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee|Roboto+Slab');
+/********************** BODY **************************/
+.color {
+  --dark: #262626;
+  --gold: #c5ab58;
+  --light-gold: #f1c12a;
+  --dark-gold: #9a8645;
+  --turtle: #276060;
+  --light-turtle: #00988e;
+  --light-grey: #cbcbcb;
+}
+body {
+  background-color: #cbcbcb;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bungee', cursive;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+p, label, input, textarea, select {
+  color: var(--dark);
+  font-family: 'Roboto Slab', serif;
+}
+a {
+  color: var(--turtle);
+  text-decoration: none;
+}
+a:hover, a:active {
+  color: var(--light-turtle);
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+.btn-custom {
+  font-family: 'Roboto Slab', serif;
+  background-color: var(--gold);
+  color: white;
+  outline: none;
+  text-align: center;
+}
+.btn-custom:hover {
+  font-family: 'Roboto Slab', serif;
+  background-color: var(--light-gold);
+  color: white;
+  outline: none;
+}
+.form-group input, .form-group textarea, .form-group select {
+  border: solid 0.075em var(--gold);
+}
+textarea {
+  resize: none;
+}
+/******************** NAVBAR ****************************/
+nav {
+  background-color: var(--dark);
+  border-bottom: solid var(--gold) 0.1em;
+  padding: 0;
+}
+.navbar{
+  padding:0;
+}
+nav .navbar-brand, nav .nav-item {
+  font-family: 'Bungee', cursive;
+  color: var(--gold);
+}
+nav button i {
+  color: var(--gold);
+}
+@media only screen and (min-width: 768px) {
+  nav .nav-item:hover {
+    transform: skewX(-12deg);
+    color: white;
+    background-color: var(--gold);
+    transition: 0.1s;
+  }
+  nav .nav-item {
+    transform: skewX(-12deg);
+  }
+}
+@media only screen and (max-width: 768px) {
+  nav .nav-item:hover {
+    color: white;
+    background-color: var(--gold);
+    transition: 0.15s;
+    padding-left: 1em;
+  }
+  nav .nav-item {
+    color: var(--gold);
+    padding-left: 1em;
+  }
+  .navbar-collapse {
+    padding-left: 1em;
+  }
+  nav .navbar-brand {
+    padding-left: 1em;
+  }
+}
+nav .navbar-brand:hover {
+  color: white;
+  transition: 5s;
+}
+.dropdown-menu {
+  background-color: var(--dark);
+  border: solid 0 transparent;
+  padding: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.dropdown-item {
+  color: var(--gold);
+  font-family: 'Bungee', cursive;
+}
+.dropdown-item:hover {
+  background-color: var(--gold);
+  color: white;
+  font-family: 'Bungee', cursive;
+}
+
+/********************* MAINCONTENT ****************************/
+#maincontent {
+  margin-top: 4em;
+}
+/******************** CONTENTLEFT ****************************/
+#maincontentleft {
+  margin-top: 2em;
+}
+.list-group-item:hover {
+  background-color: #f5f1f4;
+  color: var(--turtle);
+}
+#contentmatchdirect .list-group-item:nth-child(even) {
+  background-color: #fcf8fb;
+}
+#titlematchdirect {
+  background-color: var(--light-turtle);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  font-family: 'Bungee', cursive;
+}
+@media only screen and (max-width: 1250px) {
+  #logomatchteam {
+    display: none;
+  }
+}
+ul a {
+  color: black;
+  text-decoration: none;
+  font-family: 'Roboto Slab', serif;
+}
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+#footermaincontent {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: center;
+  font-size: 1em;
+}
+#footermaincontent {
+  border-bottom: solid 0.125em var(--turle);
+}
+#footermaincontent a:hover {
+  color: var(--light-turtle);
+  text-decoration: none;
+}
+/*********************** SIDEBAR CONTENT RIGHT ****************************/
+/*
+ #maincontentright + .col-4
+ #titlesidebar
+ #sidebarinfo + .row
+ #contentsidebar + .col-12
+ */
+#maincontentright {
+  margin-top: 2em;
+}
+#maincontentright .list-group-item:nth-child(even) {
+  background-color: #fcf8fb;
+}
+#titlesidebar {
+  background-color: var(--gold);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Bungee', cursive;
+  text-transform: uppercase;
+}
+#maincontentright ul {
+  margin-bottom: 1em;
+}
+#maincontentright li {
+  border-bottom: solid 0.125em var(--gold);
+}
+#footersidebar {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: center;
+  font-size: 1em;
+  border-bottom: 0;
+}
+#footersidebar a {
+  color: var(--turtle);
+  text-decoration: none;
+}
+#footersidebar a:hover {
+  color: var(--light-turtle);
+  text-decoration: none;
+}
+.ligue_data {
+  display: block;
+  color: #666 !important;
+  font-size: 0.8em;
+}
+/**************** COMMENTAIRES *******************/
+#commentaire img {
+  width: 100%;
+}
+
+#commentaire span{
+  font-size: 0.8em;
+  color: var(--dark);
+}
+/**************** MEMBRE (profil/inscription/cnx) *******************/
+#membre-header {
+  background-color: var(--turtle);
+  color: white;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 1em;
+}
+#membre-content {
+  background-color: white;
+  color: var(--dark);
+  padding-top: 1em;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+#membre-footer {
+  background-color: var(--dark);
+  color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+#membre-footer button {
+  margin: 0 auto;
+}
+.avatar-100 {
+  background-color: var(--light-grey);
+  padding: 0.5em;
+  text-align: center;
+}
+.avatar-100 img {
+  width: 6.25em;
+  height: 6.25em;
+  background-color: white;
+}
+#club-fav img {
+  background-color: #999;
+  width: 1.875em;
+  height: 1.875em;
+}
+#club-fav a, #club-fav a:hover {
+  color: var(--dark);
+}
+/********************** FOOTER *************/
+footer {
+  margin-top: 3em;
+  padding-top: 1em;
+  background-color: var(--light-grey);
+  border-top: solid black 0.1em;
+}
+h5 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+}
+.social i {
+  color: black;
+}
+.fa-facebook:hover {
+  color: #4267b2;
+  transition: 1s;
+}
+.fa-twitter-square:hover {
+  color: #38a1f3;
+  transition: 1s;
+}
+#footerpart {
+  margin-top: 2em;
+}
+/************* DÉTAILS *********************/
+/****** Timeline *********/
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+}
+ul.timeline:before {
+  content: ' ';
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+ul.timeline > li:before {
+  content: ' ';
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #22c0e8;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+/******************** CATÉGORIE ********************/
+/****** Ligue *********/
+#myInput {
+  height: 50px;
+  width: 100%;
+}
+#league {
+  background-color: #fff;
+  color: black;
+  font-family: 'Roboto Slab', serif;
+  border-radius: 5px;
+  margin: 0.5em;
+  padding: 0.5em;
+  text-align: center;
+  border-bottom: solid black 0.1em;
+  border-right: solid black 0.1em;
+}
+#leaguename {
+  font-size: 1.3em;
+}
+#leaguecountry {
+  font-size: 0.8em;
+}
+#league:hover {
+  border-color: var(--light-turtle);
+  background-color: #fcf8fb;
+  color: var(--light-turtle);
+}
+#league a:hover {
+  color: var(--light-turtle);
+}
+ul {
+  padding-inline-start: 0;
+}
+/********** LEAGUE UNIQUE *****************************/
+.jumbotron span {
+  font-style: italic;
+  font-size: 1.2em;
+}

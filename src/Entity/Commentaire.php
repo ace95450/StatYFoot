@@ -26,6 +26,10 @@ class Commentaire
      */
     private $dateCreation;
 
+    public function __construct()
+    {
+        $this->dateCreation = new \DateTime();
+    }
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Membre",
      *     inversedBy="commentaires")

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Commentaire;
 use App\Entity\Events;
 use App\Entity\LineUps;
 use App\Entity\MatchDetails;
@@ -120,8 +121,14 @@ class MatchDetailsController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->flush();
 
+        //recuperer les commentaires
+        $commentaire = $this->getDoctrine()
+            ->getRepository(Commentaire::class)
+            ->findAll();
+
         // Passage à la vue
         return $this->render('front/details.html.twig', [
+            'commentaire' => $commentaire,
             'fixtures' => $fixturesArray,
             'events' => $eventsArray,
             "standings" => $standingsArray

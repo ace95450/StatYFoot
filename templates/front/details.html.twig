@@ -6,7 +6,7 @@
 
 {% block content %}
     <div class="container">
-        <div class="row">
+        <div id="maincontent" class="row">
             <div class="col-md-8">
                 {% for fixture in fixtures  %}
                 <div class="jumbotron">
@@ -78,33 +78,32 @@
                         </div>
                     </div>
                     <div id="commentaires" class="col-12">
+                        <hr>
                         <h3>Commentaires</h3>
                         <hr>
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                             {{ render(controller('App\\Controller\\CommentaireController::NewCommentaire')) }}
-
-
                         {% else %}
                             <p>Pensez à vous identifier, afin d'écrire un commentaire, <a href="/connexion">connectez-vous ici</a></p>
                         {% endif %}
 
-                        {# {% for commentaires in commentaire  %} #}
+                        {% for commentaires in commentaire %}
                         <hr>
-                        <div id="commentaire" class="commentaire row">
+                        <div id="commentaire" class="row">
                             <div class="col-1">
                                 <img src="../images/membre/brikema.jpeg" width="100%" >
                             </div>
                             <div class="col-11">
                                 <p>
-                                    Contenu du commentaire
+                                    {{ commentaire.0.contenu }}
                                     <br>
                                     <span class="infos-commentaire">
-                                        <i>par <b>pseudo</b> le 00/00/0000 à 00:00</i>
+                                        <i>par <b>{{ commentaire.0.membre }}</b> le  à </i>
                                     </span>
                                 </p>
                             </div>
                         </div>
-                        {# {% endfor %} #}
+                        {% endfor %}
 
                     </div>
                 </div>
