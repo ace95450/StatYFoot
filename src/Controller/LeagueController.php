@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 
+use App\Entity\AllMatchLeague;
 use App\Entity\Leagues;
 use App\Entity\Standings;
 use App\Entity\Teams;
@@ -87,8 +88,21 @@ class LeagueController extends AbstractController
             $TeamArray = [];
             $em=$this->getDoctrine()->getManager();
 
+            # Les logo sont ici
+            $array1 = array_values($raw_teams['api']['teams']);
+            $array2 = array_values($raw_standings['api']['standings'][0]);
 
+            # Tri par teamID
+            usort($array1, function($a, $b) {
+                return $b['team_id'] - $a['team_id'];
+            });
 
+            usort($array2, function($a, $b) {
+                return $b['team_id'] - $a['team_id'];
+            });
+
+            #Merge
+            dump(array_replace_recursive($array1, $array2));
             foreach ($raw_teams['api']['teams'] as $teams) {
                 $detailsTeam= new Teams(
                 $teams['team_id'],
@@ -105,12 +119,42 @@ class LeagueController extends AbstractController
             $teamteam = $this->getDoctrine()
                 ->getRepository(Teams::class)
                 ->find($id);
-            dump($teamteam);
+
+
+            //Tout les match d'une league
+            $rmatchLeague = Request::get("https://api-football-v1.p.rapidapi.com/fixtures/league/".$id."", [
+                "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
+            ]);
+            //dump($rmatchLeague);
+
+            $raw_matchL = json_decode($rmatchLeague->raw_body, true);
+            $allMatchInOneLeague = [];
+            foreach($raw_matchL['api']['fixtures'] as $fixturesMatch) {
+                $allMatchLeague = new AllMatchLeague(
+                    $fixturesMatch['fixture_id'],
+                    $fixturesMatch['league_id'],
+                    $fixturesMatch['round'],
+                    $fixturesMatch['homeTeam_id'],
+                    $fixturesMatch['awayTeam_id'],
+                    $fixturesMatch['homeTeam'],
+                    $fixturesMatch['awayTeam'],
+                    $fixturesMatch['status'],
+                    $fixturesMatch['statusShort'],
+                    $fixturesMatch['goalsHomeTeam'],
+                    $fixturesMatch['goalsAwayTeam'],
+                    $fixturesMatch['halftime_score'],
+                    $fixturesMatch['final_score'],
+                    $fixturesMatch['penalty'],
+                    $fixturesMatch['elapsed']
+                );
+                $allMatchInOneLeague[] = $allMatchLeague;
+            }
 
             return $this->render("front/league.html.twig", [
                 "league" => $oneleagueArray,
                 "classement" => $standingsArray,
-                "teams" => $teamteam
+                "teams" => $teamteam,
+                "fixtures" => $allMatchInOneLeague
             ]);
         }
     }

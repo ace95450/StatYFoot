@@ -1,0 +1,24 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+    La page Ligue.
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron justify-content-center">
+        {% for teams in teams %}
+            <h4>{{ teams.name }}</h4>
+            <br>
+            <img height="200px" src="{{ teams.logo }}" alt="{{ teams.name }}logo">
+            <br>
+            <hr class="my-4">
+
+            <br><p class="lead text-center">{{ teams.name }} est un grand club de foot avec une histoire particulièrement intéressante.</p>
+        {% endfor %}
+
+
+
+
+
+    </div>
+{% endblock %}
