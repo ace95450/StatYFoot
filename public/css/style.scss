@@ -11,13 +11,16 @@
   --light-grey:#cbcbcb;
 }
 
-body{background: repeating-linear-gradient(
+/*body{background: repeating-linear-gradient(
                 -78deg,
                 #cbcbcb,
                 #cbcbcb 10px,
                 #c2c2c2 10px,
                 #c2c2c2 20px
 );
+}*/
+body{
+  background-color:#cbcbcb
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -424,7 +427,7 @@ a:hover{
   #league a:hover{
     color: var(--light-turtle);
   }
-  ul {
+  .ulligue {
     padding-inline-start:0;
   }
   /********** LEAGUE UNIQUE *****************************/

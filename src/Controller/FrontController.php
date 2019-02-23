@@ -34,7 +34,12 @@ class FrontController extends AbstractController
         // json_decode pour récuperer les données json
         $raw_body = json_decode($response->raw_body, true);
 
+
+//        dump($raw_body);
+// foreach pour bouclé les données récupère via le json_decode et pouvoir les utilisé
+
         // foreach pour bouclé les données récupère via le json_decode et pouvoir les utilisé
+
         $fixturesArray = [];
         foreach ($raw_body['api']['fixtures'] as $fixtures) {
             $matchDay = new MatchDetails(
@@ -82,6 +87,12 @@ class FrontController extends AbstractController
 
         $raw_team = json_decode($response->raw_body, true);
 
+
+
+//        dump($raw_team);
+
+
+
         $teamArray = [];
         foreach ($raw_team['api']['teams'] as $featuresTeam) {
             $infoTeams = new Teams(
@@ -117,6 +128,13 @@ class FrontController extends AbstractController
         ]);
 
         $raw_match = json_decode($responseDirect->raw_body, true);
+
+
+
+
+//           dump($raw_match);
+
+
         foreach ($raw_match['api']['fixtures'] as $fixture) {
             $matchDirect = new Matchdirect(
                 $fixture['fixture_id'],

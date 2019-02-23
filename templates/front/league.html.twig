@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-    La page Ligue.
+    {% for league in league %}Tout sur la {{ league.name }} sur StatY Foot !{% endfor %}
 {% endblock %}
 
 {% block content %}
@@ -13,15 +13,93 @@
             <br>
             <br>
                 <span>{{ league.country }}</span><br>
-
+{% for teams in teams %}{{ dump(teams.logo) }}{% endfor %}
 
         <hr class="my-4">
-        <p>La {{ league.name }} est une ligue de foot de {{ league.country }}. Il s'y passe des matchs vraiment chouette à regarder. Il y a des joueurs très fort dans cette compétition.</p>
-        <p class="lead">
+        <p>La {{ league.name }} est une ligue de football de {{ league.country }}. Il s'y passe des matchs vraiment chouette à regarder. Il y a des joueurs très fort dans cette compétition. Les supporters sont hyper sympas.</p>
+        <br><p class="lead text-center">
             Saison {{ league.season }}
         </p>
-            <hr>
-            {{ league.standings }}
         {% endfor %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="ajax-match-classement" class="classement">
+
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-striped tableau_classement" id="tableau_classement_lite">
+                                        <tbody>
+                                        {% for standing in classement %}
+                                            <tr>
+                                                <th scope="row"><span data-toggle="tooltip" data-placement="right" title="Ligue&nbsp;des&nbsp;Champions" style="width:100%; height:100%; display:block;">{{ standing.rank }}</span></th>
+                                                <td class="equipe">
+                                                    <div>
+                                                        {{ standing.teamName }}
+                                                    </div>
+                                                </td>
+
+                                                    <td class="equipe">
+                                                            <img alt="{{ teams.name }}logo" height="30px" src="{{ teams.logo }}">
+                                                    </td>
+
+                                                <td><strong>{{ standing.points }}</strong></td>
+                                                <td>{{ standing.matchsPlayed }}</td>
+                                                <td>{{ standing.goalsFor }}</td>
+                                                <td>{{ standing.goalsDiff }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                        <thead>
+                                        <tr>
+                                            <th>&nbsp;</th>
+                                            <th>Équipe</th>
+                                            <th></th>
+                                            <th>Points</th>
+                                            <th>Journée</th>
+                                            <th>Buts</th>
+                                            <th>Différence de but</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="maincontentleft" class="col-md-6">
+                        <div id="matchdirect" class="row">
+                            <div id="contentmatchdirect" class="col-12">
+                                <ul class="list-group">
+                                    <li id="" class="list-group-item"  data-scroll>{% for league in league %}Les derniers matchs de la {{ league.name }} {% endfor %}</li>
+                                    {% for daymatch in fixtures|slice(0, 20) %}
+                                        <a class="list-group-item" id="linkrow" href="/details-match/{{ daymatch.fixture_id }}">
+                                            <div id="lignematchdirect" class="row">
+                                                <div  class="col-4 text-right">
+                                                    <span>{{ daymatch.homeTeam }}</span>
+                                                </div>
+
+                                                    <div  class="col-4 text-center justify-content-center">
+                                                        {{ daymatch.goalsHomeTeam }} - {{ daymatch.goalsAwayTeam }}
+                                                    </div>
+
+                                                <div  class="col-4 text-left">
+                                                    <span>{{ daymatch.awayTeam }}</span>
+                                                </div>
+                                            </div><!-- /id ligne -->
+                                        </a>
+                                    {% endfor %}
+                                </ul>
+                            </div><!--/id contentmatchdirect + class col-12 ----->
+                        </div><!--/id matchdirect + class row-->
+                    </div><!--/id maintcontentleft + class col-lg-8-->
+                </div><!--/row-->
+
+
+
+
     </div>
 {% endblock %}

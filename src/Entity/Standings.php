@@ -125,12 +125,12 @@ class Standings
         return $this;
     }
 
-    public function getTeamId(): ?int
+    public function getTeam_id(): ?int
     {
         return $this->team_id;
     }
 
-    public function setTeamId(int $team_id): self
+    public function setTeam_id(int $team_id): self
     {
         $this->team_id = $team_id;
 

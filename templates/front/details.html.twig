@@ -12,16 +12,22 @@
                 <div class="jumbotron">
                     <h7 style="text-align: center">{{ fixture.round }}</h7>
                     <h2 style="text-align: center">{{ fixture.homeTeam }} - {{ fixture.awayTeam }}</h2>
-                    <div class="row">
-                        <div class="col-md-4" style="border: 1px solid #e1e1e1; text-align: center; width: 70px;">
-                            <img src="https://www.api-football.com/public/teams/85.png" height="45" width="45">
+                    <div class="row justify-content-center">
+                        <a class="col-md-4 text-right" href="/team/{{ fixture.homeTeam_id }}">
+                        <div >
+                            <img src="https://www.api-football.com/public/teams/85.png" height="45">
                             <p>{{ fixture.homeTeam }}</p>
                         </div>
-                        <h3 class="col-md-4" style="text-align: center;">{{ fixture.goalsHomeTeam }} - {{ fixture.goalsAwayTeam }}</h3>
-                        <div class="col-md-4" style="border: 1px solid #e1e1e1; text-align: center; width: 70px;">
-                            <img src="https://www.api-football.com/public/teams/529.svg" height="45" width="45">
+                        </a>
+                        <div class="col-4 text-center">
+                            <h3>{{ fixture.goalsHomeTeam }} - {{ fixture.goalsAwayTeam }}</h3>
+                        </div>
+                        <a class="col-md-4 text-left" href="/team/{{ fixture.awayTeam_id }}">
+                            <div >
+                            <img src="https://www.api-football.com/public/teams/529.svg" height="45">
                             <p>{{ fixture.awayTeam }}</p>
                         </div>
+                        </a>
                     </div>
                     <div class="row table-game-info">
                         <table class="table-custom table">
@@ -84,10 +90,10 @@
                     <div class="col-md-12">
                         <h4>Les faits du Match</h4>
                         <ul class="timeline">
+
                             {% for event in events %}
                             <li>
-                                <p>{{ event.type~ ' pour ' ~event.teamName~ ' - ' ~event.elapsed~ ' min' }}</p>
-                                <p>{{ event.detail~ ' pour ' ~event.player }}</p>
+                                <p>{{ event.elapsed~ 'ème minute ' ~event.detail~ ' pour ' ~event.player~ ' - ' ~event.teamName }}</p>
                             </li>
                             {% endfor %}
                         </ul>
