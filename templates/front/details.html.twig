@@ -91,14 +91,14 @@
                         <hr>
                         <div id="commentaire" class="row">
                             <div class="col-1">
-                                <img src="../images/membre/brikema.jpeg" width="100%" >
+                                <img src="../images/membre/{{ commentaires.membre }}.jpeg" width="100%" >
                             </div>
                             <div class="col-11">
                                 <p>
-                                    {{ commentaire.0.contenu }}
+                                    {{ commentaires.contenu }}
                                     <br>
                                     <span class="infos-commentaire">
-                                        <i>par <b>{{ commentaire.0.membre }}</b> le  à </i>
+                                        <i>par <b>{{ commentaires.membre }}</b> le {# {{ commentaires.date_creation|date("m/d/Y") }} à {{ commentaires.date_creation|date("H:i:s") }} #}</i>
                                     </span>
                                 </p>
                             </div>

@@ -102,6 +102,8 @@ class FrontController extends AbstractController
 //            'matchLive' => $matchDay,
             'teams' => $teamArray
         ]);
+
+
     }
 //===================================================================
 

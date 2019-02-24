@@ -32,6 +32,11 @@ a:hover, a:active {
 li {
   list-style-type: none;
 }
+
+.text-strong{
+  font-weight: bold;
+}
+
 .btn-custom {
   font-family: 'Roboto Slab', serif;
   background-color: var(--gold);
@@ -196,6 +201,9 @@ a:hover {
 }
 #maincontentright li {
   border-bottom: solid 0.125em var(--gold);
+}
+.match-side, .league-side{
+  font-size:1em;
 }
 #footersidebar {
   border-bottom-left-radius: 10px;
