@@ -56,7 +56,7 @@ class MembreFormType extends AbstractType
             ])
             ->add('inscription', SubmitType::class, [
                 'attr' => ['class'=>'form-control btn btn-custom']
-            ]);
+            ])
         ;
     }
 

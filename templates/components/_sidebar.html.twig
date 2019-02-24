@@ -1,66 +1,65 @@
 <div id="maincontentright" class="col-lg-4">
     <div id="sidebarinfo" class="row">
         <div id="contentsidebar" class="col-12">
+            <!-- Infos -->
+            <ul class="list-group">
+                <li id="titlesidebar" class="list-group-item"><i class="fas fa-info-circle"></i> Infos</li>
+                <li id="footersidebar" class="list-group-item">
+                    <p class="text-strong">
+                        Vous consultez actuellement le site StatY Foot.
+                    </p>
+                    <p class="text-justify">
+                        StatY Foot est votre nouvelle référence pour suivre les scores de vos équipes favorites en direct.
+                    </p>
+                    <p class="text-justify">
+                        Consultez les résultats de tout les <a href="/category/todaymatch" class="text-strong">matchs</a> de toutes les <a href="/category/leagues" class="text-strong">ligues</a> grâce à notre livescore.
+                    </p>
+                </li><!-- /dernière ligne-->
+            </ul>
             <!-- Match -->
             <ul class="list-group">
                 <li id="titlesidebar" class="list-group-item">Matchs</li>
+                {% for daymatch in viewtodaymatch %}
                 <li class="list-group-item">
-                    <a href="#">
-                        <img id="logomatchteam" alt="logoequipe" src="../images/logo.png" height="25px">
-                        <span class="col-md-4 col-5 text-left">Chelsea</span>
-                        <span class="col-2 text-center justify-content-center">V</span>
-                        -
-                        <span class="col-2 text-center justify-content-center" >D</span>
-                        <span class="col-md-4 col-5 text-right">Juventus</span>
-                        <img id="logomatchteam" alt="logoequipe" src="../images/logo.png" height="25px">
-                    </a>
-                </li><!-- /ligne-->
 
+                    <div class="text-center justify-content-center match-side">
+                        {% for team in teamcategory %}
+                        <p>
+                            <a href="/details-match/{{ daymatch.fixture_id }}">
+                                {{ HomeTeam.name  }} - {{ AwayTeam.name }}
+                            </a>
+                        </p>
+                        {% endfor %}
+                    </div>
+                </li><!-- /ligne-->
+                {% endfor %}
                 <li id="footersidebar" class="list-group-item">
-                    <a href="#">
+                    <a href="/category/todaymatch">
                         Voir tous les matchs
                     </a>
                 </li><!-- /dernière ligne-->
-
             </ul>
-            <!-- Classement de la ligue -->
+                <!-- leagues -->
             <ul class="list-group">
-                <li id="titlesidebar" class="list-group-item">Classement dans la ligue</li>
+                <li id="titlesidebar" class="list-group-item">Ligues</li>
+                {% for league in leaguecategory | sortbyfield('country') %}
                 <li class="list-group-item">
-                    <a href="#">
-                        <img id="logomatchteam" alt="logoequipe" src="../images/logo.png" height="25px">
-                        <span class="text-left">
-                                        Manchester
-                                    </span>
-                        <span class="ligue_data">
-                                        V : 20 | D : 10 | Pts : 78
-                                    </span>
-                    </a>
-                </li><!-- /ligne-->
-
+                    <div class="text-center justify-content-center league-side">
+                        <p>
+                            <a href="/league/{{ league.fixture_id }}">
+                                <img alt="{{ league.name }} logo" src="{{  league.logo }}" height="20px" >{{ league.name }}
+                            </a>
+                        </p>
+                    </div>
+                </li><!-- ligne-->
+                {% endfor %}
                 <li id="footersidebar" class="list-group-item">
-                    <a href="#">
-                        Voir le classement complet
-                    </a>
-                </li><!-- /dernière ligne-->
-
-            </ul>
-            <!-- Classement de la ligue -->
-            <ul class="list-group">
-                <li id="titlesidebar" class="list-group-item">équipes</li>
-                <li class="list-group-item">
-                    <a href="#">
-                        <img id="logomatchteam" alt="logoequipe" src="logo.png" height="25px">
-                        <span class="col-md-12 col-12 text-left">RC Lens
-                                    </span>
-                    </a>
-                </li><!-- /ligne-->
-                <li id="footersidebar" class="list-group-item">
-                    <a href="#">
-                        Voir toutes les équipes
+                    <a href="/category/leagues">
+                        Voir toutes les ligues
                     </a>
                 </li><!-- /dernière ligne-->
             </ul>
+
 
 
         </div><!--/id contentsidebar + class col-12 -->

@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+<<<<<<< HEAD
 
 use App\Entity\Annonce;
 use App\Entity\Countries;
+=======
+>>>>>>> origin/bastien
 use App\Entity\MatchDetails;
 use App\Entity\Matchdirect;
 use App\Entity\Teams;
@@ -12,7 +15,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Unirest\Request;
-
 
 class FrontController extends AbstractController
 {
@@ -79,8 +81,6 @@ class FrontController extends AbstractController
 //        $countriesArray[] = $values;
 
 //===================================================================
-
-
         $response = Request::get("https://api-football-v1.p.rapidapi.com/teams/team/85", [
             "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
         ]);
@@ -116,6 +116,8 @@ class FrontController extends AbstractController
             'articles' => $articles,
             'spotlight' => $spotlight
         ]);
+
+
     }
 //===================================================================
 
