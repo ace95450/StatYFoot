@@ -11,12 +11,9 @@ namespace App\Controller;
 
 use App\Entity\AllMatchLeague;
 use App\Entity\Leagues;
-<<<<<<< HEAD
 use App\Entity\MatchDetails;
-=======
 use App\Entity\Standings;
 use App\Entity\Teams;
->>>>>>> origin/brice
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -56,7 +53,6 @@ class LeagueController extends AbstractController
             $oneleagueArray[] = $newleague;
         }
 
-<<<<<<< HEAD
         //Tout les match d'une league
         $rmatchLeague = Request::get("https://api-football-v1.p.rapidapi.com/fixtures/league/".$id."", [
             "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
@@ -86,7 +82,7 @@ class LeagueController extends AbstractController
                 $fixturesMatch['elapsed']
             );
             $allMatchInOneLeague[] = $allMatchLeague;
-=======
+
             // Le classement de la ligue
             Request::verifyPeer(false);
             $response_standings =  Request::get("https://api-football-v1.p.rapidapi.com/leagueTable/".$id."", [
@@ -195,7 +191,6 @@ class LeagueController extends AbstractController
                 "teams" => $teamteam,
                 "fixtures" => $allMatchInOneLeague
             ]);
->>>>>>> origin/brice
         }
 
         dump($allMatchInOneLeague);
