@@ -7,140 +7,88 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-lg-8">
                 {% for fixture in fixtures  %}
-                <div class="jumbotron">
-                    <h7 style="text-align: center">{{ fixture.round }}</h7>
-                    <h2 style="text-align: center">{{ fixture.homeTeam }} - {{ fixture.awayTeam }}</h2>
-                    <div class="row justify-content-center">
-                        <a class="col-md-4 text-right" href="/team/{{ fixture.homeTeam_id }}">
-                        <div >
-                            <img src="https://www.api-football.com/public/teams/85.png" height="45">
-                            <p>{{ fixture.homeTeam }}</p>
+                    <div class="jumbotron">
+                        <span class="text-left">{{ fixture.round }}</span>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-5 col-6 text-left">
+                                <a class="text-left" href="/team/{{ fixture.homeTeam_id }}">
+                                    <h4>{{ fixture.homeTeam }}</h4>
+                                    <img src="https://www.api-football.com/public/teams/85.png" height="65px">
+                                </a>
+                            </div>
+                            <div class="col-2 text-center d-none d-lg-block"><h6> Vs </h6></div>
+                            <div class="col-lg-5 col-6 text-right">
+                                <a class="text-right" href="/team/{{ fixture.awayTeam_id }}">
+                                    <h4>{{ fixture.awayTeam }}</h4>
+                                    <img src="https://www.api-football.com/public/teams/446.png" height="65px">
+                                </a>
+                            </div>
                         </div>
-                        </a>
-                        <div class="col-4 text-center">
-                            <h3>{{ fixture.goalsHomeTeam }} - {{ fixture.goalsAwayTeam }}</h3>
+
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <h3>{{ fixture.goalsHomeTeam }} - {{ fixture.goalsAwayTeam }}</h3>
+                            </div>
                         </div>
-                        <a class="col-md-4 text-left" href="/team/{{ fixture.awayTeam_id }}">
-                            <div >
-                            <img src="https://www.api-football.com/public/teams/529.svg" height="45">
-                            <p>{{ fixture.awayTeam }}</p>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="row table-game-info">
-                        <table class="table-custom table">
-                            <tbody>
-                            <tr>
-                                <td class="text-right table-game-info-number">10(9)</td>
-                                <td class="text-center table-game-info-category">Tirs Cadrés</td>
-                                <td class="text-left table-game-info-number">10(9)</td>
-                            </tr>
-                            <tr>
-                                <td class="text-right table-game-info-number">4</td>
-                                <td class="text-center table-game-info-category">Corners</td>
-                                <td class="text-left table-game-info-number">4</td>
-                            </tr>
-                            <tr>
-                                <td class="text-right table-game-info-number">1</td>
-                                <td class="text-center table-game-info-category">Arrêts</td>
-                                <td class="text-left table-game-info-number">1</td>
-                            </tr>
-                            <tr>
-                                <td class="text-right table-game-info-number">2</td>
-                                <td class="text-center table-game-info-category">Cartons Jaunes</td>
-                                <td class="text-left table-game-info-number">0</td>
-                            </tr>
-                            <tr>
-                                <td class="text-right table-game-info-number">1</td>
-                                <td class="text-center table-game-info-category">Carton Rouges</td>
-                                <td class="text-left table-game-info-number">0</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- FIN JUMBOTRON -->
-                </div>
-                {% endfor %}
-                <div class="row">
-                    <div class="col-sm-6">
-                        <!-- Table Roster-->
-                        <div class="table-custom-responsive">
-                            <table class="table-custom table-roster">
-                                <thead>
-                                <tr>
-                                    <th colspan="3">Atletico</th>
-                                </tr>
-                                </thead>
+
+                        <div class="row table-game-info">
+                            <table data-placement="right" class="table-custom table">
                                 <tbody>
                                 <tr>
-                                    <td>NBR</td>
-                                    <td>Player name</td>
-                                    <td>Position</td>
+                                    <td class="text-right table-game-info-number">7(0)</td>
+                                    <td class="text-center table-game-info-category">Tirs Cadrés</td>
+                                    <td class="text-left table-game-info-number">10(1)</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right table-game-info-number">9</td>
+                                    <td class="text-center table-game-info-category">Corners</td>
+                                    <td class="text-left table-game-info-number">3</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right table-game-info-number">1</td>
+                                    <td class="text-center table-game-info-category">Arrêts</td>
+                                    <td class="text-left table-game-info-number">5</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right table-game-info-number">2</td>
+                                    <td class="text-center table-game-info-category">Cartons Jaunes</td>
+                                    <td class="text-left table-game-info-number">1</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right table-game-info-number">1</td>
+                                    <td class="text-center table-game-info-category">Carton Rouges</td>
+                                    <td class="text-left table-game-info-number">0</td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4>Les faits du Match</h4>
-                        <ul class="timeline">
+                    </div> <!-- FIN JUMBOTRON -->
+                {% endfor %}
 
+            </div>
+            <div class="col-lg-4">
+                <div class="row" id="sidebarinfo">
+                    <div id="contentsidebar" class="col-md-12">
+                        <li id="titlesidebar" class="list-group-item"><h4>Les faits du Match</h4></li>
+                        <ul id="bgcolor" class="timeline">
                             {% for event in events %}
-                            <li>
-                                <p>{{ event.elapsed~ 'ème minute ' ~event.detail~ ' pour ' ~event.player~ ' - ' ~event.teamName }}</p>
-                            </li>
+                                <li>
+                                    {{ event.elapsed~ 'ème minute ' ~event.detail~ ' pour ' ~event.player~ ' - ' ~event.teamName }}
+                                </li>
                             {% endfor %}
                         </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="ajax-match-classement" class="classement">
 
-                            <div class="panel panel-info">
-                                <div class="panel-heading">
-                                    {% for name in fixtures %}
-                                    <h3 class="panel-title">Classement {{ name.round~ ' e' }}</h3>
-                                    {% endfor %}
-                                </div>
-                                <div class="panel-body">
-                                    <table class="table table-striped tableau_classement" id="tableau_classement_lite">
-                                        <tbody>
-                                        {% for standing in standings %}
-                                        <tr>
-                                            <th scope="row"><span data-toggle="tooltip" data-placement="right" title="Ligue&nbsp;des&nbsp;Champions" style="width:100%; height:100%; display:block;">{{ standing.rank }}</span></th>
-                                            <td class="equipe"><div>{{ standing.teamName }}</div></td>
-                                            <td><strong>{{ standing.points }}</strong></td>
-                                            <td>{{ standing.matchsPlayed }}</td>
-                                            <td>{{ standing.goalsFor }}</td>
-                                            <td>{{ standing.goalsDiff }}</td>
-                                        </tr>
-                                        {% endfor %}
-                                        </tbody>
-                                        <thead>
-                                        <tr>
-                                            <th>&nbsp;</th>
-                                            <th>Equipe</th>
-                                            <th>Pts</th>
-                                            <th>J</th>
-                                            <th>BP</th>
-                                            <th>Dif</th>
-                                        </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-                            </div>
-
-                        </div>
+                        <li id="finmatch"><h6>Fin du match</h6></li>
                     </div>
                 </div>
             </div>
+
+            </div>
         </div>
+    </div>
     </div>
 {% endblock %}

@@ -2,20 +2,149 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27923602-a27d-47dc-a05a-b9167d8ac283" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/TeamController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/AllMatchLeague.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/front/team.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/StatYFoot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StatYFoot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/composerJson.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.txt" beforeDir="false" afterPath="$PROJECT_DIR$/api.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/behat" beforeDir="false" afterPath="$PROJECT_DIR$/bin/behat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/behat.bat" beforeDir="false" afterPath="$PROJECT_DIR$/bin/behat.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/console" beforeDir="false" afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/doctrine" beforeDir="false" afterPath="$PROJECT_DIR$/bin/doctrine" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/doctrine-dbal" beforeDir="false" afterPath="$PROJECT_DIR$/bin/doctrine-dbal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/doctrine-dbal.bat" beforeDir="false" afterPath="$PROJECT_DIR$/bin/doctrine-dbal.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/doctrine-migrations" beforeDir="false" afterPath="$PROJECT_DIR$/bin/doctrine-migrations" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/doctrine-migrations.bat" beforeDir="false" afterPath="$PROJECT_DIR$/bin/doctrine-migrations.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/doctrine.bat" beforeDir="false" afterPath="$PROJECT_DIR$/bin/doctrine.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/php-parse" beforeDir="false" afterPath="$PROJECT_DIR$/bin/php-parse" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/php-parse.bat" beforeDir="false" afterPath="$PROJECT_DIR$/bin/php-parse.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/var-dump-server" beforeDir="false" afterPath="$PROJECT_DIR$/bin/var-dump-server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/var-dump-server.bat" beforeDir="false" afterPath="$PROJECT_DIR$/bin/var-dump-server.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/assets.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/assets.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/cache.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/cache.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/dev/routing.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/dev/routing.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/prod/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/prod/doctrine.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/routing.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/routing.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/test/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/test/framework.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/test/routing.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/test/routing.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig_extensions.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig_extensions.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/validator.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/validator.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/webpack_encore.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/webpack_encore.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes/annotations.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/annotations.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes/dev/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/dev/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-3.3.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery-3.3.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/js.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AnnonceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AnnonceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FrontController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HelperTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HelperTrait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/LeagueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LeagueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MatchDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MatchDetailsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MembreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MembreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SaveDataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SaveDataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/StandingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StandingsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TeamController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/AllMatchLeague.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/AllMatchLeague.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Annonce.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Annonce.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Categorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Countries.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Countries.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Events.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Events.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/FixturesDate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/FixturesDate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Joueurs.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Joueurs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Leagues.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Leagues.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/LineUps.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/LineUps.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/MatchDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/MatchDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Matchdirect.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Matchdirect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Membre.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Membre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Standings.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Standings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Teams.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Teams.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ArticleFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/LoginFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LoginFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/MembreFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MembreFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ProfilFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProfilFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190219152157.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20190219152157.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190219152314.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20190219152314.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190220131435.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20190220131435.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190220141732.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20190220141732.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190220141946.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20190220141946.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190220145425.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20190220145425.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190220154552.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20190220154552.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190220163018.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20190220163018.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190221073907.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20190221073907.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190222160735.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20190222160735.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/AnnonceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AnnonceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CategorieRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CategorieRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CountriesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CountriesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EventsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EventsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/FixturesDateRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FixturesDateRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/JoueursRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/JoueursRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/LeaguesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LeaguesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/LineUpsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LineUpsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MatchDetailsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MatchDetailsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MatchdirectRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MatchdirectRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MembreRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MembreRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/StandingsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/StandingsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TeamsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TeamsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Twig/AppExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/AppExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statyfoot.sql" beforeDir="false" afterPath="$PROJECT_DIR$/statyfoot.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/form.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/country.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/country.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/league.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/league.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/todaymatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/todaymatch.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/components/_footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/components/_footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/components/_header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/components/_nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/_sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/components/_sidebar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front/article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/article.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/front/details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/details.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/home.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/front/league.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/league.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front/team.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/team.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/membre/form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/membre/form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/membre/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/membre/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/membre/profil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/membre/profil.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ok2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ok2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,74 +158,80 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="489">
+              <caret line="238" column="17" selection-start-line="238" selection-start-column="17" selection-end-line="238" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/MatchDetailsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="82" column="97" selection-start-line="82" selection-start-column="97" selection-end-line="82" selection-end-column="97" />
+              <folding>
+                <element signature="e#35#57#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/MatchDetails.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-409">
+              <caret line="129" column="20" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/front/home.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+              <folding>
+                <element signature="e#12#28#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/LeagueController.php">
+        <entry file="file://$PROJECT_DIR$/templates/front/details.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="113" column="29" lean-forward="true" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
-              <folding>
-                <element signature="e#6#87#0#PHP" expanded="true" />
-                <element signature="e#117#147#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="148">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/components/_footer.html.twig">
+        <entry file="file://$PROJECT_DIR$/templates/category/league.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="68" selection-start-line="9" selection-start-column="68" selection-end-line="9" selection-end-column="68" />
+            <state relative-caret-position="459">
+              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/front/league.html.twig">
+        <entry file="file://$PROJECT_DIR$/public/js/js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/TeamController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="38" />
-              <folding>
-                <element signature="e#6#87#0#PHP" expanded="true" />
-                <element signature="e#117#138#0#PHP" expanded="true" />
-                <element signature="e#1080#1102#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/front/team.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="135" selection-start-line="15" selection-start-column="135" selection-end-line="15" selection-end-column="135" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Standings.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Teams.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+            <state relative-caret-position="265">
+              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -116,13 +251,11 @@
       <find>$fixture_id</find>
       <find>event_date</find>
       <find>roboto</find>
-      <find>li</find>
       <find>list</find>
       <find>featureDImage</find>
       <find>featuredImage</find>
       <find>classement</find>
       <find>fixtures</find>
-      <find>$id</find>
       <find>fait</find>
       <find>avat</find>
       <find>img</find>
@@ -131,6 +264,15 @@
       <find>team</find>
       <find>league</find>
       <find>render</find>
+      <find>image</find>
+      <find>footer</find>
+      <find>light-</find>
+      <find>li</find>
+      <find>margin</find>
+      <find>margin-top</find>
+      <find>équi</find>
+      <find>side</find>
+      <find>$id</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,7 +281,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Repository/MatchDetailsRepository.php" />
         <option value="$PROJECT_DIR$/src/Twig/AppExtension.php" />
         <option value="$PROJECT_DIR$/src/Entity/Events.php" />
         <option value="$PROJECT_DIR$/templates/css/style.sass" />
@@ -149,9 +290,7 @@
         <option value="$PROJECT_DIR$/src/Entity/MatchDetails.php" />
         <option value="$PROJECT_DIR$/src/Entity/Matchdirect.php" />
         <option value="$PROJECT_DIR$/src/Controller/SaveDataController.php" />
-        <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/templates/category/todaymatch.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/MatchDetailsController.php" />
         <option value="$PROJECT_DIR$/src/Entity/Countries.php" />
         <option value="$PROJECT_DIR$/templates/membre/login.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/MembreFormType.php" />
@@ -171,7 +310,6 @@
         <option value="$PROJECT_DIR$/src/Controller/AnnonceController.php" />
         <option value="$PROJECT_DIR$/src/Controller/FrontController.php" />
         <option value="$PROJECT_DIR$/src/Entity/Leagues.php" />
-        <option value="$PROJECT_DIR$/templates/category/league.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Teams.php" />
         <option value="$PROJECT_DIR$/src/Entity/Standings.php" />
         <option value="$PROJECT_DIR$/src/Controller/CategoryController.php" />
@@ -181,15 +319,19 @@
         <option value="$PROJECT_DIR$/src/Repository/TeamsRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/AllMatch.php" />
         <option value="$PROJECT_DIR$/src/Entity/AllMatchLeague.php" />
-        <option value="$PROJECT_DIR$/public/css/style.scss" />
         <option value="$PROJECT_DIR$/templates/layout.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/TeamController.php" />
         <option value="$PROJECT_DIR$/templates/front/team.html.twig" />
-        <option value="$PROJECT_DIR$/templates/front/details.html.twig" />
-        <option value="$PROJECT_DIR$/templates/front/league.html.twig" />
         <option value="$PROJECT_DIR$/templates/components/_footer.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/LeagueController.php" />
+        <option value="$PROJECT_DIR$/templates/front/league.html.twig" />
+        <option value="$PROJECT_DIR$/public/css/style.scss" />
+        <option value="$PROJECT_DIR$/public/js/js.js" />
+        <option value="$PROJECT_DIR$/templates/category/league.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/MatchDetailsController.php" />
+        <option value="$PROJECT_DIR$/config/routes.yaml" />
+        <option value="$PROJECT_DIR$/templates/front/details.html.twig" />
       </list>
     </option>
   </component>
@@ -283,9 +425,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-15" />
-    <option name="width" value="1100" />
-    <option name="height" value="1038" />
+    <option name="x" value="840" />
+    <option name="width" value="1088" />
+    <option name="height" value="1005" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -295,6 +437,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -310,47 +453,24 @@
             <path>
               <item name="06-StatYFoot" type="b2602c69:ProjectViewProjectNode" />
               <item name="06-StatYFoot" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="06-StatYFoot" type="b2602c69:ProjectViewProjectNode" />
               <item name="06-StatYFoot" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="06-StatYFoot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="06-StatYFoot" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="06-StatYFoot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="06-StatYFoot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="06-StatYFoot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="06-StatYFoot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="06-StatYFoot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="06-StatYFoot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="06-StatYFoot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="06-StatYFoot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="06-StatYFoot" type="b2602c69:ProjectViewProjectNode" />
               <item name="06-StatYFoot" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="06-StatYFoot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="06-StatYFoot" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="article" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="06-StatYFoot" type="b2602c69:ProjectViewProjectNode" />
@@ -370,17 +490,10 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="front" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="06-StatYFoot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="06-StatYFoot" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="membre" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -446,17 +559,17 @@
       <workItem from="1550757845425" duration="8385000" />
       <workItem from="1550828031445" duration="12370000" />
       <workItem from="1550845255676" duration="5865000" />
+      <workItem from="1551020386013" duration="6467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222482000" />
+    <option name="totallyTimeSpent" value="228949000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19798657" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10671141" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -477,37 +590,11 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.04295302" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16503668" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info id="npm" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32871974" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3286517" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3298731" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../test-php/PHP_WF3/training.php" />
-    <entry file="file://$PROJECT_DIR$/../test-php/PHP_WF3/exemple.inc.php" />
-    <entry file="file://$PROJECT_DIR$/../test-php/training.php" />
-    <entry file="file://$PROJECT_DIR$/src/Entity/Mambre.php" />
     <entry file="file://$PROJECT_DIR$/src/Repository/MambreRepository.php" />
     <entry file="file://$PROJECT_DIR$/src/Form/MembreFormType.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -734,16 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/front/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="44" lean-forward="true" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding>
-            <element signature="e#12#28#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/front/article.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
@@ -751,13 +828,6 @@
           <folding>
             <element signature="e#12#28#0#Twig" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -778,38 +848,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/category/league.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/components/_footer.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="23" column="63" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/MatchDetailsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="87" column="55" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/front/details.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="93" lean-forward="true" selection-start-line="24" selection-start-column="93" selection-end-line="24" selection-end-column="93" />
+        <state relative-caret-position="153">
+          <caret line="9" column="68" selection-start-line="9" selection-start-column="68" selection-end-line="9" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Teams.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="510">
           <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/front/team.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="135" selection-start-line="15" selection-start-column="135" selection-end-line="15" selection-end-column="135" />
         </state>
       </provider>
     </entry>
@@ -827,33 +876,103 @@
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
             <element signature="e#117#138#0#PHP" expanded="true" />
-            <element signature="e#1080#1102#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/front/team.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/front/league.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+        <state relative-caret-position="103">
+          <caret line="36" column="114" selection-start-line="36" selection-start-column="114" selection-end-line="36" selection-end-column="114" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/components/_footer.html.twig">
+    <entry file="file://$PROJECT_DIR$/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="68" selection-start-line="9" selection-start-column="68" selection-end-line="9" selection-end-column="68" />
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/category/league.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/LeagueController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="113" column="29" lean-forward="true" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
+        <state relative-caret-position="1454">
+          <caret line="109" column="30" lean-forward="true" selection-start-line="109" selection-start-column="30" selection-end-line="109" selection-end-column="30" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
             <element signature="e#117#147#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="238" column="17" selection-start-line="238" selection-start-column="17" selection-end-line="238" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/MatchDetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-409">
+          <caret line="129" column="20" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/MatchDetailsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="82" column="97" selection-start-line="82" selection-start-column="97" selection-end-line="82" selection-end-column="97" />
+          <folding>
+            <element signature="e#35#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/front/home.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding>
+            <element signature="e#12#28#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/front/details.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
         </state>
       </provider>
     </entry>

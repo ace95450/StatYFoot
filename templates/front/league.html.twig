@@ -34,21 +34,21 @@
                                         <tbody>
                                         {% for standing in classement %}
                                             <tr>
-                                                <th scope="row"><span data-toggle="tooltip" data-placement="right" title="Ligue&nbsp;des&nbsp;Champions" style="width:100%; height:100%; display:block;">{{ standing.rank }}</span></th>
+                                                <th scope="row"><span data-toggle="tooltip" data-placement="center" title="Ligue&nbsp;des&nbsp;Champions">{{ standing.rank }}</span></th>
                                                 <td class="equipe">
-                                                    <div>
+
                                                         {{ standing.teamName }}
-                                                    </div>
+
                                                 </td>
 
-                                                    <td class="equipe">
+                                                    <td class="d-lg-block d-none">
                                                             <img alt="{{ teams.name }}logo" height="30px" src="{{ teams.logo }}">
                                                     </td>
 
                                                 <td><strong>{{ standing.points }}</strong></td>
                                                 <td>{{ standing.matchsPlayed }}</td>
                                                 <td>{{ standing.goalsFor }}</td>
-                                                <td>{{ standing.goalsDiff }}</td>
+                                                <td class="d-lg-block d-none">{{ standing.goalsDiff }}</td>
                                             </tr>
                                         {% endfor %}
                                         </tbody>
@@ -56,11 +56,11 @@
                                         <tr>
                                             <th>&nbsp;</th>
                                             <th>Équipe</th>
-                                            <th></th>
+                                            <th class="d-lg-block d-none">Logo</th>
                                             <th>Points</th>
-                                            <th>Journée</th>
+                                            <th>Jour</th>
                                             <th>Buts</th>
-                                            <th>Différence de but</th>
+                                            <th class="d-lg-block d-none">Différence de but</th>
                                         </tr>
                                         </thead>
                                     </table>
