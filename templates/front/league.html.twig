@@ -42,7 +42,9 @@
                                                 </td>
 
                                                     <td class="equipe">
-                                                            <img alt="{{ teams.name }}logo" height="30px" src="{{ teams.logo }}">
+                                                        {% for logos in logo %}
+                                                            <img alt="{{ logos.name }}logo" height="30px" src="{{ logos.logo }}">
+                                                        {% endfor %}
                                                     </td>
 
                                                 <td><strong>{{ standing.points }}</strong></td>

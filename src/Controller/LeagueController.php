@@ -82,6 +82,7 @@ class LeagueController extends AbstractController
                 $fixturesMatch['elapsed']
             );
             $allMatchInOneLeague[] = $allMatchLeague;
+        }
 
             // Le classement de la ligue
             Request::verifyPeer(false);
@@ -137,7 +138,7 @@ class LeagueController extends AbstractController
             });
 
             #Merge
-            dump(array_replace_recursive($array1, $array2));
+            $logoTeam = array_replace_recursive($array1, $array2);
             foreach ($raw_teams['api']['teams'] as $teams) {
                 $detailsTeam= new Teams(
                 $teams['team_id'],
@@ -189,23 +190,8 @@ class LeagueController extends AbstractController
                 "league" => $oneleagueArray,
                 "classement" => $standingsArray,
                 "teams" => $teamteam,
-                "fixtures" => $allMatchInOneLeague
+                "fixtures" => $allMatchInOneLeague,
+                "logo" => $logoTeam
             ]);
-        }
-
-        dump($allMatchInOneLeague);
-
-
-        // Sauvegarde en BDD
-//        FIXME : Not working DateTime Error
-//        $em = $this->getDoctrine()->getManager();
-//        $em->persist($allMatchLeague);
-//        $em->persist($newleague);
-//        $em->flush();
-
-        return $this->render("front/league.html.twig", [
-            "league" => $oneleagueArray,
-            "match" => $allMatchInOneLeague
-        ]);
     }
 }

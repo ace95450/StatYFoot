@@ -99,10 +99,6 @@ class AllMatchLeague
     /**
      * AllMatchLeague constructor.
      * @param $fixture_id
-<<<<<<< HEAD
-     * @param $event_date
-=======
->>>>>>> origin/brice
      * @param $league_id
      * @param $round
      * @param $homeTeam_id
@@ -118,16 +114,9 @@ class AllMatchLeague
      * @param $penalty
      * @param $elapsed
      */
-<<<<<<< HEAD
-    public function __construct($fixture_id, $event_date, $league_id, $round, $homeTeam_id, $awayTeam_id, $homeTeam, $awayTeam, $status, $statusShort, $goalsHomeTeam, $goalsAwayTeam, $halftime_score, $final_score, $penalty, $elapsed)
-    {
-        $this->fixture_id = $fixture_id;
-        $this->event_date = $event_date;
-=======
     public function __construct($fixture_id, $league_id, $round, $homeTeam_id, $awayTeam_id, $homeTeam, $awayTeam, $status, $statusShort, $goalsHomeTeam, $goalsAwayTeam, $halftime_score, $final_score, $penalty, $elapsed)
     {
         $this->fixture_id = $fixture_id;
->>>>>>> origin/brice
         $this->league_id = $league_id;
         $this->round = $round;
         $this->homeTeam_id = $homeTeam_id;
@@ -150,20 +139,12 @@ class AllMatchLeague
         return $this->id;
     }
 
-<<<<<<< HEAD
-    public function getFixtureId(): ?int
-=======
     public function getFixture_id(): ?int
->>>>>>> origin/brice
     {
         return $this->fixture_id;
     }
 
-<<<<<<< HEAD
-    public function setFixtureId(int $fixture_id): self
-=======
     public function setFixture_id(int $fixture_id): self
->>>>>>> origin/brice
     {
         $this->fixture_id = $fixture_id;
 
