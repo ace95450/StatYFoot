@@ -9,7 +9,7 @@
 require('../css/app.css');
 
 / -- Chargement du CSS
-require('./css/style.scss');
+require('./css/style.css');
 // -- Chargement du JS
 require('./js/jquery.min');
 require('./js/bootstrap.js');

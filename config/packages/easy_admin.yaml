@@ -1,0 +1,10 @@
+easy_admin:
+  entities:
+    - App\Entity\Annonce
+    - App\Entity\Categorie
+    - App\Entity\Events
+    - App\Entity\Leagues
+    - App\Entity\MatchDetails
+    - App\Entity\Matchdirect
+    - App\Entity\Membre
+    - App\Entity\Teams

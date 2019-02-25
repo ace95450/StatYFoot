@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-    La page Ligue.
+    Détails de l'équipe.
 {% endblock %}
 
 {% block content %}
@@ -15,10 +15,51 @@
 
             <br><p class="lead text-center">{{ teams.name }} est un grand club de foot avec une histoire particulièrement intéressante.</p>
         {% endfor %}
-
-
-
-
-
+        <div class="row">
+            <div class="col-md-6">
+        {% for matchs in match | slice(0,10) %}
+            <a class="list-group-item" id="linkrow" href="/details-match/{{ matchs.fixture_id }}">
+                <div id="lignematchdirect" class="row">
+                    <div  class="col-1 text-left d-none d-lg-block">{{ matchs.status }}
+                    </div>
+                    <div  class="col-lg-4 col-5 text-right">
+                        <span>{{ matchs.homeTeam }}</span>
+                    </div>
+                        <div  class="col-2 text-center justify-content-center">
+                            {{ matchs.goalsHomeTeam }} - {{ matchs.goalsAwayTeam }}
+                        </div>
+                    <div  class="col-lg-4 col-5 text-left">
+                        <span>{{ matchs.awayTeam }}</span>
+                    </div>
+                    <div  class="col-1 text-right d-none d-lg-block"><i class="fas fa-share-alt"></i>
+                    </div>
+                </div><!-- /id ligne -->
+            </a>
+        {% endfor %}
+            </div>
+            <div class="col-md-6">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        {% for team in teams %}
+                            <th colspan="3" class="text-center">{{ team.name }}</th>
+                        {% endfor %}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>Numéro</th>
+                        <th>Joueur</th>
+                    </tr>
+                    {% for player in players %}
+                        <tr>
+                            <td>{{ player.number }}</td>
+                            <td>{{ player.player }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 {% endblock %}

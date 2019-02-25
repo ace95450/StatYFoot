@@ -19,38 +19,50 @@ class Joueurs
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Nom;
+    private $Number;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Prenom;
+    private $Player;
+
+    /**
+     * Joueurs constructor.
+     * @param $Number
+     * @param $Player
+     */
+    public function __construct($Number, $Player)
+    {
+        $this->Number = $Number;
+        $this->Player = $Player;
+    }
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getNumber(): ?string
     {
-        return $this->Nom;
+        return $this->Number;
     }
 
-    public function setNom(string $Nom): self
+    public function setNumber(string $Number): self
     {
-        $this->Nom = $Nom;
+        $this->Number = $Number;
 
         return $this;
     }
 
-    public function getPrenom(): ?string
+    public function getPlayer(): ?string
     {
-        return $this->Prenom;
+        return $this->Player;
     }
 
-    public function setPrenom(string $Prenom): self
+    public function setPlayer(string $Player): self
     {
-        $this->Prenom = $Prenom;
+        $this->Player = $Player;
 
         return $this;
     }

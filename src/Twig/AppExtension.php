@@ -16,8 +16,8 @@ class AppExtension extends \Twig_Extension
          * @return array|\Twig_Extension[]
          */
         return [
-            new Twig_Function('getMatch', [$this, 'getMatch']),
-            new Twig_Function('render', [$this, 'render'], ['is_safe' => ['html']])
+            new Twig_Function('getMatch', [$this, 'getMatch'])
+//            new Twig_Function('render', [$this, 'render'], ['is_safe' => ['html']])
         ];
     }
 
@@ -67,5 +67,34 @@ class AppExtension extends \Twig_Extension
                 }
             }
         return $fixturesArray;
+    }
+
+    public const NB_SUMMARY_CHAR = 150;
+
+    public function getFilters()
+    {
+        return [
+            new \Twig_Filter('summary', function($text) {
+
+                # Supprimer les balises HTML
+                $string = strip_tags($text);
+
+                # Si ma chaine est supérieur à 150...
+                # je poursuis, sinon c'est inutile
+                if( strlen($string) > self::NB_SUMMARY_CHAR ) {
+
+                    # Je coupe ma chaine à 150
+                    $stringCut = substr($string, 0 , self::NB_SUMMARY_CHAR);
+
+                    # Je m'assure de ne pas couper de mot
+                    $string = substr($stringCut, 0, strrpos($stringCut, ' ')). '...';
+
+                }
+
+                # On retourne l'accroche
+                return $string;
+
+            },['is_safe'=>['html']])
+        ];
     }
 }

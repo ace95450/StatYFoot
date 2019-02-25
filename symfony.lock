@@ -1,15 +1,6 @@
 {
-    "behat/behat": {
-        "version": "v3.5.0"
-    },
-    "behat/gherkin": {
-        "version": "v4.6.0"
-    },
     "behat/transliterator": {
         "version": "v1.2.0"
-    },
-    "container-interop/container-interop": {
-        "version": "1.2.0"
     },
     "curl/curl": {
         "version": "2.2.0"
@@ -80,6 +71,15 @@
     "doctrine/reflection": {
         "version": "v1.0.0"
     },
+    "easycorp/easyadmin-bundle": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "0a51040a43c6f2172a3a0135cd15daf2043905d7"
+        }
+    },
     "guzzlehttp/guzzle": {
         "version": "6.3.3"
     },
@@ -103,6 +103,9 @@
     },
     "ocramius/proxy-manager": {
         "version": "2.2.2"
+    },
+    "pagerfanta/pagerfanta": {
+        "version": "v2.0.1"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -128,6 +131,15 @@
     "sebastiansulinski/dotenv": {
         "version": "v1.2.0"
     },
+    "sensio/framework-extra-bundle": {
+        "version": "5.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.2",
+            "ref": "fb7e19da7f013d0d422fa9bce16f5c510e27609b"
+        }
+    },
     "snilius/twig-sort-by-field": {
         "version": "v0.1.5"
     },
@@ -136,9 +148,6 @@
     },
     "symfony/cache": {
         "version": "v4.2.3"
-    },
-    "symfony/class-loader": {
-        "version": "v3.4.22"
     },
     "symfony/config": {
         "version": "v4.2.3"
@@ -168,6 +177,9 @@
         "version": "v4.2.3"
     },
     "symfony/event-dispatcher": {
+        "version": "v4.2.3"
+    },
+    "symfony/expression-language": {
         "version": "v4.2.3"
     },
     "symfony/filesystem": {
@@ -311,13 +323,13 @@
             "ref": "dae9b39fd6717970be7601101ce5aa960bf53d9a"
         }
     },
-    "symfony/webpack-encore-bundle": {
+    "symfony/webpack-encore-pack": {
         "version": "1.0",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "1.0",
-            "ref": "248c29c070dcd79e8333c676b0c5e284e3b365b5"
+            "ref": "e18b0c550c3ee79142dc314b3e38193caafe4bb5"
         }
     },
     "symfony/yaml": {

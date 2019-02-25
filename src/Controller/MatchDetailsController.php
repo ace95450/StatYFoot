@@ -3,10 +3,12 @@
 namespace App\Controller;
 
 
+use App\Entity\Commentaire;
 use App\Entity\Events;
 use App\Entity\LineUps;
 use App\Entity\MatchDetails;
 use App\Entity\Standings;
+use PhpParser\Node\Scalar\MagicConst\Line;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Unirest\Request;
@@ -29,7 +31,7 @@ class MatchDetailsController extends AbstractController
         $raw_body = json_decode($response->raw_body, true);
 //       dump($raw_body);
 
-        // foreach pour bouclé les données récupère via le json_decode et pouvoir les utilisé
+        // foreach pour bouclé les données récupère via le json_decode et pouvoir les utilisés
         $fixturesArray = [];
         foreach ($raw_body['api']['fixtures'] as $fixtures) {
             $detailsmatch = new MatchDetails(
@@ -113,18 +115,34 @@ class MatchDetailsController extends AbstractController
         ]);
 
         $raw_lineups = json_decode($rLineups->raw_body, true);
-//        dump($raw_lineups);
+        dump($raw_lineups);
 
-        foreach($raw_lineups['api']['lineUps'] as $fixLine) {
-        }
+//        foreach($raw_lineups['api']['lineUps'] as $fixLine) {
+//            $fixtureLine = new LineUps(
+//                $fixLine['number'],
+//                $fixLine['player']
+//            );
+//            foreach ($raw_lineups['api']['lineUps'][''] as $fixline) {
+//                $fixtureLineUps = new LineUps(
+//                    $fixLine['number'],
+//                    $fixLine['player']
+//                );
+//            }
+//        }
 
 
         // Sauvegarde en BDD
         $em = $this->getDoctrine()->getManager();
         $em->flush();
 
+        //recuperer les commentaires
+        $commentaire = $this->getDoctrine()
+            ->getRepository(Commentaire::class)
+            ->findAll();
+
         // Passage à la vue
         return $this->render('front/details.html.twig', [
+            'commentaire' => $commentaire,
             'fixtures' => $fixturesArray,
             'events' => $eventsArray,
             "standings" => $standingsArray

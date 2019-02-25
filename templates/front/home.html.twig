@@ -9,6 +9,14 @@
     <!--MAIN CONTENT ------------------------------------------------------------------------------->
     <main>
         <div id="maincontent" class="row">
+            <div class="col-12">
+                <section class="owl-carousel owl-spotlight">
+                    {% for article in spotlight %}
+                        {% include 'components/_spotlight.html.twig' %}
+                    {% endfor %}
+                </section>
+            </div>
+            <div class="row">
             <div id="maincontentleft" class="col-lg-8">
                 <div id="matchdirect" class="row">
                     <div id="contentmatchdirect" class="col-12">
@@ -45,11 +53,23 @@
                 </div><!--/id matchdirect + class row-->
             </div><!--/id maintcontentleft + class col-lg-8-->
         {% include 'components/_sidebar.html.twig' %}
-
+            </div>
             </div><!--/ maincontent row-->
     </main>
     </div><!-- class container-->
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
+
+    <script>
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items:1,
+            loop:true,
+            margin:10,
+            autoplay:true,
+            autoplayTimeout:500,
+            autoplayHoverPause:true
+        });
+    </script>
 {% endblock %}

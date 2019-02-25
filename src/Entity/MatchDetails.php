@@ -22,7 +22,7 @@ class MatchDetails
     public $fixture_id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=255)
      */
     private $event_date;
 
@@ -167,15 +167,13 @@ class MatchDetails
         return $this;
     }
 
-    /**
-     * @return \DateTimeInterface(Y-m-d H:i:s)
-     */
-    public function getEventDate(): ?\DateTimeInterface
+
+    public function getEventDate()
     {
         return $this->event_date;
     }
 
-    public function setEventDate(\DateTimeInterface $event_date): self
+    public function setEventDate($event_date): self
     {
         $this->event_date = $event_date;
 

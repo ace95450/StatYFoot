@@ -2,19 +2,28 @@
 
 namespace App\Controller;
 
+<<<<<<< HEAD
 
+use App\Entity\Annonce;
 use App\Entity\Countries;
+=======
+>>>>>>> origin/bastien
 use App\Entity\MatchDetails;
 use App\Entity\Matchdirect;
 use App\Entity\Teams;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Unirest\Request;
-
 
 class FrontController extends AbstractController
 {
     public function index()
     {
+        $repository = $this->getDoctrine()->getRepository(Annonce::class);
+
+        $articles = $repository->findAll();
+        $spotlight = $repository->findBySpotlight();
 
         $date = date('Y-m-d');
 
@@ -72,8 +81,6 @@ class FrontController extends AbstractController
 //        $countriesArray[] = $values;
 
 //===================================================================
-
-
         $response = Request::get("https://api-football-v1.p.rapidapi.com/teams/team/85", [
             "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
         ]);
@@ -105,8 +112,12 @@ class FrontController extends AbstractController
         return $this->render('front/home.html.twig', [
             'fixtures' => $fixturesArray,
 //            'matchLive' => $matchDay,
-            'teams' => $teamArray
+            'teams' => $teamArray,
+            'articles' => $articles,
+            'spotlight' => $spotlight
         ]);
+
+
     }
 //===================================================================
 
@@ -153,5 +164,29 @@ class FrontController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->persist($matchDirect);
         $em->flush();
+    }
+
+    /**
+     * @Route("/{categorie<[a-zA-Z0-9\-_\/]+>}/{slug<[a-zA-Z0-9\-_\/]+>}_{id<\d+>}.html",
+     *     name="front_article")
+     * @param $id
+     * @param $categorie
+     * @param $slug
+     * @return Response
+     */
+    public function articles()
+    {
+        // Récupération des derniers annonce et ceux en spotlight
+
+        $annonces = $this->getDoctrine()->getRepository(Annonce::class)
+            ->findLatest();
+
+        $spotlight = $this->getDoctrine()->getRepository(Annonce::class)
+            ->findBySpotlight();
+
+        return $this->render('front/article.html.twig', [
+           "articles" => $annonces,
+           "spotlight" => $spotlight
+        ]);
     }
 }

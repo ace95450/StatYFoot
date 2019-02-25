@@ -22,19 +22,16 @@ class LeaguesRepository extends ServiceEntityRepository
     // /**
     //  * @return Leagues[] Returns an array of Leagues objects
     //  */
-    /*
-    public function findByExampleField($value)
+
+    public function findByLogo($value)
     {
-        return $this->createQueryBuilder('l')
-            ->andWhere('l.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('l.id', 'ASC')
-            ->setMaxResults(10)
+        return $this->createQueryBuilder('a')
+            ->addSelect('a')
+            ->join('a.country', 'c')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Leagues
