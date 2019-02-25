@@ -4,21 +4,13 @@
     Connexion
 {% endblock %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-{% endblock %}
 
 
-{% block javascripts %}
-    {{ parent() }}
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
-{% endblock %}
 
 {% block content %}
 
-    <div id="maincontent" class="row">
+    <div id="maincontent" class="row loginform">
         <div id="membre-header" class="col-10 offset-1">
             <h2>connexion</h2>
         </div>
@@ -31,6 +23,7 @@
             {% endfor %}
             <p class="text-center">Pas encore inscrit ? Inscrivez vous <a href="/ajouter-un-membre">ici</a>.</p>
         </div>
-
+    </div>
     </div>
 {% endblock %}
+
