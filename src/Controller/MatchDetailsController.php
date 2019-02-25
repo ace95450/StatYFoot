@@ -131,8 +131,6 @@ class MatchDetailsController extends AbstractController
             ->findAll();
 
         if($this->getUser()){
-
-
             $commentaire = new Commentaire();
 
             $commentaire->setMembre($this->getUser()->getPseudo());
