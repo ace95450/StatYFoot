@@ -22,40 +22,40 @@ class MembreFormType extends AbstractType
                 'required' => true,
                 'label' => 'Nom',
                 'attr' => ['placeholder' => "Nom",
-                    'class'=>'form-control']
+                    'class'=>'form-control mb-2']
             ])
             ->add('prenom', TextType::class, [
                 'required' => true,
                 'label' => 'Prénom',
                 'attr' => ['placeholder' => "Prénom",
-                    'class'=>'form-control']
+                    'class'=>'form-control mb-2']
             ])
             ->add('pseudo', TextType::class,[
                 'required' => true,
                 'label' => 'Pseudo',
                 'attr' => ['placeholder' => "Pseudo",
-                    'class'=>'form-control']
+                    'class'=>'form-control mb-2']
             ])
             ->add('email', EmailType::class,[
                 'required' => true,
                 'label' => 'E-Mail',
                 'attr' => ['placeholder' => "E-Mail",
-                    'class'=>'form-control']
+                    'class'=>'form-control mb-2']
             ])
             ->add('bio', TextType::class,[
                 'required' => true,
                 'label' => 'Bio',
                 'attr' => ['placeholder' => "Une courte bio..",
-                    'class'=>'form-control']
+                    'class'=>'form-control mb-2']
             ])
             ->add('password', PasswordType::class,[
                 'required' => true,
                 'label' => 'Mot de passe',
-                'attr' => ['placeholder' => "••••••••",
-                    'class'=>'form-control']
+                'attr' => ['placeholder' => "mot de passe",
+                    'class'=>'form-control mb-2']
             ])
             ->add('inscription', SubmitType::class, [
-                'attr' => ['class'=>'form-control btn btn-custom']
+                'attr' => ['class'=>'form-control btn btn-custom my-3']
             ])
         ;
     }

@@ -21,15 +21,15 @@ class LoginFormType extends AbstractType
             ->add('email',EmailType::class,[
                 'label'=>false,
                 'attr'=>['placeholder' => 'E-Mail',
-                    'class'=>'form-control']
+                    'class'=>'form-control mb-2']
             ])
             ->add('password', PasswordType::class,[
                 'label'=>false,
                 'attr'=>['placeholder' => 'Mot de Passe',
-                    'class'=>'form-control']
+                    'class'=>'form-control mb-2']
             ])
             ->add('Connexion', SubmitType::class,[
-                'attr' => ['class'=>'form-control btn btn-custom']
+                'attr' => ['class'=>'form-control btn btn-custom mb-2']
             ])
         ;
     }
