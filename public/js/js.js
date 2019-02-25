@@ -37,3 +37,14 @@ function searchBarligue() {
         }
     }
 }
+
+var owl = $('.owl-carousel');
+owl.owlCarousel({
+    items:3,
+    nav:true,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:3000,
+    autoplayHoverPause:true
+});

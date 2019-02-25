@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-    Détails de match
+    {% for fixture in fixtures %}{{ fixture.homeTeam }} - {{ fixture.awayTeam }} sur StatY Foot{% endfor %}
 {% endblock %}
 
 {% block content %}
@@ -68,6 +68,40 @@
                         </div>
                     </div> <!-- FIN JUMBOTRON -->
                 {% endfor %}
+
+                <div class="row">
+
+                    <div id="commentaires" class="col-12">
+                        <hr>
+                        <h3>Commentaires</h3>
+                        <hr>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            {{ render(controller('App\\Controller\\CommentaireController::NewCommentaire')) }}
+                        {% else %}
+                            <p>Pensez à vous identifier, afin d'écrire un commentaire, <a href="/connexion">connectez-vous ici</a></p>
+                        {% endif %}
+
+                        {% for commentaires in commentaire %}
+                            <hr>
+                            <div id="commentaire" class="row">
+                                <div class="col-2">
+                                    <img src="../images/membre/{{ commentaires.membre }}.jpeg" width="100%" >
+                                </div>
+                                <div class="col-10">
+                                    <p id="content-comment">
+                                        {{ commentaires.contenu }}
+                                        <br>
+                                        <span class="infos-commentaire">
+                                        <i>par <b>{{ commentaires.membre }}</b> {#le{{ commentaires.date_creation|date("m/d/Y") }} à {{ commentaires.date_creation|date("H:i:s") }}#}</i>
+                                    </span>
+                                    </p>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+
 
             </div>
             <div class="col-lg-4">
