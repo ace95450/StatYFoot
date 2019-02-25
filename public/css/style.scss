@@ -19,8 +19,14 @@
                 #c2c2c2 20px
 );
 }*/
-body{
+/*body{
   background-color:#cbcbcb
+}*/
+body{
+  background-image:url("../images/field.png");
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -46,6 +52,7 @@ a:hover, a:active{
 
 li{
   list-style-type:none;
+  overflow: hidden;
 }
 
 
@@ -148,7 +155,10 @@ main{
 
 }
 #maincontent{
-  margin-top:4em;
+  margin-top:2em;
+}
+.jumbotron{
+  margin-top:2em
 }
 /******************** CONTENTLEFT ****************************/
 #maincontentleft{
@@ -225,6 +235,10 @@ a:hover{
   background-color: #fcf8fb;
 }
 
+#sidebarinfo{
+  margin-top:2em;
+}
+
 #titlesidebar{
   background-color: var(--gold);
   border-top-left-radius:10px;
@@ -270,7 +284,7 @@ a:hover{
 
 
 /**************** MEMBRE (profil/inscription/cnx) *******************/
-  #membre-header{
+#membre-header{
   background-color:var(--turtle);
   color:white;
   text-align:center;
@@ -279,159 +293,177 @@ a:hover{
   padding-top: 1em;
 }
 
-  #membre-content{
-    background-color:white;
-    color:var(--dark);
-    padding-top: 1em;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;
-  }
+#membre-content{
+  background-color:white;
+  color:var(--dark);
+  padding-top: 1em;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+}
 
-  #membre-footer{
-    background-color:var(--dark);
-    color:white;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;
-    margin-top: 2em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-  }
+#membre-footer{
+  background-color:var(--dark);
+  color:white;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  margin-top: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
 
-  #membre-footer button{
-    margin: 0 auto;
-  }
+#membre-footer button{
+  margin: 0 auto;
+}
 
-  .dropify{
-    background-color:var(--turtle);
-    margin-bottom: 1em;
-    padding:1em;
-    color:white;
-    width:100%;
-  }
+.dropify{
+  background-color:var(--turtle);
+  margin-bottom: 1em;
+  padding:1em;
+  color:white;
+  width:100%;
+}
 
-  .avatar-100{
-    background-color:var(--light-grey);
-    padding:0.5em;
-    text-align:center;
-  }
+.avatar-100{
+  background-color:var(--light-grey);
+  padding:0.5em;
+  text-align:center;
+}
 
-  .avatar-100 img{
-    width: 6.250em;
-    height: 6.250em;
-    background-color: white;
-  }
+.avatar-100 img{
+  width: 6.250em;
+  height: 6.250em;
+  background-color: white;
+}
 
-  #club-fav img{
-    background-color: #999;
-    width:1.875em;
-    height:1.875em;
-  }
+#club-fav img{
+  background-color: #999;
+  width:1.875em;
+  height:1.875em;
+}
 
-  #club-fav a, #club-fav a:hover{
-    color:var(--dark);
-  }
-  /********************** FOOTER *************/
-  footer{
-    margin-top:3em;
-    padding-top:1em;
-    background-color: var(--light-grey);
-    border-top: solid black 0.1em;
-  }
-  h5{
-    font-family: 'Roboto Slab', serif;
-    font-weight:bold;
-  }
-  .social i{
-    color:black;
-  }
-  .fa-facebook:hover{
-    color:#4267b2;
-    transition:1s;
+#club-fav a, #club-fav a:hover{
+  color:var(--dark);
+}
+/********************** FOOTER *************/
+footer{
+  margin-top:2em;
+  padding-top:1em;
+  border-top: solid black 0.1em;
+  background-color: #cbcbcb;
+}
+h5{
+  font-family: 'Roboto Slab', serif;
+  font-weight:bold;
+}
+.social i{
+  color:black;
+}
+.fa-facebook:hover{
+  color:#4267b2;
+  transition:1s;
 
-  }
-  .fa-twitter-square:hover{
-    color:#38A1F3;
-    transition:1s;
-  }
-  #footerpart{
-    margin-top:2em;
-  }
+}
+.fa-twitter-square:hover{
+  color:#38A1F3;
+  transition:1s;
+}
+#footerpart{
+  margin-top:2em;
+}
 
-  /************* DÉTAILS *********************/
-  /****** Timeline *********/
+/************* DÉTAILS *********************/
+/****** Timeline *********/
 
 
-  ul.timeline {
-    list-style-type: none;
-    position: relative;
-  }
-  ul.timeline:before {
-    content: ' ';
-    background: #d4d9df;
-    display: inline-block;
-    position: absolute;
-    left: 29px;
-    width: 2px;
-    height: 100%;
-    z-index: 400;
-  }
-  ul.timeline > li {
-    margin: 20px 0;
-    padding-left: 20px;
-  }
-  ul.timeline > li:before {
-    content: ' ';
-    background: white;
-    display: inline-block;
-    position: absolute;
-    border-radius: 50%;
-    border: 3px solid #22c0e8;
-    left: 20px;
-    width: 20px;
-    height: 20px;
-    z-index: 400;
-  }
-  /******************** CATÉGORIE ********************/
-  /****** Ligue *********/
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+}
+ul.timeline:before {
+  content: ' ';
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+ul.timeline > li:before {
+  content: ' ';
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #22c0e8;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+
+#bgcolor{
+  background-color:white;
+  padding-top:1em;
+  padding-bottom:0.5em;
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+
+#finmatch{
+  z-index:500;
+  text-align:center;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+  background-color:white;
+  height:30px;
+}
+/******************** CATÉGORIE ********************/
+/****** Ligue *********/
 #myInput {
   height: 50px;
   width: 100%
 }
-  #league{
-    background-color: #fff;
-    color:black;
-    font-family: 'Roboto Slab', serif;
-    border-radius:5px;
-    margin:0.5em;
-    padding:0.5em;
-    text-align:center;
+#league{
+  background-color: #fff;
+  color:black;
+  font-family: 'Roboto Slab', serif;
+  border-radius:5px;
+  margin:0.5em;
+  padding:0.5em;
+  text-align:center;
 
-    border-bottom: solid black 0.1em;
-    border-right: solid black 0.1em;
-  }
+  border-bottom: solid black 0.1em;
+  border-right: solid black 0.1em;
+}
 
-  #leaguename{
-    font-size:1.3em;
-  }
+#leaguename{
+  font-size:1.3em;
+}
 
-  #leaguecountry{
-    font-size:0.8em;
-  }
+#leaguecountry{
+  font-size:0.8em;
+}
 
-  #league:hover{
-    border-color: var(--light-turtle);
-    background-color: #fcf8fb;
-    color: var(--light-turtle);
-  }
+#league:hover{
+  border-color: var(--light-turtle);
+  background-color: #fcf8fb;
+  color: var(--light-turtle);
+}
 
-  #league a:hover{
-    color: var(--light-turtle);
-  }
-  .ulligue {
-    padding-inline-start:0;
-  }
-  /********** LEAGUE UNIQUE *****************************/
+#league a:hover span{
+  color: var(--light-turtle);
+}
+.ulligue {
+  padding-inline-start:0;
+}
+/********** LEAGUE UNIQUE *****************************/
 .jumbotron span{
   font-style:italic;
   font-size:1.2em;
 }
+/********************************************************/

@@ -57,6 +57,7 @@ class MatchDetailsController extends AbstractController
             $fixturesArray[] = $detailsmatch;
         }
 
+
         // Tout ce qui concerne les évenements du match
         Request::verifyPeer(false);
         $rEvent = Request::get("https://api-football-v1.p.rapidapi.com/events/".$id."", [
@@ -77,9 +78,11 @@ class MatchDetailsController extends AbstractController
             $eventsArray[] = $eventsMatch;
         }
 
+
+
         // Le classement de la ligue
         Request::verifyPeer(false);
-        $response_standings =  Request::get("https://api-football-v1.p.rapidapi.com/leagueTable/4", [
+        $response_standings =  Request::get("https://api-football-v1.p.rapidapi.com/leagueTable/8", [
             "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
         ]);
 
