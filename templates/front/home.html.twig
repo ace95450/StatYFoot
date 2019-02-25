@@ -11,9 +11,11 @@
         <div id="maincontent" class="row">
             <div class="col-12">
                 <section class="owl-carousel owl-spotlight">
+
                     {% for article in spotlight %}
                         {% include 'components/_spotlight.html.twig' %}
                     {% endfor %}
+
                 </section>
             </div>
             <div class="row">

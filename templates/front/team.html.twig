@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-    Détails de l'équipe.
+    {% for teams in teams %}{{ teams.name }} sur StatY Foot{% endfor %}
 {% endblock %}
 
 {% block content %}
