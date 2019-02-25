@@ -27,7 +27,6 @@ class CommentaireController extends AbstractController
 
         $commentaire = new Commentaire();
         $commentaire->setMembre($membre->getPseudo());
-
         // Création du formulaire
         $form = $this->createForm(CommentFormType::class, $commentaire, [
             'action' => $this->generateUrl('Commentaire_new'),

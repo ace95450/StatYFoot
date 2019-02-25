@@ -58,25 +58,7 @@
                 </div>
                 {% endfor %}
                 <div class="row">
-                    <div class="col-sm-6">
-                        <!-- Table Roster-->
-                        <div class="table-custom-responsive">
-                            <table class="table-custom table-roster">
-                                <thead>
-                                <tr>
-                                    <th colspan="3">Atletico</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>NBR</td>
-                                    <td>Player name</td>
-                                    <td>Position</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    
                     <div id="commentaires" class="col-12">
                         <hr>
                         <h3>Commentaires</h3>
@@ -94,11 +76,11 @@
                                 <img src="../images/membre/{{ commentaires.membre }}.jpeg" width="100%" >
                             </div>
                             <div class="col-11">
-                                <p>
+                                <p id="content-comment">
                                     {{ commentaires.contenu }}
                                     <br>
                                     <span class="infos-commentaire">
-                                        <i>par <b>{{ commentaires.membre }}</b> le {# {{ commentaires.date_creation|date("m/d/Y") }} à {{ commentaires.date_creation|date("H:i:s") }} #}</i>
+                                        <i>par <b>{{ commentaires.membre }}</b> le {#{{ commentaires.date_creation|date("m/d/Y") }} à {{ commentaires.date_creation|date("H:i:s") }}#}</i>
                                     </span>
                                 </p>
                             </div>

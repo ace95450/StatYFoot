@@ -62,9 +62,7 @@ nav {
   border-bottom: solid var(--gold) 0.1em;
   padding: 0;
 }
-.navbar{
-  padding:0;
-}
+
 nav .navbar-brand, nav .nav-item {
   font-family: 'Bungee', cursive;
   color: var(--gold);
@@ -264,7 +262,6 @@ a:hover {
   margin: 0 auto;
 }
 .avatar-150 {
-  background-color: transparent;
   padding: 0.5em;
   text-align: center;
 }
@@ -272,6 +269,7 @@ a:hover {
   height: 9.375em;
   background-color: white;
 }
+
 #club-fav img {
   background-color: #999;
   width: 1.875em;

@@ -15,7 +15,7 @@ use Unirest\Request;
 class MatchDetailsController extends AbstractController
 {
     /**
-     * @Route("/details-match/{id<\d+>}")
+     * @Route("/details-match/{id<\d+>}", name="details_match")
      */
     public function detailsMatch($id)
     {
