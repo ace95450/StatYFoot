@@ -40,7 +40,7 @@ function searchBarligue() {
 
 var owl = $('.owl-carousel');
 owl.owlCarousel({
-    items:3,
+    items:2,
     nav:true,
     loop:true,
     margin:10,
