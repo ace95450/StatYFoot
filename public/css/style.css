@@ -62,9 +62,7 @@ nav {
   border-bottom: solid var(--gold) 0.1em;
   padding: 0;
 }
-.navbar{
-  padding:0;
-}
+
 nav .navbar-brand, nav .nav-item {
   font-family: 'Bungee', cursive;
   color: var(--gold);
@@ -156,10 +154,7 @@ ul a {
   text-decoration: none;
   font-family: 'Roboto Slab', serif;
 }
-a:hover {
-  color: black;
-  text-decoration: none;
-}
+
 #footermaincontent {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -226,6 +221,12 @@ a:hover {
   font-size: 0.8em;
 }
 /**************** COMMENTAIRES *******************/
+#commentaires{
+  background-color: white;
+  border-radius: 0.625em;
+  padding:0.625em;
+}
+
 #commentaire img {
   width: 100%;
 }
@@ -233,6 +234,14 @@ a:hover {
 #commentaire span{
   font-size: 0.8em;
   color: var(--dark);
+}
+
+#commentaire a{
+  color:var(--turtle) !important;
+}
+
+#commentaire a:hover{
+  color:var(--light-turtle) !important;
 }
 /**************** MEMBRE (profil/inscription/cnx) *******************/
 #membre-header {
@@ -264,7 +273,6 @@ a:hover {
   margin: 0 auto;
 }
 .avatar-150 {
-  background-color: transparent;
   padding: 0.5em;
   text-align: center;
 }
@@ -272,6 +280,7 @@ a:hover {
   height: 9.375em;
   background-color: white;
 }
+
 #club-fav img {
   background-color: #999;
   width: 1.875em;

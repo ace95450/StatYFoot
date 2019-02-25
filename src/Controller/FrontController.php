@@ -70,6 +70,8 @@ class FrontController extends AbstractController
         ]);
 
         $raw_team = json_decode($response->raw_body, true);
+
+
 //        dump($raw_team);
 
         $teamArray = [];
@@ -111,10 +113,9 @@ class FrontController extends AbstractController
             'fixtures' => $fixturesArray,
 //            'matchLive' => $matchDay,
             'teams' => $teamArray,
-            'articles' => $articles,
-            'spotlight' => $spotlight
+            "viewtodaymatch" => $fixturesArray,
+            "teamcategory" => $teamArray,
         ]);
-
 
     }
 //===================================================================
@@ -162,6 +163,8 @@ class FrontController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->persist($matchDirect);
         $em->flush();
+
+
     }
 
     /**
