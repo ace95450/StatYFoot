@@ -61,7 +61,7 @@ class LeagueController extends AbstractController
 
         $raw_matchL = json_decode($rmatchLeague->raw_body, true);
         $allMatchInOneLeague = [];
-        dump($raw_matchL);
+        //dump($raw_matchL);
         foreach($raw_matchL['api']['fixtures'] as $fixturesMatch) {
             $allMatchLeague = new AllMatchLeague(
                 $fixturesMatch['fixture_id'],
