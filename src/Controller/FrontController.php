@@ -2,12 +2,9 @@
 
 namespace App\Controller;
 
-<<<<<<< HEAD
 
 use App\Entity\Annonce;
 use App\Entity\Countries;
-=======
->>>>>>> origin/bastien
 use App\Entity\MatchDetails;
 use App\Entity\Matchdirect;
 use App\Entity\Teams;
@@ -67,31 +64,12 @@ class FrontController extends AbstractController
             $fixturesArray[] = $matchDay;
         }
 //===================================================================
-//        $countriesArray = [];
-//
-//        $response_countries = Request::get("https://api-football-v1.p.rapidapi.com/countries", [
-//            "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
-//        ]);
-//
-//        $raw_coutries = json_decode($response_countries->raw_body, true);
-//
-//        foreach($raw_coutries['api']['countries'] as $key => $values){
-//            echo $values.'<br>';
-//        };
-//        $countriesArray[] = $values;
-
-//===================================================================
         $response = Request::get("https://api-football-v1.p.rapidapi.com/teams/team/85", [
             "X-RapidAPI-Key" => "f9391e3ademsh1e9a775f76d8bc1p198f3ejsnca04e9c35725"
         ]);
 
         $raw_team = json_decode($response->raw_body, true);
-
-
-
 //        dump($raw_team);
-
-
 
         $teamArray = [];
         foreach ($raw_team['api']['teams'] as $featuresTeam) {
@@ -102,6 +80,25 @@ class FrontController extends AbstractController
             );
             $teamArray[] = $infoTeams;
         }
+
+//===================================================================
+
+//        # Les logo sont ici
+//        $array1 = array_values($raw_team['api']['teams']);
+//        $array2 = array_values($raw_body['api']['fixtures']);
+//
+//        # Tri par teamID
+//        usort($array1, function($a, $b) {
+//            return $b['team_id'] - $a['team_id'];
+//        });
+//
+//        usort($array2, function($a, $b) {
+//            return $b['team_id'] - $a['team_id'];
+//        });
+//
+//        #Merge
+//        $logoTeam = array_replace_recursive($array1, $array2);
+//        dump($logoTeam);
 //===================================================================
         # Sauvegarde en BDD
         $em = $this->getDoctrine()->getManager();

@@ -188,7 +188,6 @@ class LeagueController extends AbstractController
 
             return $this->render("front/league.html.twig", [
                 "league" => $oneleagueArray,
-                "classement" => $standingsArray,
                 "teams" => $teamteam,
                 "fixtures" => $allMatchInOneLeague,
                 "logo" => $logoTeam

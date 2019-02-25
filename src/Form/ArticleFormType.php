@@ -20,42 +20,9 @@ class ArticleFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre', TextType::class, [
-                'required' => true,
-                'label' => "Titre de l'Article",
-                'attr' => [
-                    'placeholder' => "Titre de l'Article"
-                ]
-            ])
-            ->add('categorie', EntityType::class, [
-                'class' => Categorie::class,
-                'choice_label' => 'nom',
-                'expanded' => false,
-                'multiple' => false,
-                'label' => false
-            ])
-            ->add('contenu', TextareaType::class, [
-                'label' => false
-            ])
             ->add('featureImage', FileType::class, [
                 'attr' => [
                     'class' => 'dropify'
-                ]
-            ])
-            ->add('special', CheckboxType::class, [
-                'required' => false,
-                'attr' => [
-                    'data-toggle' => 'toggle',
-                    'data-on' => 'Oui',
-                    'data-off' => 'Non'
-                ]
-            ])
-            ->add('spotlight', CheckboxType::class, [
-                'required' => false,
-                'attr' => [
-                    'data-toggle' => 'toggle',
-                    'data-on' => 'Oui',
-                    'data-off' => 'Non'
                 ]
             ])
             ->add('submit', SubmitType::class, [
