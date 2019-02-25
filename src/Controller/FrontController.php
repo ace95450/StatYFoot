@@ -129,13 +129,6 @@ class FrontController extends AbstractController
         ]);
 
         $raw_match = json_decode($responseDirect->raw_body, true);
-
-
-
-
-//           dump($raw_match);
-
-
         foreach ($raw_match['api']['fixtures'] as $fixture) {
             $matchDirect = new Matchdirect(
                 $fixture['fixture_id'],
@@ -170,9 +163,6 @@ class FrontController extends AbstractController
     /**
      * @Route("/{categorie<[a-zA-Z0-9\-_\/]+>}/{slug<[a-zA-Z0-9\-_\/]+>}_{id<\d+>}.html",
      *     name="front_article")
-     * @param $id
-     * @param $categorie
-     * @param $slug
      * @return Response
      */
     public function articles()
