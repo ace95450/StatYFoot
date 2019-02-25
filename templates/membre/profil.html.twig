@@ -25,10 +25,11 @@
             <h2>Profil</h2>
         </div>
         <div id="membre-content" class="col-10 offset-1">
-            {% for membre in membre  %}
+            <div class="avatar-150">
+            {% for membre in membre %}
                 <img src="{{ '/images/membre/' ~ membre.avatar }}" height="150">
             {% endfor %}
-
+            </div>
             {{ form(form, {attr:{novalidate: 'novalidate' }}) }}
             {% for message in app.flashes('notice')  %}
                 <div class="flash-notice alert alert-success">

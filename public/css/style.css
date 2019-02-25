@@ -250,6 +250,7 @@ a:hover {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
 #membre-footer {
   background-color: var(--dark);
   color: white;
@@ -262,14 +263,13 @@ a:hover {
 #membre-footer button {
   margin: 0 auto;
 }
-.avatar-100 {
-  background-color: var(--light-grey);
+.avatar-150 {
+  background-color: transparent;
   padding: 0.5em;
   text-align: center;
 }
-.avatar-100 img {
-  width: 6.25em;
-  height: 6.25em;
+.avatar-150 img {
+  height: 9.375em;
   background-color: white;
 }
 #club-fav img {

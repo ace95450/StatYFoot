@@ -19,7 +19,7 @@
             <!-- Match -->
             <ul class="list-group">
                 <li id="titlesidebar" class="list-group-item">Matchs</li>
-                {% for daymatch in viewtodaymatch %}
+                {#{% for daymatch in viewtodaymatch %}
                 <li class="list-group-item">
 
                     <div class="text-center justify-content-center match-side">
@@ -32,7 +32,7 @@
                         {% endfor %}
                     </div>
                 </li><!-- /ligne-->
-                {% endfor %}
+                {% endfor %}#}
                 <li id="footersidebar" class="list-group-item">
                     <a href="/category/todaymatch">
                         Voir tous les matchs
@@ -42,17 +42,17 @@
                 <!-- leagues -->
             <ul class="list-group">
                 <li id="titlesidebar" class="list-group-item">Ligues</li>
-                {% for league in leaguecategory | sortbyfield('country') %}
-                <li class="list-group-item">
-                    <div class="text-center justify-content-center league-side">
-                        <p>
-                            <a href="/league/{{ league.fixture_id }}">
-                                <img alt="{{ league.name }} logo" src="{{  league.logo }}" height="20px" >{{ league.name }}
-                            </a>
-                        </p>
-                    </div>
-                </li><!-- ligne-->
-                {% endfor %}
+{#{% for league in leaguecategory | sortbyfield('country') %}
+<li class="list-group-item">
+<div class="text-center justify-content-center league-side">
+<p>
+<a href="/league/{{ league.fixture_id }}">
+<img alt="{{ league.name }} logo" src="{{  league.logo }}" height="20px" >{{ league.name }}
+</a>
+</p>
+</div>
+</li><!-- ligne-->
+{% endfor %}#}
                 <li id="footersidebar" class="list-group-item">
                     <a href="/category/leagues">
                         Voir toutes les ligues
@@ -62,6 +62,6 @@
 
 
 
-        </div><!--/id contentsidebar + class col-12 -->
-    </div><!-- /id sidebarinfo + class row-->
+</div><!--/id contentsidebar + class col-12 -->
+</div><!-- /id sidebarinfo + class row-->
 </div><!-- sidebar col-4 ---->

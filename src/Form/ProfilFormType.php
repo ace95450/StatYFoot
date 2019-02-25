@@ -22,25 +22,25 @@ class ProfilFormType extends AbstractType
                 'required' => true,
                 'label' => 'Nom',
                 'attr' => ['placeholder' => "Nom",
-                    'class'=>'form-control']
+                    'class'=>'form-control mb-2']
             ])
             ->add('prenom', TextType::class, [
                 'required' => true,
                 'label' => 'Prénom',
                 'attr' => ['placeholder' => "Prénom",
-                    'class'=>'form-control']
+                    'class'=>'form-control mb-2']
             ])
             ->add('pseudo', TextType::class,[
                 'required' => true,
                 'label' => 'Pseudo',
                 'attr' => ['placeholder' => "Pseudo",
-                    'class'=>'form-control']
+                    'class'=>'form-control mb-2']
             ])
             ->add('bio', TextareaType::class, [
                 'label' => 'Bio',
                 'attr' => ['placeholder' => "...",
                     'rows'=>'4',
-                    'class'=>'form-control']
+                    'class'=>'form-control mb-2']
             ])
             ->add('profileFile', FileType::class, [
                 'label' => 'Avatar',
@@ -56,7 +56,7 @@ class ProfilFormType extends AbstractType
                 'label' => false
             ])*/
             ->add('modifier', SubmitType::class, [
-                'attr' => ['class'=>'form-control btn btn-custom']
+                'attr' => ['class'=>'form-control btn btn-custom my-3']
             ])
         ;
     }
