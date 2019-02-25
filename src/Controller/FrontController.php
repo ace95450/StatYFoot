@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
-
+<<<<<<< HEAD
 
 use App\Entity\Annonce;
 use App\Entity\Countries;
+=======
+>>>>>>> origin/bastien
 use App\Entity\MatchDetails;
 use App\Entity\Matchdirect;
 use App\Entity\Teams;
