@@ -20,38 +20,38 @@ class MembreFormType extends AbstractType
         $builder
             ->add('nom', TextType::class, [
                 'required' => true,
-                'label' => 'Nom',
+                'label' => 'Nom:',
                 'attr' => ['placeholder' => "Nom",
                     'class'=>'form-control mb-2']
             ])
             ->add('prenom', TextType::class, [
                 'required' => true,
-                'label' => 'Prénom',
+                'label' => 'Prénom:',
                 'attr' => ['placeholder' => "Prénom",
                     'class'=>'form-control mb-2']
             ])
             ->add('pseudo', TextType::class,[
                 'required' => true,
-                'label' => 'Pseudo',
+                'label' => 'Pseudo:',
                 'attr' => ['placeholder' => "Pseudo",
                     'class'=>'form-control mb-2']
             ])
             ->add('email', EmailType::class,[
                 'required' => true,
-                'label' => 'E-Mail',
+                'label' => 'E-Mail:',
                 'attr' => ['placeholder' => "E-Mail",
                     'class'=>'form-control mb-2']
             ])
             ->add('bio', TextType::class,[
                 'required' => true,
-                'label' => 'Bio',
+                'label' => 'Bio:',
                 'attr' => ['placeholder' => "Une courte bio..",
                     'class'=>'form-control mb-2']
             ])
             ->add('password', PasswordType::class,[
                 'required' => true,
-                'label' => 'Mot de passe',
-                'attr' => ['placeholder' => "mot de passe",
+                'label' => 'Mot de passe:',
+                'attr' => ['placeholder' => "Mot de passe",
                     'class'=>'form-control mb-2']
             ])
             ->add('inscription', SubmitType::class, [

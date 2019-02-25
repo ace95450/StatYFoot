@@ -38,13 +38,10 @@ function searchBarligue() {
     }
 }
 
-var owl = $('.owl-carousel');
-owl.owlCarousel({
-    items:2,
-    nav:true,
+$('.owl-carousel').owlCarousel({
     loop:true,
+    items:2,
     margin:10,
-    autoplay:true,
-    autoplayTimeout:3000,
-    autoplayHoverPause:true
-});
+    responsiveClass:true,
+
+})

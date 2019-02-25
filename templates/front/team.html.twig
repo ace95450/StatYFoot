@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-    Détails de l'équipe.
+    {% for teams in teams %}{{ teams.name }} sur StatY Foot{% endfor %}
 {% endblock %}
 
 {% block content %}
@@ -17,25 +17,26 @@
         {% endfor %}
         <div class="row">
             <div class="col-md-6">
-        {% for matchs in match | slice(0,10) %}
+                <ul class="list-group">
+                <li id="" class="list-group-item"  data-scroll>{% for teams in teams %}Les derniers matchs de {{ teams.name }} {% endfor %}</li>
+        {% for matchs in match | slice(0,20) %}
             <a class="list-group-item" id="linkrow" href="/details-match/{{ matchs.fixture_id }}">
                 <div id="lignematchdirect" class="row">
-                    <div  class="col-1 text-left d-none d-lg-block">{{ matchs.status }}
-                    </div>
-                    <div  class="col-lg-4 col-5 text-right">
+                    <div  class="col-4 text-right">
                         <span>{{ matchs.homeTeam }}</span>
                     </div>
-                        <div  class="col-2 text-center justify-content-center">
-                            {{ matchs.goalsHomeTeam }} - {{ matchs.goalsAwayTeam }}
-                        </div>
-                    <div  class="col-lg-4 col-5 text-left">
-                        <span>{{ matchs.awayTeam }}</span>
+
+                    <div  class="col-4 text-center justify-content-center">
+                        {{ matchs.goalsHomeTeam }} - {{ matchs.goalsAwayTeam }}
                     </div>
-                    <div  class="col-1 text-right d-none d-lg-block"><i class="fas fa-share-alt"></i>
+
+                    <div  class="col-4 text-left">
+                        <span>{{ matchs.awayTeam }}</span>
                     </div>
                 </div><!-- /id ligne -->
             </a>
         {% endfor %}
+                </ul>
             </div>
             <div class="col-md-6">
                 <table class="table table-bordered">
@@ -61,5 +62,6 @@
                 </table>
             </div>
         </div>
+    </div>
     </div>
 {% endblock %}

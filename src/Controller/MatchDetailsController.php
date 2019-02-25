@@ -118,7 +118,7 @@ class MatchDetailsController extends AbstractController
         ]);
 
         $raw_lineups = json_decode($rLineups->raw_body, true);
-        dump($raw_lineups);
+    //    dump($raw_lineups);
 
 //        foreach($raw_lineups['api']['lineUps'] as $fixLine) {
 //            $fixtureLine = new LineUps(
