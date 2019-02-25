@@ -58,18 +58,4 @@
     </main>
     </div><!-- class container-->
 {% endblock %}
-{% block javascripts %}
-    {{ parent() }}
 
-    <script>
-        var owl = $('.owl-carousel');
-        owl.owlCarousel({
-            items:1,
-            loop:true,
-            margin:10,
-            autoplay:true,
-            autoplayTimeout:500,
-            autoplayHoverPause:true
-        });
-    </script>
-{% endblock %}
