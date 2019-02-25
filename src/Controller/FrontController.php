@@ -76,7 +76,6 @@ class FrontController extends AbstractController
         $raw_team = json_decode($response->raw_body, true);
 
 
-
 //        dump($raw_team);
 
 
@@ -100,9 +99,10 @@ class FrontController extends AbstractController
         return $this->render('front/home.html.twig', [
             'fixtures' => $fixturesArray,
 //            'matchLive' => $matchDay,
-            'teams' => $teamArray
+            'teams' => $teamArray,
+            "viewtodaymatch" => $fixturesArray,
+            "teamcategory" => $teamArray,
         ]);
-
 
     }
 //===================================================================
@@ -150,5 +150,7 @@ class FrontController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->persist($matchDirect);
         $em->flush();
+
+
     }
 }
