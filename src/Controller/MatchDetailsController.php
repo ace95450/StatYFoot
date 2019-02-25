@@ -130,23 +130,28 @@ class MatchDetailsController extends AbstractController
             ->getRepository(Commentaire::class)
             ->findAll();
 
-        $commentaire = new Commentaire();
-        $commentaire->setMembre($this->getUser()->getPseudo());
+        if($this->getUser()){
 
-        // -- Traitement des commentaires
-        $form = $this->createForm(CommentFormType::class, $commentaire, [
-            'action' => $this->generateUrl('Commentaire_new'),
-            'method' => 'POST'
-        ])->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+            $commentaire = new Commentaire();
 
-            // Sauvegarde en BDD
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($commentaire);
-            $em->flush();
+            $commentaire->setMembre($this->getUser()->getPseudo());
 
-            return $this->redirect($request->server->get('REQUEST_URI'));
+            // -- Traitement des commentaires
+            $form = $this->createForm(CommentFormType::class, $commentaire, [
+                'action' => $this->generateUrl('Commentaire_new'),
+                'method' => 'POST'
+            ])->handleRequest($request);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+
+                // Sauvegarde en BDD
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($commentaire);
+                $em->flush();
+
+                return $this->redirect($request->server->get('REQUEST_URI'));
+            }
         }
 
         // Passage à la vue
