@@ -12,7 +12,6 @@
 
 
 {% block javascripts %}
-    {# parent() permet de conserver le code existant dans le block #}
     {{ parent() }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js" integrity="sha256-SUaao5Q7ifr2twwET0iyXVy0OVnuFJhGVi5E/dqEiLU=" crossorigin="anonymous"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
@@ -26,9 +25,10 @@
         </div>
         <div id="membre-content" class="col-10 offset-1">
             <div class="avatar-150">
-            {% for membre in membre %}
-                <img src="{{ '/images/membre/' ~ membre.avatar }}" height="150">
-            {% endfor %}
+                {% for membre in membre  %}
+                    <img src="/images/membre/{{ membre.avatar }}">
+                {% endfor %}
+
             </div>
             {{ form(form, {attr:{novalidate: 'novalidate' }}) }}
             {% for message in app.flashes('notice')  %}

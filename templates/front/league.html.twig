@@ -51,7 +51,11 @@
                                         </td>
 
                                         <td class="d-lg-block d-none">
+                                            {% if standing.logo is not empty %}
                                             <img alt="{{ standing.name }}logo" height="30px" src="{{ standing.logo }}">
+                                                {% else %}
+                                                    <img src="{{ asset('/images/league/mohamed.gif') }}" alt="#" height="35px">
+                                            {% endif %}
                                         </td>
 
                                         <td><strong>{{ standing.points }}</strong></td>

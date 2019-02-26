@@ -70,6 +70,8 @@ class FrontController extends AbstractController
         ]);
 
         $raw_team = json_decode($response->raw_body, true);
+
+
 //        dump($raw_team);
 
         $teamArray = [];
@@ -111,10 +113,9 @@ class FrontController extends AbstractController
             'fixtures' => $fixturesArray,
 //            'matchLive' => $matchDay,
             'teams' => $teamArray,
-            'articles' => $articles,
-            'spotlight' => $spotlight
+            "viewtodaymatch" => $fixturesArray,
+            "teamcategory" => $teamArray,
         ]);
-
 
     }
 //===================================================================
@@ -128,13 +129,6 @@ class FrontController extends AbstractController
         ]);
 
         $raw_match = json_decode($responseDirect->raw_body, true);
-
-
-
-
-//           dump($raw_match);
-
-
         foreach ($raw_match['api']['fixtures'] as $fixture) {
             $matchDirect = new Matchdirect(
                 $fixture['fixture_id'],
@@ -162,14 +156,13 @@ class FrontController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->persist($matchDirect);
         $em->flush();
+
+
     }
 
     /**
      * @Route("/{categorie<[a-zA-Z0-9\-_\/]+>}/{slug<[a-zA-Z0-9\-_\/]+>}_{id<\d+>}.html",
      *     name="front_article")
-     * @param $id
-     * @param $categorie
-     * @param $slug
      * @return Response
      */
     public function articles()
