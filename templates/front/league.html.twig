@@ -9,7 +9,7 @@
         {% for league in league %}
             <h4>{{ league.name }}</h4>
             <br>
-            <img height="200px" src="{{ league.logo }}" alt="{{ league.name }}logo">
+            <img id="logoteam" height="200px" src="{{ league.logo }}" alt="{{ league.name }}logo">
             <br>
             <br>
             <span>{{ league.country }}</span><br>
@@ -22,7 +22,7 @@
         </p>
         {% endfor %}
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <div id="ajax-match-classement" class="classement">
 
                     <div class="panel panel-info">
@@ -31,6 +31,17 @@
                         </div>
                         <div class="panel-body">
                             <table class="table table-striped tableau_classement" id="tableau_classement_lite">
+                                <thead>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <th>Équipe</th>
+                                    <th class="d-lg-block d-none"></th>
+                                    <th>Points</th>
+                                    <th>Jour</th>
+                                    <th>Buts</th>
+                                    <th>Diff</th>
+                                </tr>
+                                </thead>
                                 <tbody>
                                 {% for standing in logo | sortbyfield('rank') %}
                                     <tr>
@@ -50,21 +61,10 @@
                                         <td><strong>{{ standing.points }}</strong></td>
                                         <td>{{ standing.matchsPlayed }}</td>
                                         <td>{{ standing.goalsFor }}</td>
-                                        <td class="d-lg-block d-none">{{ standing.goalsDiff }}</td>
+                                        <td>{{ standing.goalsDiff }}</td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
-                                <thead>
-                                <tr>
-                                    <th>&nbsp;</th>
-                                    <th>Équipe</th>
-                                    <th class="d-lg-block d-none"></th>
-                                    <th>Points</th>
-                                    <th>Jour</th>
-                                    <th>Buts</th>
-                                    <th class="d-lg-block d-none">Différence de but</th>
-                                </tr>
-                                </thead>
                             </table>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                 </div>
             </div>
 
-            <div id="maincontentleft" class="col-md-6">
+            <div id="maincontentleft" class="col-lg-6">
                 <div id="matchdirect" class="row">
                     <div id="contentmatchdirect" class="col-12">
                         <ul class="list-group">
@@ -97,7 +97,7 @@
                         </ul>
                     </div><!--/id contentmatchdirect + class col-12 ----->
                 </div><!--/id matchdirect + class row-->
-            </div><!--/id maintcontentleft + class col-lg-8-->
+            </div><!--/id maintcontentleft + class col-lg-6-->
         </div><!--/row-->
 
 
