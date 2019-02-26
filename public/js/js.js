@@ -41,7 +41,7 @@ function searchBarligue() {
 $('.owl-carousel').owlCarousel({
     loop:true,
     autoplay:true,
-    autoplayTimeout:5000,
+    autoplayTimeout:3000,
     margin:10,
     responsiveClass:true,
     responsive : {

@@ -6,6 +6,7 @@
 
 {% block content %}
     <div class="jumbotron justify-content-center">
+        <div>
         {% for league in league %}
             <h4>{{ league.name }}</h4>
             <br>
@@ -21,12 +22,13 @@
             Saison {{ league.season }}
         </p>
         {% endfor %}
+        </div>
         <div class="row">
             <div class="col-lg-6">
                 <div id="ajax-match-classement" class="classement">
 
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
+                    <div class="panel panel-info row">
+                        <div class="panel-heading col-12">
 
                         </div>
                         <div class="panel-body">
@@ -51,7 +53,11 @@
                                         </td>
 
                                         <td class="d-lg-block d-none">
-                                            <img alt="{{ standing.name }}logo" height="30px" src="{{ standing.logo }}">
+                                            {% if standing.logo is not empty %}
+                                                <img alt="{{ standing.name }}logo" height="30px" src="{{ standing.logo }}">
+                                            {% else %}
+                                                <img src="{{ asset('/images/league/mohamed.gif') }}" alt="#" height="35px">
+                                            {% endif %}
                                         </td>
 
                                         <td><strong>{{ standing.points }}</strong></td>

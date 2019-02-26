@@ -20,22 +20,21 @@ class CommentaireController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function newCommentaire(Request $request)
+    public function newCommentaire($request = null)
     {
         // Récupération d'un membre
         $membre = $this->getUser();
 
         $commentaire = new Commentaire();
         $commentaire->setMembre($membre->getPseudo());
-
         // Création du formulaire
         $form = $this->createForm(CommentFormType::class, $commentaire, [
-            'action' => $this->generateUrl('Commentaire_new'),
-            'method' => 'POST',
+            'method' => 'POST'
         ])->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            # Sauvegarde en BDD
+
+            // Sauvegarde en BDD
             $em = $this->getDoctrine()->getManager();
             $em->persist($commentaire);
             $em->flush();
@@ -43,9 +42,30 @@ class CommentaireController extends AbstractController
             return $this->json(['result' => true]);
         }
 
-        # Passage à la vue du formulaire
+        // Passage à la vue du formulaire
         return $this->render('components/_comment.html.twig', [
             'form' => $form->createView()
         ]);
+    }
+
+    /**
+     * Formulaire pour commenter
+     * @Route("front/allcomment", name="Commentaire_all")
+     * @param Request $request
+     * @return Response
+     */
+    public function allCommentaire()
+    {
+        //recuperer les commentaires
+        $commentaires = $this->getDoctrine()
+            ->getRepository(Commentaire::class)
+            ->findAll();
+
+        // Passage à la vue du formulaire
+        return $this->render('front/allcomment.html.twig', [
+            'commentaire' => $commentaires
+        ]);
+
+
     }
 }
