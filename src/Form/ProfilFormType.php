@@ -43,8 +43,9 @@ class ProfilFormType extends AbstractType
                     'class'=>'form-control mb-2']
             ])
             ->add('profileFile', FileType::class, [
+                'label' => 'Avatar',
                 'attr' => [
-                    'class'=>'dropify'
+                    'class' => 'dropify'
                 ]
             ])
             /*->add('Leagues', EntityType::class, [

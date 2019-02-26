@@ -8,7 +8,7 @@ use App\Entity\Events;
 use App\Entity\LineUps;
 use App\Entity\MatchDetails;
 use App\Entity\Standings;
-use App\Form\CommentFormType;
+use PhpParser\Node\Scalar\MagicConst\Line;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Unirest\Request;
@@ -16,12 +16,9 @@ use Unirest\Request;
 class MatchDetailsController extends AbstractController
 {
     /**
-     * @Route("/details-match/{id<\d+>}", name="details_match")
-     * @param $id
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @return \Symfony\Component\HttpFoundation\JsonResponse|\Symfony\Component\HttpFoundation\Response
+     * @Route("/details-match/{id<\d+>}")
      */
-    public function detailsMatch($id, \Symfony\Component\HttpFoundation\Request $request)
+    public function detailsMatch($id)
     {
         // Appelle de l'api ! Request::verifyPeer fait une demande de vérirification du certif SSL
         Request::verifyPeer(false);
@@ -139,35 +136,13 @@ class MatchDetailsController extends AbstractController
         $em->flush();
 
         //recuperer les commentaires
-        $commentaires = $this->getDoctrine()
+        $commentaire = $this->getDoctrine()
             ->getRepository(Commentaire::class)
             ->findAll();
 
-        if($this->getUser()){
-            $commentaire = new Commentaire();
-
-            $commentaire->setMembre($this->getUser()->getPseudo());
-
-            // -- Traitement des commentaires
-            $form = $this->createForm(CommentFormType::class, $commentaire, [
-                'action' => $this->generateUrl('Commentaire_new'),
-                'method' => 'POST'
-            ])->handleRequest($request);
-
-            if ($form->isSubmitted() && $form->isValid()) {
-
-                // Sauvegarde en BDD
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($commentaire);
-                $em->flush();
-
-                return $this->redirect($request->server->get('REQUEST_URI'));
-            }
-        }
-
         // Passage à la vue
         return $this->render('front/details.html.twig', [
-            'commentaire' => $commentaires,
+            'commentaire' => $commentaire,
             'fixtures' => $fixturesArray,
             'events' => $eventsArray,
             "standings" => $standingsArray
