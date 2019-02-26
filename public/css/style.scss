@@ -154,25 +154,11 @@ main{
 }
 #maincontent{
   margin-top:2em;
-  margin-left:0;
-  margin-right:0;
-  padding:0;
 }
 .jumbotron{
   margin-top:2em
 }
-/********************Carousel***********************************/
-#imgcarousel{
-  min-height:500px;
-  object-fit: cover;
-}
-.item{
-  overflow:hidden;
-
-}
 /******************** CONTENTLEFT ****************************/
-
-
 #maincontentleft{
   margin-top:2em;
 }
@@ -180,7 +166,6 @@ main{
 
 }
 #contentmatchdirect{
-  padding:0;
 }
 #contentmatchdirect ul{
 
@@ -206,12 +191,6 @@ main{
     display:none;
   }
 }
-
-#logoteam{
-  object-fit:cover;
-  max-width:100%;
-}
-
 ul a{
   color:black;
   text-decoration:none;
@@ -246,7 +225,9 @@ a:hover{
 #contentsidebar + .col-12
 
 */
-
+#maincontentright{
+  margin-top: 2em;
+}
 
 #maincontentright .list-group-item:nth-child(even) {
   background-color: #fcf8fb;

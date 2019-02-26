@@ -40,21 +40,8 @@ function searchBarligue() {
 
 $('.owl-carousel').owlCarousel({
     loop:true,
-    autoplay:true,
-    autoplayTimeout:5000,
+    items:2,
     margin:10,
     responsiveClass:true,
-    responsive : {
-        // breakpoint from 0 up
-        0: {
-            items:1,
-        },
-        992: {
-            items:2,
-        },
-
-
-
-        },
 
 })
