@@ -9,7 +9,11 @@
         {% for teams in teams %}
             <h4>{{ teams.name }}</h4>
             <br>
-            <img height="200px" src="{{ teams.logo }}" alt="{{ teams.name }}logo">
+            {% if teams.logo is not empty %}
+            <img alt="{{ teams.name }} logo" height="200px" src="{{ teams.logo }}">
+            {% else %}
+                <img src="{{ asset('/images/league/mohamed.gif') }}" alt="#" height="200px">
+            {% endif %}
             <br>
             <hr class="my-4">
 

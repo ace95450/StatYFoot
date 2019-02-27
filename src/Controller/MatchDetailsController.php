@@ -9,6 +9,7 @@ use App\Entity\LineUps;
 use App\Entity\MatchDetails;
 use App\Entity\Standings;
 use App\Form\CommentFormType;
+use PhpParser\Node\Scalar\MagicConst\Line;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Unirest\Request;
@@ -16,10 +17,10 @@ use Unirest\Request;
 class MatchDetailsController extends AbstractController
 {
     /**
-     * @Route("/details-match/{id<\d+>}", name="details_match")
+     * @Route("/details-match/{id<\d+>}")
      * @param $id
      * @param \Symfony\Component\HttpFoundation\Request $request
-     * @return \Symfony\Component\HttpFoundation\JsonResponse|\Symfony\Component\HttpFoundation\Response
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function detailsMatch($id, \Symfony\Component\HttpFoundation\Request $request)
     {

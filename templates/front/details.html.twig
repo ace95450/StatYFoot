@@ -34,41 +34,41 @@
                                 <h3>{{ fixture.goalsHomeTeam }} - {{ fixture.goalsAwayTeam }}</h3>
                             </div>
                         </div>
-                    </div>
-                    <div class="row table-game-info">
-                        <table class="table-custom table">
-                            <tbody>
-                            <tr>
-                                <td class="text-right table-game-info-number">10(9)</td>
-                                <td class="text-center table-game-info-category">Tirs Cadrés</td>
-                                <td class="text-left table-game-info-number">10(9)</td>
-                            </tr>
-                            <tr>
-                                <td class="text-right table-game-info-number">4</td>
-                                <td class="text-center table-game-info-category">Corners</td>
-                                <td class="text-left table-game-info-number">4</td>
-                            </tr>
-                            <tr>
-                                <td class="text-right table-game-info-number">1</td>
-                                <td class="text-center table-game-info-category">Arrêts</td>
-                                <td class="text-left table-game-info-number">1</td>
-                            </tr>
-                            <tr>
-                                <td class="text-right table-game-info-number">2</td>
-                                <td class="text-center table-game-info-category">Cartons Jaunes</td>
-                                <td class="text-left table-game-info-number">0</td>
-                            </tr>
-                            <tr>
-                                <td class="text-right table-game-info-number">1</td>
-                                <td class="text-center table-game-info-category">Carton Rouges</td>
-                                <td class="text-left table-game-info-number">0</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- FIN JUMBOTRON -->
-                </div>
+
+                        <div class="row table-game-info">
+                            <table data-placement="right" class="table-custom table">
+                                <tbody>
+                                <tr>
+                                    <td class="text-right table-game-info-number">7(0)</td>
+                                    <td class="text-center table-game-info-category">Tirs Cadrés</td>
+                                    <td class="text-left table-game-info-number">10(1)</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right table-game-info-number">9</td>
+                                    <td class="text-center table-game-info-category">Corners</td>
+                                    <td class="text-left table-game-info-number">3</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right table-game-info-number">1</td>
+                                    <td class="text-center table-game-info-category">Arrêts</td>
+                                    <td class="text-left table-game-info-number">5</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right table-game-info-number">2</td>
+                                    <td class="text-center table-game-info-category">Cartons Jaunes</td>
+                                    <td class="text-left table-game-info-number">1</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right table-game-info-number">1</td>
+                                    <td class="text-center table-game-info-category">Carton Rouges</td>
+                                    <td class="text-left table-game-info-number">0</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> <!-- FIN JUMBOTRON -->
                 {% endfor %}
+
                 <div class="row">
 
                     <div id="commentaires" class="col-12">
@@ -84,16 +84,16 @@
                         {% endif %}
 
                         {% for commentaires in commentaire | sort | reverse | slice(0,5) %}
-                        <hr>
-                        <div id="commentaire" class="row">
-                            <div class="col-2">
-                                <img src="../images/membre/{{ commentaires.membre }}.jpeg" width="100%" >
-                            </div>
-                            <div class="col-10">
-                                <p id="content-comment">
-                                    {{ commentaires.contenu }}
-                                    <br>
-                                    <span class="infos-commentaire">
+                            <hr>
+                            <div id="commentaire" class="row">
+                                <div class="col-2">
+                                    <img src="../images/membre/{{ commentaires.membre }}.jpeg" width="100%" >
+                                </div>
+                                <div class="col-10">
+                                    <p id="content-comment">
+                                        {{ commentaires.contenu }}
+                                        <br>
+                                        <span class="infos-commentaire">
                                         <i>par <b>{{ commentaires.membre }}</b> le {{ commentaires.getDateCreation() |date("d/m/Y") }} à {{ commentaires.getDateCreation() |date("H:i:s") }}</i>
                                     </span>
                                     </p>
